@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #000000;
+    --primary-dark: #111111;
+    --secondary: #333333;
+    --accent: #666666;
+    --background: #FFFFFF;
+    --surface: #FFFFFF;
+  }
+
+  body {
+    @apply bg-background text-primary font-sans antialiased;
+    margin: 0;
+  }
+
+  h1 {
+    @apply text-5xl font-bold tracking-tight mb-6;
+  }
+
+  h2 {
+    @apply text-4xl font-bold tracking-tight mb-4;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold mb-3;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium text-sm tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-black border border-black px-8 py-3 rounded-full hover:bg-gray-50 transition-all duration-300 font-medium text-sm tracking-wide;
+  }
+
+  .card-black {
+    @apply bg-black text-white rounded-[2rem] p-8 shadow-2xl;
+  }
+
+  .card-white {
+    @apply bg-white text-black rounded-[2rem] p-8 shadow-xl;
+  }
+
+  .nav-pill {
+    @apply bg-black text-white rounded-full px-6 py-3 flex items-center gap-6 shadow-2xl backdrop-blur-md;
+  }
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+/* Redesign Animations & Overrides */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Auth Input Autofill Fixes */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px black inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
