@@ -48,8 +48,6 @@ export default function Home() {
   ];
   const allReviews = [...dynamicReviews, ...reviews];
 
-
-
   const featuredProducts = [
     {
       id: "shilajit-resin-premium",
@@ -60,7 +58,7 @@ export default function Home() {
       category: "Pure Resin",
       weight: "30g",
       servings: 150,
-      stock: 50
+      stock: 50,
     },
     {
       id: "shilajit-honey-blend",
@@ -71,7 +69,7 @@ export default function Home() {
       category: "Honey Blend",
       weight: "250g",
       servings: 50,
-      stock: 30
+      stock: 30,
     },
     {
       id: "shilajit-capsules",
@@ -82,7 +80,7 @@ export default function Home() {
       category: "Capsules",
       weight: "60 Capsules",
       servings: 60,
-      stock: 100
+      stock: 100,
     },
     {
       id: "shilajit-extract",
@@ -92,8 +90,8 @@ export default function Home() {
       category: "Liquid",
       weight: "50ml",
       servings: 100,
-      stock: 25
-    }
+      stock: 25,
+    },
   ];
 
   useEffect(() => {
@@ -103,7 +101,7 @@ export default function Home() {
 
     let isTouching = false;
     let lastUserTouch = 0;
-    
+
     const handleTouchStart = () => {
       isTouching = true;
       lastUserTouch = Date.now();
@@ -112,21 +110,21 @@ export default function Home() {
       isTouching = false;
       lastUserTouch = Date.now();
     };
-    
+
     const containerNode = reviewsContainerRef.current;
     if (containerNode) {
-      containerNode.addEventListener('touchstart', handleTouchStart, { passive: true });
-      containerNode.addEventListener('touchend', handleTouchEnd, { passive: true });
+      containerNode.addEventListener("touchstart", handleTouchStart, { passive: true });
+      containerNode.addEventListener("touchend", handleTouchEnd, { passive: true });
     }
 
     const reviewTimer = setInterval(() => {
       if (reviewsContainerRef.current && window.innerWidth <= 767) {
         // Pause auto-scroll if user is currently swiping or swiped recently
         if (isTouching || Date.now() - lastUserTouch < 4000) return;
-        
+
         const container = reviewsContainerRef.current;
         const { scrollLeft, scrollWidth, clientWidth } = container;
-        
+
         // Loop back to start
         if (scrollLeft + clientWidth >= scrollWidth - 20) {
           container.scrollTo({ left: 0, behavior: "smooth" });
@@ -145,25 +143,19 @@ export default function Home() {
       clearInterval(timer);
       clearInterval(reviewTimer);
       if (containerNode) {
-        containerNode.removeEventListener('touchstart', handleTouchStart);
-        containerNode.removeEventListener('touchend', handleTouchEnd);
+        containerNode.removeEventListener("touchstart", handleTouchStart);
+        containerNode.removeEventListener("touchend", handleTouchEnd);
       }
     };
   }, []);
 
-
-
   const loadFeaturedProducts = async () => {
     try {
-      const { data, error } = await supabase
-        .from("products")
-        .select("*")
-        .eq("is_active", true)
-        .limit(4);
+      const { data, error } = await supabase.from("products").select("*").eq("is_active", true).limit(4);
 
       if (error) throw error;
       // Enhance database products with local images/hover images for demo
-      const enhancedData = data.map(p => {
+      const enhancedData = data.map((p) => {
         const localJar = "/images/products/shilajit-resin.jpg";
         const localNutrition = "/images/products/shilajit-nutrition.jpg";
 
@@ -171,7 +163,7 @@ export default function Home() {
           ...p,
           // Swapped assignments to fix "opposite" order
           image_url: localNutrition,
-          hover_image_url: localJar
+          hover_image_url: localJar,
         };
       });
       setDynamicProducts(enhancedData);
@@ -184,20 +176,22 @@ export default function Home() {
     try {
       const { data, error } = await supabase
         .from("reviews")
-        .select(`
+        .select(
+          `
           *,
           profiles (full_name)
-        `)
+        `,
+        )
         .eq("show_on_home", true)
         .order("created_at", { ascending: false });
 
       if (error) throw error;
 
-      const formattedReviews = (data || []).map(r => ({
+      const formattedReviews = (data || []).map((r) => ({
         name: r.profiles?.full_name || "Anonymous",
         text: r.comment,
         rating: r.rating,
-        isDynamic: true
+        isDynamic: true,
       }));
 
       setDynamicReviews(formattedReviews);
@@ -205,8 +199,6 @@ export default function Home() {
       console.error("Error fetching featured reviews:", err);
     }
   };
-
-
 
   // Redirect admins to dashboard
   useEffect(() => {
@@ -262,18 +254,10 @@ export default function Home() {
           <img src="/hero-1.png" alt="" className="w-full h-auto invisible" />
         </div>
         {/* Slider Images */}
-        {[
-          "/hero-1.png",
-          "/hero-2.png",
-          "/hero-3.png"
-        ].map((img, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <img src={img} alt={`Slide ${index + 1}`} className="w-full h-auto md:h-[calc(100%-40px)] max-md:absolute max-md:top-12 max-md:left-0 max-md:object-contain md:mt-[40px] md:object-cover" style={{ objectPosition: 'center top' }} />
-            
+        {["/hero-1.png", "/hero-2.png", "/hero-3.png"].map((img, index) => (
+          <div key={index} className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}>
+            <img src={img} alt={`Slide ${index + 1}`} className="w-full h-auto md:h-[calc(100%-40px)] max-md:absolute max-md:top-12 max-md:left-0 max-md:object-contain md:mt-[40px] md:object-cover" style={{ objectPosition: "center top" }} />
+
             <div className="absolute inset-0 bg-black/10 md:bg-black/10 max-md:bg-gradient-to-t max-md:from-black max-md:via-black/20 max-md:to-transparent z-0"></div>
           </div>
         ))}
@@ -293,12 +277,7 @@ export default function Home() {
         {/* Slider Indicators */}
         <div className="absolute md:bottom-6 left-0 right-0 z-20 flex justify-center gap-2 max-md:relative max-md:!top-auto max-md:pb-4">
           {[0, 1, 2].map((idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? "bg-white w-8" : "bg-white/50 hover:bg-white/80"
-                }`}
-            />
+            <button key={idx} onClick={() => setCurrentSlide(idx)} className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? "bg-white w-8" : "bg-white/50 hover:bg-white/80"}`} />
           ))}
         </div>
       </section>
@@ -359,23 +338,12 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[12px] md:gap-8">
             {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="group relative bg-black text-white rounded-[12px] md:rounded-[3rem] p-[10px] md:p-8 flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-900/50 border border-gray-800"
-              >
+              <div key={index} className="group relative bg-black text-white rounded-[12px] md:rounded-[3rem] p-[10px] md:p-8 flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-900/50 border border-gray-800">
                 <div className="w-full h-[120px] md:h-48 mb-[10px] md:mb-6 rounded-[10px] md:rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-amber-500/50 transition-all duration-500">
-                  <img
-                    src={benefit.image}
-                    alt={benefit.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
+                  <img src={benefit.image} alt={benefit.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
                 </div>
-                <h3 className="text-[13px] md:text-2xl font-bold mb-1 md:mb-4 text-amber-500 group-hover:text-amber-400">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-300 leading-[1.4] md:leading-relaxed text-[11px] md:text-sm group-hover:text-white transition-colors">
-                  {benefit.description}
-                </p>
+                <h3 className="text-[13px] md:text-2xl font-bold mb-1 md:mb-4 text-amber-500 group-hover:text-amber-400">{benefit.title}</h3>
+                <p className="text-gray-300 leading-[1.4] md:leading-relaxed text-[11px] md:text-sm group-hover:text-white transition-colors">{benefit.description}</p>
                 <div className="absolute inset-0 rounded-[12px] md:rounded-[3rem] bg-gradient-to-tr from-amber-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             ))}
@@ -392,16 +360,14 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 mb-16 max-md:mb-[24px] max-md:items-stretch max-md:[&>*:nth-child(3)]:col-span-full max-md:[&>*:nth-child(3)]:max-w-[calc(50%-4px)] max-md:[&>*:nth-child(3)]:mx-auto">
-            {(dynamicProducts.length > 0 ? dynamicProducts : featuredProducts).slice(0, 3).map((product) => (
+            {dynamicProducts.slice(0, 3).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
           <div className="text-center">
             <Link to="/products" className="max-md:!inline-block max-md:!w-full max-md:!max-w-[200px] max-md:!mx-auto">
-              <button className="bg-black text-white px-12 py-4 text-lg font-bold rounded-full hover:bg-gray-900 transition-all shadow-lg hover:scale-105 max-md:!w-full max-md:!block max-md:!text-[14px] max-md:!py-[12px] max-md:!px-[24px] max-md:!mx-auto">
-                View All Products
-              </button>
+              <button className="bg-black text-white px-12 py-4 text-lg font-bold rounded-full hover:bg-gray-900 transition-all shadow-lg hover:scale-105 max-md:!w-full max-md:!block max-md:!text-[14px] max-md:!py-[12px] max-md:!px-[24px] max-md:!mx-auto">View All Products</button>
             </Link>
           </div>
         </section>
@@ -415,25 +381,17 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div 
-              ref={reviewsContainerRef}
-              className="animate-marquee max-md:animate-none flex max-md:!w-full max-md:items-stretch gap-6 max-md:!gap-[12px] max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4"
-            >
+            <div ref={reviewsContainerRef} className="animate-marquee max-md:animate-none flex max-md:!w-full max-md:items-stretch gap-6 max-md:!gap-[12px] max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
               {/* First set of reviews */}
               {allReviews.map((review, idx) => (
-                <div
-                  key={`rev-1-${idx}`}
-                  className="w-[350px] max-md:!w-[85vw] max-md:!min-w-[85vw] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[16px] border-2 border-amber-500 shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col"
-                >
+                <div key={`rev-1-${idx}`} className="w-[350px] max-md:!w-[85vw] max-md:!min-w-[85vw] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[16px] border-2 border-amber-500 shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col">
                   <div className="flex gap-1 mb-6 max-md:!mb-4 justify-center">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 max-md:!w-[18px] max-md:!h-[18px] fill-amber-500 text-amber-500" />
                     ))}
                   </div>
 
-                  <p className="text-gray-300 text-sm max-md:!text-[13px] max-md:!leading-[1.6] leading-relaxed mb-8 max-md:!min-h-0 max-md:!mb-4 min-h-[80px] text-center">
-                    "{review.text}"
-                  </p>
+                  <p className="text-gray-300 text-sm max-md:!text-[13px] max-md:!leading-[1.6] leading-relaxed mb-8 max-md:!min-h-0 max-md:!mb-4 min-h-[80px] text-center">"{review.text}"</p>
 
                   <div className="text-center mt-auto">
                     <div className="flex items-center justify-center gap-2 mb-1">
@@ -446,19 +404,14 @@ export default function Home() {
               ))}
               {/* Duplicate set for seamless loop - Hidden on mobile so scrolling naturally terminates */}
               {allReviews.map((review, idx) => (
-                <div
-                  key={`rev-2-${idx}`}
-                  className="w-[350px] max-md:hidden flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 border-2 border-amber-500 shadow-xl transition-all duration-500 hover:scale-105"
-                >
+                <div key={`rev-2-${idx}`} className="w-[350px] max-md:hidden flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 border-2 border-amber-500 shadow-xl transition-all duration-500 hover:scale-105">
                   <div className="flex gap-1 mb-6 justify-center">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-amber-500 text-amber-500" />
                     ))}
                   </div>
 
-                  <p className="text-gray-300 text-sm leading-relaxed mb-8 min-h-[80px] text-center">
-                    "{review.text}"
-                  </p>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-8 min-h-[80px] text-center">"{review.text}"</p>
 
                   <div className="text-center mt-auto">
                     <div className="flex items-center justify-center gap-2 mb-1">
@@ -494,10 +447,7 @@ export default function Home() {
                 { q: "Do you offer free shipping?", a: "Yes! We offer free express shipping on all orders nationwide, with tracking provided once your order is dispatched." },
               ].map((item, i) => (
                 <div key={i}>
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex justify-between items-center py-6 text-left gap-4 group max-md:!items-start max-md:!py-[14px] max-md:!gap-[12px]"
-                  >
+                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex justify-between items-center py-6 text-left gap-4 group max-md:!items-start max-md:!py-[14px] max-md:!gap-[12px]">
                     <span className={`text-white transition-colors md:font-semibold md:text-2xl max-md:!text-[14px] max-md:!font-[500] max-md:!leading-[1.4] ${openFaq === i ? "!text-amber-400" : ""}`}>{item.q}</span>
                     <span className={`text-amber-500 text-3xl font-light flex-shrink-0 transition-transform duration-300 max-md:!text-[18px] max-md:!leading-none max-md:!mt-[2px] ${openFaq === i ? "rotate-45" : "rotate-0"}`}>+</span>
                   </button>
@@ -509,8 +459,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-      </div >
-    </div >
+      </div>
+    </div>
   );
 }
