@@ -14,6 +14,33 @@ export default function Home() {
   const navigate = useNavigate();
   const { profile } = useAuthStore();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      image: "/mountain-1.jpg",
+      eyebrow: "SOURCED ABOVE THE CLOUDS",
+      titleWhite: "Ancient",
+      titleGold: "Purity",
+      tagline: "Hand-harvested  ·  Glacier-purified  ·  Sun-dried",
+      cta: "DISCOVER THE ORIGIN",
+    },
+    {
+      image: "/mountain-2.jpg",
+      eyebrow: "FORGED BY THE HIMALAYAS",
+      titleWhite: "Raw",
+      titleGold: "Power",
+      tagline: "Million-year minerals  ·  100% Natural  ·  Lab Tested",
+      cta: "EXPLORE THE RANGE",
+    },
+    {
+      image: "/mountain-3.avif",
+      eyebrow: "NATURE'S FINEST GIFT",
+      titleWhite: "Eternal",
+      titleGold: "Vitality",
+      tagline: "Boost Energy  ·  Heal Joints  ·  Elevate Performance",
+      cta: "SHOP COLLECTION",
+    },
+  ];
   const [dynamicReviews, setDynamicReviews] = useState([]);
   const [dynamicProducts, setDynamicProducts] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
@@ -247,37 +274,98 @@ export default function Home() {
 
   return (
     <div className="pb-20 max-md:!pb-0">
-      {/* Hero Section - Slider (Full Width) */}
-      <section className="relative overflow-hidden md:min-h-[600px] md:h-[85vh] w-full group bg-black max-md:!h-auto max-md:!min-h-0 max-md:!mb-0 max-md:!pb-0">
-        {/* Invisible Placeholder to give container height on mobile */}
-        <div className="md:hidden w-full pt-12 pointer-events-none">
-          <img src="/hero-1.png" alt="" className="w-full h-auto invisible" />
-        </div>
-        {/* Slider Images */}
-        {["/hero-1.png", "/hero-2.png", "/hero-3.png"].map((img, index) => (
-          <div key={index} className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}>
-            <img src={img} alt={`Slide ${index + 1}`} className="w-full h-auto md:h-[calc(100%-40px)] max-md:absolute max-md:top-12 max-md:left-0 max-md:object-contain md:mt-[40px] md:object-cover" style={{ objectPosition: "center top" }} />
-
-            <div className="absolute inset-0 bg-black/10 md:bg-black/10 max-md:bg-gradient-to-t max-md:from-black max-md:via-black/20 max-md:to-transparent z-0"></div>
+      {/* Hero Section - Cinematic Mountain Slider */}
+      <section className="relative w-full h-screen min-h-[500px] max-h-[900px] overflow-hidden bg-black">
+        {/* Slide backgrounds */}
+        {heroSlides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
+          >
+            <img
+              src={slide.image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Dark gradient overlay - heavier at bottom and top */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
           </div>
         ))}
 
-        {/* Buttons Overlay */}
-        <div className="absolute md:bottom-16 left-0 right-0 z-20 flex flex-row justify-center items-center gap-2 sm:gap-4 px-2 max-md:relative max-md:!top-auto max-md:-mt-[15vw] max-md:mb-6">
-          <Link to="/products" className="flex justify-center flex-shrink-0">
-            <button className="btn-secondary text-base px-10 py-4 shadow-xl hover:scale-105 transition-transform max-md:!text-[13px] max-md:!px-[20px] max-md:!py-[10px] max-md:!max-w-[160px] max-md:!w-auto flex items-center justify-center whitespace-nowrap">Shop Collection</button>
-          </Link>
-          <Link to="/about" className="flex justify-center flex-shrink-0">
-            <button className="bg-black/50 backdrop-blur-md text-white border border-white/30 hover:bg-black/70 px-10 py-4 font-medium rounded-full transition-all flex items-center gap-2 justify-center shadow-lg hover:scale-105 max-md:!text-[13px] max-md:!px-[20px] max-md:!py-[10px] max-md:!max-w-[160px] max-md:!w-auto whitespace-nowrap">
-              Learn More <span className="text-xl md:text-xl text-lg relative top-[1px] ml-1">→</span>
+        {/* Centered Text Content */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
+          {/* Eyebrow text */}
+          <p
+            key={`eyebrow-${currentSlide}`}
+            className="text-[#D4AF37] text-xs sm:text-sm tracking-[0.3em] uppercase font-medium mb-4 animate-fade-in-up"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+          >
+            {heroSlides[currentSlide].eyebrow}
+          </p>
+
+          {/* Main title */}
+          <h1
+            key={`title-${currentSlide}`}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-4 animate-fade-in-up animation-delay-200"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+          >
+            <span className="text-white">{heroSlides[currentSlide].titleWhite} </span>
+            <span className="text-[#D4AF37]">{heroSlides[currentSlide].titleGold}</span>
+          </h1>
+
+          {/* Tagline */}
+          <p
+            key={`tagline-${currentSlide}`}
+            className="text-white/80 text-sm sm:text-base tracking-widest mb-8 animate-fade-in-up animation-delay-400"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+          >
+            {heroSlides[currentSlide].tagline}
+          </p>
+
+          {/* CTA Button */}
+          <Link
+            key={`cta-${currentSlide}`}
+            to="/products"
+            className="animate-fade-in-up animation-delay-400"
+          >
+            <button className="border border-[#D4AF37] text-white text-xs sm:text-sm tracking-[0.25em] uppercase px-8 py-3 hover:bg-[#D4AF37] hover:text-black transition-all duration-300 font-medium">
+              {heroSlides[currentSlide].cta}
             </button>
           </Link>
         </div>
 
-        {/* Slider Indicators */}
-        <div className="absolute md:bottom-6 left-0 right-0 z-20 flex justify-center gap-2 max-md:relative max-md:!top-auto max-md:pb-4">
-          {[0, 1, 2].map((idx) => (
-            <button key={idx} onClick={() => setCurrentSlide(idx)} className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? "bg-white w-8" : "bg-white/50 hover:bg-white/80"}`} />
+        {/* Left Arrow */}
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/40 text-white flex items-center justify-center hover:bg-white/20 transition-all duration-300 text-lg"
+          aria-label="Previous slide"
+        >
+          ‹
+        </button>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/40 text-white flex items-center justify-center hover:bg-white/20 transition-all duration-300 text-lg"
+          aria-label="Next slide"
+        >
+          ›
+        </button>
+
+        {/* Slide counter top right */}
+        <div className="absolute top-6 right-6 z-20 text-white/50 text-xs tracking-widest">
+          {String(currentSlide + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}
+        </div>
+
+        {/* Dot Indicators */}
+        <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2">
+          {heroSlides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentSlide(idx)}
+              className={`h-[3px] rounded-full transition-all duration-500 ${currentSlide === idx ? "bg-[#D4AF37] w-8" : "bg-white/40 w-4 hover:bg-white/70"}`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
           ))}
         </div>
       </section>

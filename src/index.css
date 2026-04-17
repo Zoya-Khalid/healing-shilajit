@@ -88,15 +88,16 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.7s ease-out forwards;
+  opacity: 0;
 }
 
 .animation-delay-200 {
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
 }
 
 .animation-delay-400 {
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 }
 
 /* Auth Input Autofill Fixes */

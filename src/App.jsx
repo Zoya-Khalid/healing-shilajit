@@ -62,22 +62,8 @@ function App() {
           <Route path="signup" element={<Signup />} />
 
           {/* Protected Routes */}
-          <Route
-            path="checkout"
-            element={
-              <ProtectedRoute>
-                <Checkout />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="order-confirmation/:orderId"
-            element={
-              <ProtectedRoute>
-                <OrderConfirmation />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="order-confirmation/:orderId" element={<OrderConfirmation />} />
           <Route
             path="profile"
             element={

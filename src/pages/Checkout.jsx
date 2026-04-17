@@ -172,6 +172,13 @@ export default function Checkout() {
     postalCode: "",
   });
 
+  // Pre-fill email if user logs in after page load
+  useEffect(() => {
+    if (user?.email && !formData.email) {
+      setFormData((prev) => ({ ...prev, email: user.email }));
+    }
+  }, [user]);
+
   useEffect(() => {
     if (items.length === 0) {
       navigate("/cart");
@@ -355,7 +362,7 @@ Email: support@healingshilajit.com
 
     try {
       const orderData = {
-        user_id: user.id,
+        user_id: user?.id || null,  // null for guest orders
         total_amount: getTotal(),
         status: "pending",
         payment_status: paymentStatus,
@@ -388,7 +395,10 @@ Email: support@healingshilajit.com
       await db.createOrderItems(orderItems);
 
       // 🆕 SEND ORDER CONFIRMATION EMAIL VIA RESEND
-      await sendOrderEmail(order, user.email, formData.fullName, items, getTotal());
+      const emailTo = formData.email || user?.email || "";
+      if (emailTo) {
+        await sendOrderEmail(order, emailTo, formData.fullName, items, getTotal());
+      }
 
       clearCart();
       navigate(`/order-confirmation/${order.id}`);
