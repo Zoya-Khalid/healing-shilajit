@@ -259,12 +259,12 @@ export default function Checkout() {
               <p>
                 <strong>Contact:</strong><br>
                 📞 +92 333 807 1123<br>
-                📧 support@healingshilajit.com
+                📧 support@herbvedashilajit.com
               </p>
             </div>
             
             <div class="footer">
-              <p>Thank you for choosing Healing Shilajit!</p>
+              <p>Thank you for choosing Herbveda Shilajit!</p>
               <p style="font-size: 12px; color: #666;">
                 This is an automated email. Please do not reply to this message.
               </p>
@@ -330,13 +330,13 @@ PAYMENT STATUS: ${order.payment_status === "paid" ? "Paid Online" : "Cash on Del
 
 We'll send you another email when your order ships with tracking information.
 
-Thank you for choosing Healing Shilajit!
+Thank you for choosing Herbveda Shilajit!
 
 Best regards,
-The Healing Shilajit Team
+The Herbveda Shilajit Team
 
 Contact: +92 333 807 1123
-Email: support@healingshilajit.com
+Email: support@herbvedashilajit.com
       `.trim();
 
       await supabase.from("order_notifications").insert([

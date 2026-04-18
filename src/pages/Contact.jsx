@@ -200,7 +200,7 @@ export default function Contact() {
 
             <div className="group/info hover:translate-x-2 transition-transform duration-300 max-md:!pt-[24px]">
               <h3 className="text-xs uppercase tracking-wider text-gray-500 mb-4 group-hover/info:text-white transition-colors max-md:!text-[11px] max-md:!tracking-[0.08em] max-md:!mb-[6px]">support</h3>
-              <p className="text-sm text-gray-300 leading-relaxed max-md:!text-[12px] mb-0 max-md:!line-height-[1.8]">support@healingshilajit.com</p>
+              <p className="text-sm text-gray-300 leading-relaxed max-md:!text-[12px] mb-0 max-md:!line-height-[1.8]">support@herbvedashilajit.com</p>
               <p className="text-sm text-gray-300 leading-relaxed max-md:!text-[12px] max-md:!line-height-[1.8]">+92 333 8071123</p>
             </div>
           </div>

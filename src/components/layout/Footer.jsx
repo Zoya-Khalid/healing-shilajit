@@ -14,7 +14,7 @@ export default function Footer() {
           
           {/* Brand Section — full width on mobile */}
           <div className="max-md:!border-b max-md:border-white/10 max-md:!pb-[12px] max-md:!mb-[12px]">
-            <h3 className="text-lg font-bold mb-4 max-md:!text-[13px] max-md:!font-[600] max-md:!mb-[6px]">Healing Shilajit</h3>
+            <h3 className="text-lg font-bold mb-4 max-md:!text-[13px] max-md:!font-[600] max-md:!mb-[6px]">Herbveda Shilajit</h3>
             <p className="text-gray-400 text-sm max-md:!text-[12px] max-md:!leading-[1.5]" style={{ color: 'rgba(255,255,255,0.7)' }}>Premium quality Himalayan Shilajit sourced from 17,000 feet, lab-tested and certified for purity.</p>
           </div>
 
@@ -79,7 +79,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center space-x-2 max-md:!space-x-0">
                   <Mail className="h-4 w-4 max-md:!w-[12px] max-md:!h-[12px] max-md:!mr-[4px] flex-shrink-0" />
-                  <span className="text-gray-400 max-md:!text-[11px] max-md:break-all">support@healingshilajit.com</span>
+                  <span className="text-gray-400 max-md:!text-[11px] max-md:break-all">support@herbvedashilajit.com</span>
                 </li>
               </ul>
               <div className="flex space-x-4 mt-4 max-md:!gap-[10px] max-md:!space-x-0 max-md:!mt-[8px]">
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm max-md:!mt-[12px] max-md:!pt-[12px] max-md:!text-[11px] max-md:!px-[16px]">
-          <p>&copy; {new Date().getFullYear()} Healing Shilajit. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Herbveda Shilajit. All rights reserved.</p>
         </div>
       </div>
     </footer>

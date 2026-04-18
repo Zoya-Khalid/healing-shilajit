@@ -107,28 +107,28 @@ export default function Home() {
 
   const reviews = [
     {
-      name: "Fawad Khan",
-      text: "maine apne father k liye purchase kiya tha aur unko boht positive effect hua ha. joints and back pain khatam in a week. Very impressed with the quality",
+      name: "James Thompson",
+      text: "I bought this for my father and he's seen a very positive effect. His joint and back pain was gone within a week. Very impressed with the quality.",
       rating: 5,
     },
     {
-      name: "Danish Rafiq",
-      text: "Beautiful Packaging and excellent quality. You can feel its purify and effectiveness with the very first use. Highly recommended",
+      name: "David Richardson",
+      text: "Beautiful packaging and excellent quality. You can feel its purity and effectiveness from the very first use. Highly recommended.",
       rating: 5,
     },
     {
-      name: "Zain Malik",
-      text: "Best Shilajit brand in town. Tired of using fake ones finally got the real deal. It helped me feel more active and focused throughout the day. Definitely worth trying.",
+      name: "Oliver Wright",
+      text: "Best Shilajit brand around. Tired of using fakes, I finally found the real deal. It helped me feel more active and focused throughout the day. Definitely worth trying.",
       rating: 5,
     },
     {
-      name: "Ayesha Malik",
-      text: "Apny husband k liye order kiya tha. Yaqeen nahi aa raha k ye itna effective ha. uski performance 10 x increase huvi ha. Highly recommended",
+      name: "Sophie Evans",
+      text: "I ordered this for my husband. I can't believe how effective it is. His performance has increased tenfold. Highly recommended.",
       rating: 5,
     },
     {
-      name: "Abdul Basit",
-      text: "Premium quality at its finest. Tried both of their products. Shilajit Resin and Honey Shilajit . Both were perfect. Recommend Honey shilajit more.",
+      name: "George Miller",
+      text: "Premium quality at its finest. Tried both of their products, the Shilajit Resin and Honey Shilajit. Both were perfect. I'd recommend the Honey Shilajit especially.",
       rating: 5,
     },
   ];
@@ -651,17 +651,17 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl max-md:!text-[22px] font-serif font-bold inline-block text-black border-b-8 border-[#D4AF37] pb-4 max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[12px]">Frequently Asked Questions</h2>
               <div className="w-full h-2 max-md:!w-[60px] max-md:!h-[4px] bg-amber-500 rounded-full md:hidden"></div>
             </div>
-            <p className="text-gray-500 max-w-xl mx-auto mt-6 text-lg max-md:!text-[13px] max-md:!mt-2 max-md:!px-[16px]">Everything you need to know about Healing Shilajit — answered.</p>
+            <p className="text-gray-500 max-w-xl mx-auto mt-6 text-lg max-md:!text-[13px] max-md:!mt-2 max-md:!px-[16px]">About Herbveda Shilajit</p>
           </div>
 
           <div className="rounded-[3rem] bg-black px-6 md:px-12 py-16 max-md:!rounded-[12px] max-md:!p-[16px] max-md:!mx-[12px]">
             <div className="max-w-3xl mx-auto divide-y divide-white/10">
               {[
-                { q: "What is Healing Shilajit?", a: "Healing Shilajit is a pure, mineral-rich resin sourced from the Himalayas at 17,000 feet. It undergoes natural filtration to preserve its full potency, free from additives or heavy metals." },
+                { q: "What is Herbveda Shilajit?", a: "Herbveda Shilajit is a pure, mineral-rich resin sourced from the Himalayas at 17,000 feet. It undergoes natural filtration to preserve its full potency, free from additives or heavy metals." },
                 { q: "How do I use Shilajit Resin?", a: "Take a pea-sized amount (300–500mg) and dissolve it in warm water, milk, or tea. Consume once daily, preferably in the morning on an empty stomach for best results." },
-                { q: "How long until I see results?", a: "Most customers notice improved energy and focus within the first week. For deeper benefits like joint relief, muscle strength, and hormonal support, allow 4–8 weeks of consistent use." },
-                { q: "Is Healing Shilajit safe for daily use?", a: "Yes. Our Shilajit is lab-tested and certified pure. It is safe for daily use by healthy adults. If you have an existing medical condition or are on medication, consult your doctor first." },
-                { q: "What makes Healing Shilajit different from others?", a: "We source directly from high-altitude Himalayan regions and test every batch in certified USA labs. No fillers, no fakes — just 100% authentic, potent Shilajit resin." },
+                { q: "How long until I see results?", a: "Most customers notice improved energy and focus within the first week. For deeper benefits like joint relief, muscle strength, and hormonal support, allow 2–3 weeks of consistent use." },
+                { q: "Is Herbveda Shilajit safe for daily use?", a: "Yes. Our Shilajit is lab-tested and certified pure. It is safe for daily use by healthy adults. If you have an existing medical condition or are on medication, consult your doctor first." },
+                { q: "What makes Herbveda Shilajit different from others?", a: "We source directly from high-altitude Himalayan regions and test every batch in certified labs. No fillers, no fakes — just 100% authentic, potent Shilajit resin." },
                 { q: "Do you offer free shipping?", a: "Yes! We offer free express shipping on all orders nationwide, with tracking provided once your order is dispatched." },
               ].map((item, i) => (
                 <div key={i}>

@@ -383,7 +383,7 @@ export default function ProductDetail() {
                               </div>
                               <div className="flex-1">
                                 <div className="flex items-center justify-between mb-2">
-                                  <p className="font-bold text-gray-900">Response from Healing Shilajit Team</p>
+                                  <p className="font-bold text-gray-900">Response from Herbveda Shilajit Team</p>
                                   <p className="text-xs text-gray-500">{format(new Date(review.response_date), "MMM d, yyyy")}</p>
                                 </div>
                                 <p className="text-gray-800 leading-relaxed">{review.admin_response}</p>

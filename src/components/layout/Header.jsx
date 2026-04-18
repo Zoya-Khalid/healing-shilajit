@@ -37,7 +37,7 @@ export default function Header() {
       <div className="bg-black/95 backdrop-blur-lg text-white border-b border-white/10 max-md:!px-[12px] max-md:!py-[8px] md:px-8 md:py-4 max-md:!h-[50px] w-full flex justify-between items-center transition-all duration-300">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 shrink-0">
-          <img src="/logo.png" alt="Healing Shilajit" className="max-md:!max-w-[90px] max-md:!max-h-[38px] md:h-10 object-contain" />
+          <img src="/logo.png" alt="Herbveda Shilajit" className="max-md:!max-w-[90px] max-md:!max-h-[38px] md:h-10 object-contain" />
         </Link>
 
         {/* Desktop Navigation - Hide for admins */}
