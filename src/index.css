@@ -152,3 +152,19 @@ input:-webkit-autofill:active {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #B8860B;
 }
+
+/* Announcement Banner Marquee */
+@keyframes marqueeBanner {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-banner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeBanner 30s linear infinite;
+}
+
+.animate-marquee-banner:hover {
+  animation-play-state: paused;
+}

@@ -297,7 +297,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="pb-20 max-md:!pb-0">
+    <div className="pb-20 max-md:!pb-0 mt-[50px] md:mt-[72px]">
+      {/* Announcement Banner */}
+      <div className="bg-[#D4AF37] h-[32px] md:h-[40px] flex items-center overflow-hidden border-b border-black/5">
+        <div className="animate-marquee-banner whitespace-nowrap">
+          <span className="text-black font-bold text-[11px] md:text-[14px] uppercase tracking-wider">
+            Buy 2 Get 1 FREE — Limited Time Offer! &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; Free Shipping on All Orders Across Pakistan &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; 100% Natural Himalayan Shilajit &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; Buy 2 Get 1 FREE — Limited Time Offer! &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; Free Shipping on All Orders Across Pakistan &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; 100% Natural Himalayan Shilajit &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; 
+          </span>
+          <span className="text-black font-bold text-[11px] md:text-[14px] uppercase tracking-wider">
+            Buy 2 Get 1 FREE — Limited Time Offer! &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; Free Shipping on All Orders Across Pakistan &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; 100% Natural Himalayan Shilajit &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; Buy 2 Get 1 FREE — Limited Time Offer! &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; Free Shipping on All Orders Across Pakistan &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; 100% Natural Himalayan Shilajit &nbsp;&nbsp;&nbsp; · &nbsp;&nbsp;&nbsp; 
+          </span>
+        </div>
+      </div>
+
       {/* Hero Section - Cinematic Mountain Slider */}
       <section className="relative w-full h-[60vh] md:h-screen min-h-[400px] md:min-h-[500px] max-h-[900px] overflow-hidden bg-black">
         {/* Slide backgrounds */}
