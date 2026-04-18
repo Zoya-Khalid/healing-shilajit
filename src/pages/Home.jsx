@@ -587,52 +587,52 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row">
             {/* Left Content */}
-            <div className={`flex-1 p-8 md:p-12 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
-              <div className="flex items-center gap-2 mb-3">
+            <div className={`flex-1 p-8 md:p-10 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
+              <div className="flex items-center gap-2 mb-2">
                 <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse"></span>
-                <span className="text-black font-black text-[10px] tracking-[0.3em] uppercase">Limited Time Bundle</span>
+                <span className="text-black font-black text-[9px] tracking-[0.3em] uppercase">Limited Time Bundle</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-4 leading-tight">
+              <h2 className="text-2xl md:text-4xl font-serif font-bold text-black mb-3 leading-tight">
                 Buy 2 Get 1 <span className="text-[#D4AF37]">FREE</span>
               </h2>
-              <p className="text-gray-600 text-lg mb-8 max-md:!text-sm max-md:!mb-6 max-w-md leading-relaxed">
+              <p className="text-gray-600 text-base mb-6 max-md:!text-sm max-md:!mb-4 max-w-md leading-relaxed">
                 Our most popular value pack. Get two 50g jars and we'll add a 30g jar completely free.
               </p>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6">
                 {[
                   "2x 50g Premium Himalayan Resin",
                   "1x 30g Resin (Rs. 11,200 Value) FREE",
                   "Free Express Shipping Nationwide",
                   "PCSIR Certified Purity & Potency"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-black font-bold text-base max-md:!text-[14px]">
-                    <CheckCircle className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-3 text-black font-bold text-sm max-md:!text-[13px]">
+                    <CheckCircle className="text-[#D4AF37] w-4 h-4 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex items-end gap-5 mb-8">
+              <div className="flex items-end gap-4 mb-6">
                 <div className="flex flex-col">
-                  <span className="text-gray-400 line-through text-lg">Rs. 45,000</span>
-                  <span className="text-4xl md:text-5xl font-black text-black">Rs. 33,800</span>
+                  <span className="text-gray-400 line-through text-sm">Rs. 45,000</span>
+                  <span className="text-3xl md:text-4xl font-black text-black">Rs. 33,800</span>
                 </div>
-                <div className="bg-[#D4AF37] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2 shadow-md animate-shimmer">
+                <div className="bg-[#D4AF37] text-black text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-1.5 shadow-md animate-shimmer">
                   Save 25%
                 </div>
               </div>
 
               <button 
                 onClick={handleClaimBundle}
-                className="bg-black text-white font-black py-4 px-10 rounded-full text-lg uppercase tracking-widest hover:bg-[#222] transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl max-md:!py-3.5 max-md:!text-[13px] w-full md:w-fit animate-breathing"
+                className="bg-black text-white font-black py-3.5 px-8 rounded-full text-base uppercase tracking-widest hover:bg-[#222] transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl max-md:!py-3 max-md:!text-[12px] w-full md:w-fit animate-breathing"
               >
                 Claim This Offer
               </button>
             </div>
 
-            {/* Right Visuals - Upsized and Refined */}
-            <div className={`flex-1 bg-[#0a0a0a] p-12 flex items-center justify-center relative overflow-hidden min-h-[500px] md:min-h-[650px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
+            {/* Right Visuals - Downsized */}
+            <div className={`flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
               {/* Gold Dot Pattern Overlay with drift */}
               <div 
                 className="absolute inset-0 opacity-15 animate-bg-glow"
@@ -652,7 +652,7 @@ export default function Home() {
 
               {/* SHILAJIT Watermark */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <span className="text-white/[0.03] text-[150px] md:text-[250px] font-black tracking-tighter transform -rotate-12">
+                <span className="text-white/[0.03] text-[120px] md:text-[200px] font-black tracking-tighter transform -rotate-12">
                   SHILAJIT
                 </span>
               </div>
@@ -661,17 +661,17 @@ export default function Home() {
               <div className="relative z-20 flex flex-col items-center">
                 
                 {/* FREE GIFT Badge - Top Centered */}
-                <div className="mb-6 bg-[#D4AF37] text-black font-black px-6 py-2 rounded-full text-xs uppercase tracking-widest shadow-[0_0_20px_rgba(212,175,55,0.4)] border-2 border-black animate-breathing z-30">
+                <div className="mb-4 bg-[#D4AF37] text-black font-black px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest shadow-[0_0_15px_rgba(212,175,55,0.3)] border-2 border-black animate-breathing z-30">
                   Free Gift Included
                 </div>
 
                 {/* Main Image Wrapper with Padding */}
-                <div className="relative p-8 md:p-12 transform hover:scale-[1.02] transition-transform duration-500 animate-float">
-                  <div className="relative z-20 w-80 md:w-[550px] lg:w-[650px]">
+                <div className="relative p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-500 animate-float">
+                  <div className="relative z-20 w-64 md:w-[400px] lg:w-[480px]">
                     <img 
                       src="/images/products/shilajit-nutrition.jpg" 
                       alt="Premium Shilajit Resin Bundle" 
-                      className="w-full rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.5)] border-2 border-[#D4AF37]/30" 
+                      className="w-full rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border-2 border-[#D4AF37]/30" 
                     />
                   </div>
 
