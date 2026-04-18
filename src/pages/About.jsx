@@ -195,13 +195,13 @@ export default function About() {
             <div className="hidden max-md:!block max-md:!w-[60px] max-md:!h-[4px] max-md:!bg-amber-600 max-md:!rounded-full max-md:!mx-auto max-md:!mt-0"></div>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
             {/* Left Column - Product Image */}
-            <div className="flex-1 w-full max-md:order-1">
+            <div className="w-full lg:flex-1 max-md:px-4">
               <div className="relative group mx-auto max-w-lg lg:max-w-none">
-                <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.1)] transition-transform duration-700 group-hover:scale-[1.02]">
+                <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.1)] transition-transform duration-700 group-hover:scale-[1.02] aspect-square md:aspect-[4/5] max-md:max-h-[350px]">
                   <img
-                    src="/images/about/how-to-use-final.png"
+                    src="/images/about/how-to-use-final-v4.png"
                     alt="Herbveda Shilajit Usage Routine"
                     className="w-full h-full object-cover"
                   />
@@ -212,12 +212,12 @@ export default function About() {
             </div>
 
             {/* Right Column - Steps */}
-            <div className="flex-1 space-y-10 max-md:!space-y-6 max-md:order-2">
-              <div className="space-y-2">
+            <div className="w-full lg:flex-1 space-y-8 md:space-y-10 px-6 md:px-0">
+              <div className="space-y-2 max-md:text-center lg:text-left">
                 <span className="text-[#D4AF37] font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Simple 3-Step Routine</span>
               </div>
 
-              <div className="space-y-8 max-md:!space-y-6">
+              <div className="space-y-6 md:space-y-8">
                 {[
                   {
                     step: 1,
@@ -248,7 +248,7 @@ export default function About() {
               </div>
 
               {/* Pro Tip Box */}
-              <div className="bg-white/5 border-l-4 border-[#D4AF37] p-5 md:p-8 rounded-r-2xl max-md:!p-[16px]">
+              <div className="bg-white/5 border-l-4 border-[#D4AF37] p-5 md:p-8 rounded-r-2xl mx-2 md:mx-0">
                 <p className="text-gray-200 text-sm md:text-lg italic leading-relaxed max-md:text-[12px]">
                   <strong className="text-[#D4AF37] not-italic">Pro Tip —</strong> Consistency is key. Use daily for at least 2–3 weeks to feel the full benefit.
                 </p>
