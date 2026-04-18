@@ -11,6 +11,36 @@ import { supabase } from "../lib/supabase";
 import ProductCard from "../components/products/ProductCard";
 import { useCartStore } from "../store/cartStore";
 
+// CountUp Component for stats animation
+const CountUpValue = ({ end, duration = 1500, startTrigger }) => {
+  const [currentCount, setCurrentCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!startTrigger) return;
+    
+    let startTime;
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      
+      const target = typeof end === 'number' ? end : parseInt(end.replace(/[^0-9]/g, '')) || 0;
+      setCurrentCount(Math.floor(easedProgress * target));
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    requestAnimationFrame(animate);
+  }, [end, duration, startTrigger]);
+
+  if (typeof end === 'string' && !parseInt(end.replace(/[^0-9]/g, ''))) return end;
+  
+  const suffix = typeof end === 'string' ? end.replace(/[0-9]/g, '') : "";
+  return <>{currentCount}{suffix}</>;
+};
+
+
 export default function Home() {
   const navigate = useNavigate();
   const { profile } = useAuthStore();
@@ -50,6 +80,9 @@ export default function Home() {
   const [showBundleModal, setShowBundleModal] = useState(false);
   const reviewsContainerRef = useRef(null);
   const shopNowRef = useRef(null);
+  const bannerRef = useRef(null);
+  const [bannerInView, setBannerInView] = useState(false);
+
 
   const featureDetails = {
     "Lab Tested": {
@@ -267,6 +300,21 @@ export default function Home() {
       navigate("/admin");
     }
   }, [profile, navigate]);
+
+  // Intersection Observer for Bundle Banner
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBannerInView(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (bannerRef.current) observer.observe(bannerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
 
   const handleClaimBundle = () => {
     // Find the real 50g product from dynamicProducts
@@ -529,14 +577,17 @@ export default function Home() {
         </section>
 
         {/* Exclusive Bundle Banner */}
-        <section className="bg-white border-2 border-black rounded-[2rem] overflow-hidden my-8 max-md:!my-[20px] max-md:!rounded-[1.2rem] flex flex-col relative">
+        <section 
+          ref={bannerRef}
+          className="bg-white border-2 border-black rounded-[2rem] overflow-hidden my-8 max-md:!my-[20px] max-md:!rounded-[1.2rem] flex flex-col relative"
+        >
           {/* Framing Gold Lines */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
 
           <div className="flex flex-col md:flex-row">
             {/* Left Content */}
-            <div className="flex-1 p-8 md:p-12 flex flex-col justify-center relative z-20">
+            <div className={`flex-1 p-8 md:p-12 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse"></span>
                 <span className="text-black font-black text-[10px] tracking-[0.3em] uppercase">Limited Time Bundle</span>
@@ -567,27 +618,27 @@ export default function Home() {
                   <span className="text-gray-400 line-through text-lg">Rs. 45,000</span>
                   <span className="text-4xl md:text-5xl font-black text-black">Rs. 33,800</span>
                 </div>
-                <div className="bg-[#D4AF37] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2 shadow-md">
+                <div className="bg-[#D4AF37] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2 shadow-md animate-shimmer">
                   Save 25%
                 </div>
               </div>
 
               <button 
                 onClick={handleClaimBundle}
-                className="bg-black text-white font-black py-4 px-10 rounded-full text-lg uppercase tracking-widest hover:bg-gray-900 transition-all hover:scale-[1.02] active:scale-95 shadow-xl max-md:!py-3.5 max-md:!text-[13px] w-full md:w-fit"
+                className="bg-black text-white font-black py-4 px-10 rounded-full text-lg uppercase tracking-widest hover:bg-[#222] transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl max-md:!py-3.5 max-md:!text-[13px] w-full md:w-fit animate-breathing"
               >
                 Claim This Offer
               </button>
             </div>
 
             {/* Right Visuals - Reduced Size */}
-            <div className="flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px]">
-              {/* Gold Dot Pattern Overlay */}
+            <div className={`flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
+              {/* Gold Dot Pattern Overlay with drift */}
               <div 
-                className="absolute inset-0 opacity-15"
+                className="absolute inset-0 opacity-15 animate-bg-glow"
                 style={{ 
-                  backgroundImage: 'radial-gradient(#D4AF37 0.6px, transparent 0.6px)', 
-                  backgroundSize: '10px 10px' 
+                  backgroundImage: 'radial-gradient(circle at center, rgba(212,175,55,0.1) 0%, transparent 70%), radial-gradient(#D4AF37 0.6px, transparent 0.6px)', 
+                  backgroundSize: '100% 100%, 10px 10px' 
                 }}
               ></div>
 
@@ -598,29 +649,38 @@ export default function Home() {
                 </span>
               </div>
               
-              {/* Floating Badges */}
-              <div className="absolute top-8 left-8 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float">
+              {/* Floating Badges with Staggered Fade */}
+              <div 
+                className={`absolute top-8 left-8 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
+                style={{ transitionDelay: '0s' }}
+              >
                 100% Pure
               </div>
-              <div className="absolute bottom-16 left-12 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float-delayed">
+              <div 
+                className={`absolute bottom-16 left-12 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float-delayed ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
+                style={{ transitionDelay: '0.3s' }}
+              >
                 Lab Tested
               </div>
-              <div className="absolute top-24 right-10 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float">
+              <div 
+                className={`absolute top-24 right-10 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
+                style={{ transitionDelay: '0.6s' }}
+              >
                 PCSIR Certified
               </div>
 
               {/* Floating Jars */}
               <div className="relative w-full h-full flex items-center justify-center max-w-lg">
                 {/* Back Jar Left */}
-                <div className="absolute transform -translate-x-24 -translate-y-8 rotate-[-15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px]">
+                <div className="absolute transform -translate-x-24 -translate-y-8 rotate-[-15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px] animate-float-slow">
                   <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border border-white/5" />
                 </div>
                 {/* Back Jar Right */}
-                <div className="absolute transform translate-x-24 -translate-y-8 rotate-[15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px]">
+                <div className="absolute transform translate-x-24 -translate-y-8 rotate-[15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px] animate-float-fast">
                   <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border border-white/5" />
                 </div>
                 {/* Front Main Jar */}
-                <div className="relative z-20 w-56 md:w-72 transform hover:scale-105 transition-transform duration-500">
+                <div className="relative z-20 w-56 md:w-72 transform hover:scale-105 transition-transform duration-500 animate-float">
                   <img 
                     src="/images/products/shilajit-resin.jpg" 
                     alt="Premium Shilajit Resin" 
@@ -635,7 +695,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bottom Stats Bar */}
+          {/* Bottom Stats Bar with Count-Up */}
           <div className="bg-black py-6 md:py-8 px-8 grid grid-cols-2 md:grid-cols-4 gap-4 border-t-2 border-black">
             {[
               { label: "Servings", val: "130+" },
@@ -644,7 +704,9 @@ export default function Home() {
               { label: "Shipping", val: "FREE" }
             ].map((stat, i) => (
               <div key={i} className="text-center flex flex-col md:border-r border-white/10 last:border-0">
-                <span className="text-[#D4AF37] text-2xl md:text-3xl font-black">{stat.val}</span>
+                <span className="text-[#D4AF37] text-2xl md:text-3xl font-black">
+                  <CountUpValue end={stat.val} startTrigger={bannerInView} />
+                </span>
                 <span className="text-white/60 text-[10px] md:text-xs uppercase tracking-widest mt-1">{stat.label}</span>
               </div>
             ))}
