@@ -9,10 +9,12 @@ import { Award, Truck, Shield, Star, CheckCircle, ChevronLeft, ChevronRight, X }
 import { useAuthStore } from "../store/authStore";
 import { supabase } from "../lib/supabase";
 import ProductCard from "../components/products/ProductCard";
+import { useCartStore } from "../store/cartStore";
 
 export default function Home() {
   const navigate = useNavigate();
   const { profile } = useAuthStore();
+  const addItem = useCartStore((state) => state.addItem);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
@@ -45,7 +47,9 @@ export default function Home() {
   const [dynamicProducts, setDynamicProducts] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
   const [selectedFeature, setSelectedFeature] = useState(null);
+  const [showBundleModal, setShowBundleModal] = useState(false);
   const reviewsContainerRef = useRef(null);
+  const shopNowRef = useRef(null);
 
   const featureDetails = {
     "Lab Tested": {
@@ -190,9 +194,15 @@ export default function Home() {
 
     loadFeaturedReviews();
     loadFeaturedProducts();
+
+    const bundleTimer = setTimeout(() => {
+      setShowBundleModal(true);
+    }, 1500);
+
     return () => {
       clearInterval(timer);
       clearInterval(reviewTimer);
+      clearTimeout(bundleTimer);
       if (containerNode) {
         containerNode.removeEventListener("touchstart", handleTouchStart);
         containerNode.removeEventListener("touchend", handleTouchEnd);
@@ -490,7 +500,11 @@ export default function Home() {
         </section>
 
         {/* Shop Now Section */}
-        <section className="pt-4 pb-0 max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!py-[16px] max-md:-mx-[8px] max-md:px-[8px]">
+        <section 
+          ref={shopNowRef}
+          id="shop-now"
+          className="pt-4 pb-0 max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!py-[16px] max-md:-mx-[8px] max-md:px-[8px]"
+        >
           <div className="text-center mb-16 px-4 max-md:!mb-[16px]">
             <div className="inline-block group max-md:flex max-md:flex-col max-md:items-center">
               <h2 className="text-4xl md:text-5xl max-md:!text-[22px] font-serif font-bold inline-block text-black border-b-8 border-[#D4AF37] pb-4 max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[12px]">Shop Now</h2>
@@ -629,6 +643,101 @@ export default function Home() {
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed max-md:text-base">
                 {featureDetails[selectedFeature].detail}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Bundle Deal Modal */}
+      {showBundleModal && (
+        <div 
+          className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6"
+          onClick={() => setShowBundleModal(false)}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in" />
+          
+          {/* Modal Content */}
+          <div 
+            className="relative bg-[#0a0a0a] w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-2xl animate-scale-in max-md:w-[88vw] max-md:rounded-[1.2rem] border-2 border-[#D4AF37] max-h-[85vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setShowBundleModal(false)}
+              className="absolute top-2 right-2 md:top-4 md:right-4 z-20 w-10 h-10 md:w-11 md:h-11 flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+              aria-label="Close modal"
+            >
+              <X size={20} className="md:w-6 md:h-6" />
+            </button>
+
+            {/* Content Label Banner */}
+            <div className="bg-[#D4AF37] text-black font-black text-[11px] md:text-[12px] tracking-[0.4em] uppercase py-2 md:py-3 text-center flex items-center justify-center gap-3 shrink-0">
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-black rounded-full animate-pulse-gold"></span>
+              LIMITED TIME OFFER
+            </div>
+
+            <div className="p-4 md:p-10 overflow-y-auto custom-scrollbar flex flex-col items-center text-center">
+              <h2 className="text-[22px] md:text-5xl font-serif font-bold text-white mb-1 md:mb-3">
+                Buy 2 Get 1 <span className="text-[#D4AF37]">FREE</span>
+              </h2>
+              <p className="text-gray-400 text-[12px] md:text-base tracking-widest uppercase mb-4 md:mb-8">
+                2x Premium 50g Resin + 1x 30g FREE
+              </p>
+
+              {/* Benefit Text instead of Image */}
+              <div className="w-full mb-6 py-2">
+                <ul className="space-y-2 text-[#D4AF37] font-medium tracking-wide text-[13px] md:text-[15px]">
+                  <li className="flex items-center justify-center gap-2">
+                    <CheckCircle size={16} /> 2x 50g Premium Resin
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <CheckCircle size={16} /> 1x 30g Resin (FREE)
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <CheckCircle size={16} /> Free Express Shipping
+                  </li>
+                  <li className="flex items-center justify-center gap-2 text-white/80">
+                    <Award size={16} /> PCSIR Certified Purity
+                  </li>
+                </ul>
+              </div>
+
+              {/* Pricing Section with Dividers */}
+              <div className="w-full py-3 md:py-6 border-y border-[#D4AF37]/30 mb-4 md:mb-8">
+                <div className="text-gray-500 text-[13px] md:text-xl line-through decoration-gray-600 decoration-2 mb-1 md:mb-2">
+                  Rs.45,000
+                </div>
+                <div className="text-[24px] md:text-6xl font-black text-white mb-2 md:mb-4 flex items-center justify-center gap-2">
+                  <span className="text-[#D4AF37] text-lg md:text-3xl font-serif">Rs.</span>33,800
+                </div>
+                <div className="inline-block bg-[#D4AF37] text-black font-black text-[11px] md:text-xs px-4 md:px-6 py-1 md:py-2 rounded-full uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                  YOU SAVE Rs.11,200!
+                </div>
+              </div>
+
+              {/* CTA */}
+              <button 
+                onClick={() => {
+                  const bundleProduct = {
+                    id: "bundle-buy-2-get-1",
+                    name: "Buy 2 Get 1 FREE - Premium Bundle",
+                    price: 33800,
+                    image_url: "/images/products/shilajit-resin.jpg",
+                    category: "Bundle Offer",
+                    weight: "2x50g + 1x30g FREE"
+                  };
+                  addItem(bundleProduct, 1);
+                  setShowBundleModal(false);
+                  shopNowRef.current?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full h-11 md:h-auto md:py-5 bg-[#D4AF37] text-black font-black rounded-full text-[13px] md:text-lg shadow-lg hover:bg-[#e5c263] transition-all hover:scale-[1.02] active:scale-95 mb-2 md:mb-4 uppercase tracking-widest flex items-center justify-center"
+              >
+                Claim This Offer
+              </button>
+              
+              <p className="text-gray-500 text-[10px] uppercase tracking-[0.3em] italic">
+                Limited stock available. Offer ends soon.
               </p>
             </div>
           </div>
