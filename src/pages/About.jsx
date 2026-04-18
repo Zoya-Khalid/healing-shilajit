@@ -187,62 +187,76 @@ export default function About() {
 
 
 
-      {/* How to Use Section */}
-      <div className="bg-white pt-8 pb-24 max-md:!mt-0 max-md:!pt-0">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 max-md:!px-[12px]">
-          <div className="text-center mb-24 max-md:!mb-[16px]">
-            <h2 className="text-6xl md:text-7xl font-serif font-bold inline-block border-b-8 border-amber-600 pb-4 tracking-tight max-md:!text-[22px] max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[16px]">How to Use</h2>
-            <div className="hidden max-md:!block max-md:!w-[60px] max-md:!h-[4px] max-md:!bg-amber-600 max-md:!rounded-full max-md:!mx-auto max-md:!mt-0 max-md:!mb-[16px]"></div>
+      {/* How to Use Section - Redesigned for UK Market */}
+      <section className="bg-black text-white py-16 md:py-24 max-md:!py-[32px] overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-md:!mb-[24px]">
+            <h2 className="text-5xl md:text-7xl font-serif font-bold inline-block border-b-8 border-amber-600 pb-4 tracking-tight max-md:!text-[22px] max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[4px]">How to Use</h2>
+            <div className="hidden max-md:!block max-md:!w-[60px] max-md:!h-[4px] max-md:!bg-amber-600 max-md:!rounded-full max-md:!mx-auto max-md:!mt-0"></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 max-md:!grid-cols-2 max-md:!gap-[12px] max-md:[&>*:nth-child(3)]:col-span-full max-md:[&>*:nth-child(3)]:max-w-[50%] max-md:[&>*:nth-child(3)]:mx-auto">
-            {[
-              {
-                title: "Shilajit Resin",
-                description: "Take a pea-sized amount (250-500 mg), dissolve in warm water or milk, and use daily in the morning or before bed",
-                image: "/images/about/how-to-use-resin.jpg"
-              },
-              {
-                title: "Shilajit Drops",
-                description: "Take 5-10 drops in water or milk, drink once or twice daily in the morning and before bed",
-                image: "/images/about/how-to-use-drops.jpg"
-              },
-              {
-                title: "Honey Shilajit",
-                description: "Take one sachet daily with warm water, milk or tear and suck directly. Take every morning on an empty stomach or before bed",
-                image: "/images/about/about-how-to-use.png"
-              }
-            ].map((method, index) => (
-              <div
-                key={index}
-                className="group relative bg-black text-white rounded-[3rem] p-8 md:p-10 w-full flex flex-col items-center text-center transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(212,175,55,0.2)] border border-white/10 max-md:!p-[10px] max-md:!rounded-[12px]"
-              >
-                {/* Title */}
-                <h3 className="text-3xl md:text-4xl font-bold mb-8 text-amber-500 group-hover:text-amber-400 transition-colors max-md:!text-[13px] max-md:!font-[600] max-md:!mb-[8px]">
-                  {method.title}
-                </h3>
-
-                {/* Image */}
-                <div className="w-full max-w-md aspect-square mb-10 rounded-3xl overflow-hidden border-2 border-white/5 group-hover:border-amber-500/30 transition-all duration-500 max-md:!h-[130px] max-md:!mb-0 max-md:!rounded-[10px] max-md:!aspect-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            {/* Left Column - Product Image */}
+            <div className="flex-1 w-full max-md:order-1">
+              <div className="relative group mx-auto max-w-lg lg:max-w-none">
+                <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.1)] transition-transform duration-700 group-hover:scale-[1.02]">
                   <img
-                    src={method.image}
-                    alt={method.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    src="/images/about/how-to-use-resin.jpg"
+                    alt="Shilajit Resin Usage"
+                    className="w-full h-full object-cover aspect-square md:aspect-[4/5]"
                   />
                 </div>
-
-                {/* Description */}
-                <p className="text-gray-300 leading-relaxed text-lg md:text-xl group-hover:text-white transition-colors max-md:!text-[11px] max-md:!leading-[1.5] max-md:!mt-[8px]">
-                  {method.description}
-                </p>
-
                 {/* Decorative Glow */}
-                <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-tr from-amber-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none max-md:!rounded-[12px]"></div>
+                <div className="absolute -inset-4 bg-amber-500/10 rounded-[3.5rem] blur-2xl -z-10 group-hover:bg-amber-500/20 transition-all duration-700 max-md:hidden"></div>
               </div>
-            ))}
+            </div>
+
+            {/* Right Column - Steps */}
+            <div className="flex-1 space-y-10 max-md:!space-y-6 max-md:order-2">
+              <div className="space-y-2">
+                <span className="text-[#D4AF37] font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Simple 3-Step Routine</span>
+              </div>
+
+              <div className="space-y-8 max-md:!space-y-6">
+                {[
+                  {
+                    step: 1,
+                    title: "Take a pea-sized amount",
+                    desc: "Around 250–500 mg, roughly the size of a grain of rice."
+                  },
+                  {
+                    step: 2,
+                    title: "Dissolve in warm water or milk",
+                    desc: "Stir until fully dissolved. Never use boiling water, keep it warm."
+                  },
+                  {
+                    step: 3,
+                    title: "Drink in the morning or before bed",
+                    desc: "Best taken on an empty stomach for maximum absorption."
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 md:gap-6 items-start">
+                    <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-lg md:text-2xl shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                      {item.step}
+                    </div>
+                    <div className="space-y-1 md:space-y-2">
+                      <h3 className="text-lg md:text-2xl font-bold text-white max-md:text-[15px]">{item.title}</h3>
+                      <p className="text-gray-400 text-sm md:text-lg leading-relaxed max-md:text-[13px]">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Pro Tip Box */}
+              <div className="bg-white/5 border-l-4 border-[#D4AF37] p-5 md:p-8 rounded-r-2xl max-md:!p-[16px]">
+                <p className="text-gray-200 text-sm md:text-lg italic leading-relaxed max-md:text-[12px]">
+                  <strong className="text-[#D4AF37] not-italic">Pro Tip —</strong> Consistency is key. Use daily for at least 2–3 weeks to feel the full benefit.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
