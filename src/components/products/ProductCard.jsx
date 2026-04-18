@@ -89,7 +89,7 @@ export default function ProductCard({ product }) {
               <Star key={i} className="h-3.5 w-3.5 fill-current max-md:!w-[10px] max-md:!h-[10px]" />
             ))}
           </div>
-          <span className="text-xs text-gray-400 font-medium max-md:!text-[11px] md:text-[13px]">(1.2k Reviews)</span>
+          <span className="text-xs text-gray-400 font-medium max-md:!text-[11px] md:text-[13px]">({product.review_count || "1.2k"} Reviews)</span>
         </div>
 
         {/* Buttons Row */}
