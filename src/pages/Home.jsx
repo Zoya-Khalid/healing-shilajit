@@ -680,11 +680,11 @@ export default function Home() {
                   <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border border-white/5" />
                 </div>
                 {/* Front Main Jar */}
-                <div className="relative z-20 w-56 md:w-72 transform hover:scale-105 transition-transform duration-500 animate-float">
+                <div className="relative z-20 w-72 md:w-[450px] lg:w-[500px] transform hover:scale-105 transition-transform duration-500 animate-float">
                   <img 
-                    src="/images/products/shilajit-resin.jpg" 
-                    alt="Premium Shilajit Resin" 
-                    className="w-full rounded-3xl shadow-[0_0_40px_rgba(212,175,55,0.15)] border-2 border-[#D4AF37]" 
+                    src="/images/products/bundle-display.jpg" 
+                    alt="Premium Shilajit Resin Bundle" 
+                    className="w-full rounded-3xl shadow-[0_0_50px_rgba(212,175,55,0.25)] border-2 border-[#D4AF37]" 
                   />
                   <div className="absolute -top-4 -right-4 bg-[#D4AF37] text-black font-black w-16 h-16 rounded-full flex flex-col items-center justify-center text-[10px] leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)] border-2 border-black animate-pulse-gold z-30">
                     <span className="text-[12px]">FREE</span>
