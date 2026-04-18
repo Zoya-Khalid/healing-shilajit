@@ -586,59 +586,58 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
 
           <div className="flex flex-col md:flex-row">
-            {/* Left Content */}
-            <div className={`flex-1 p-8 md:p-10 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
+            {/* Left Content - Minimal Sizing */}
+            <div className={`flex-1 p-6 md:p-8 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse"></span>
-                <span className="text-black font-black text-[9px] tracking-[0.3em] uppercase">Limited Time Bundle</span>
+                <span className="w-1 h-1 bg-[#D4AF37] rounded-full animate-pulse"></span>
+                <span className="text-black font-black text-[8px] tracking-[0.3em] uppercase">Limited Offer</span>
               </div>
-              <h2 className="text-2xl md:text-4xl font-serif font-bold text-black mb-3 leading-tight">
+              <h2 className="text-xl md:text-2xl font-serif font-bold text-black mb-2 leading-tight">
                 Buy 2 Get 1 <span className="text-[#D4AF37]">FREE</span>
               </h2>
-              <p className="text-gray-600 text-base mb-6 max-md:!text-sm max-md:!mb-4 max-w-md leading-relaxed">
-                Our most popular value pack. Get two 50g jars and we'll add a 30g jar completely free.
+              <p className="text-gray-600 text-sm mb-4 max-md:!text-xs max-md:!mb-3 max-w-sm leading-relaxed">
+                Our best-selling value bundle. Get a 30g jar free with two 50g jars.
               </p>
 
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1.5 mb-4">
                 {[
-                  "2x 50g Premium Himalayan Resin",
-                  "1x 30g Resin (Rs. 11,200 Value) FREE",
-                  "Free Express Shipping Nationwide",
-                  "PCSIR Certified Purity & Potency"
+                  "2x 50g Premium Resin",
+                  "1x 30g Resin (Rs. 11,200) FREE",
+                  "Free Express Shipping"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-black font-bold text-sm max-md:!text-[13px]">
-                    <CheckCircle className="text-[#D4AF37] w-4 h-4 flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-2 text-black font-bold text-xs">
+                    <CheckCircle className="text-[#D4AF37] w-3.5 h-3.5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex items-end gap-4 mb-6">
+              <div className="flex items-end gap-3 mb-4">
                 <div className="flex flex-col">
-                  <span className="text-gray-400 line-through text-sm">Rs. 45,000</span>
-                  <span className="text-3xl md:text-4xl font-black text-black">Rs. 33,800</span>
+                  <span className="text-gray-400 line-through text-[10px]">Rs. 45,000</span>
+                  <span className="text-2xl md:text-3xl font-black text-black">Rs. 33,800</span>
                 </div>
-                <div className="bg-[#D4AF37] text-black text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-1.5 shadow-md animate-shimmer">
-                  Save 25%
+                <div className="bg-[#D4AF37] text-black text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider mb-1 shadow-sm animate-shimmer">
+                  -25%
                 </div>
               </div>
 
               <button 
                 onClick={handleClaimBundle}
-                className="bg-black text-white font-black py-3.5 px-8 rounded-full text-base uppercase tracking-widest hover:bg-[#222] transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl max-md:!py-3 max-md:!text-[12px] w-full md:w-fit animate-breathing"
+                className="bg-black text-white font-black py-3 px-6 rounded-full text-xs uppercase tracking-widest hover:bg-[#222] transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg w-full md:w-fit animate-breathing"
               >
-                Claim This Offer
+                Claim Offer
               </button>
             </div>
 
-            {/* Right Visuals - Downsized */}
-            <div className={`flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
+            {/* Right Visuals - Compact */}
+            <div className={`flex-1 bg-[#0a0a0a] p-6 flex items-center justify-center relative overflow-hidden min-h-[250px] md:min-h-[350px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
               {/* Gold Dot Pattern Overlay with drift */}
               <div 
-                className="absolute inset-0 opacity-15 animate-bg-glow"
+                className="absolute inset-0 opacity-10 animate-bg-glow"
                 style={{ 
-                  backgroundImage: 'radial-gradient(circle at center, rgba(212,175,55,0.1) 0%, transparent 70%), radial-gradient(#D4AF37 0.6px, transparent 0.6px)', 
-                  backgroundSize: '100% 100%, 10px 10px' 
+                  backgroundImage: 'radial-gradient(circle at center, rgba(212,175,55,0.05) 0%, transparent 70%), radial-gradient(#D4AF37 0.5px, transparent 0.5px)', 
+                  backgroundSize: '100% 100%, 8px 8px' 
                 }}
               ></div>
 
@@ -646,13 +645,13 @@ export default function Home() {
               <div 
                 className="absolute inset-0 z-10"
                 style={{ 
-                  background: 'radial-gradient(circle at center, rgba(212,175,55,0.12) 0%, transparent 65%)'
+                  background: 'radial-gradient(circle at center, rgba(212,175,55,0.08) 0%, transparent 65%)'
                 }}
               ></div>
 
               {/* SHILAJIT Watermark */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <span className="text-white/[0.03] text-[120px] md:text-[200px] font-black tracking-tighter transform -rotate-12">
+                <span className="text-white/[0.02] text-[100px] md:text-[150px] font-black tracking-tighter transform -rotate-12">
                   SHILAJIT
                 </span>
               </div>
@@ -661,17 +660,17 @@ export default function Home() {
               <div className="relative z-20 flex flex-col items-center">
                 
                 {/* FREE GIFT Badge - Top Centered */}
-                <div className="mb-4 bg-[#D4AF37] text-black font-black px-4 py-1.5 rounded-full text-[10px] uppercase tracking-widest shadow-[0_0_15px_rgba(212,175,55,0.3)] border-2 border-black animate-breathing z-30">
-                  Free Gift Included
+                <div className="mb-3 bg-[#D4AF37] text-black font-black px-3 py-1 rounded-full text-[8px] uppercase tracking-widest shadow-md border border-black animate-breathing z-30">
+                  Free Gift
                 </div>
 
                 {/* Main Image Wrapper with Padding */}
-                <div className="relative p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-500 animate-float">
-                  <div className="relative z-20 w-64 md:w-[400px] lg:w-[480px]">
+                <div className="relative p-4 md:p-6 transform hover:scale-[1.02] transition-transform duration-500 animate-float">
+                  <div className="relative z-20 w-48 md:w-[260px] lg:w-[300px]">
                     <img 
                       src="/images/products/shilajit-nutrition.jpg" 
                       alt="Premium Shilajit Resin Bundle" 
-                      className="w-full rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border-2 border-[#D4AF37]/30" 
+                      className="w-full rounded-xl shadow-2xl border border-[#D4AF37]/20" 
                     />
                   </div>
 
