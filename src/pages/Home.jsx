@@ -275,7 +275,7 @@ export default function Home() {
   return (
     <div className="pb-20 max-md:!pb-0">
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-screen min-h-[500px] max-h-[900px] overflow-hidden bg-black">
+      <section className="relative w-full h-[60vh] md:h-screen min-h-[400px] md:min-h-[500px] max-h-[900px] overflow-hidden bg-black">
         {/* Slide backgrounds */}
         {heroSlides.map((slide, index) => (
           <div
@@ -297,7 +297,7 @@ export default function Home() {
           {/* Eyebrow text */}
           <p
             key={`eyebrow-${currentSlide}`}
-            className="text-[#D4AF37] text-xs sm:text-sm tracking-[0.3em] uppercase font-medium mb-4 animate-fade-in-up"
+            className="text-[#D4AF37] text-[10px] sm:text-sm tracking-[0.3em] uppercase font-medium mb-2 md:mb-4 animate-fade-in-up"
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
           >
             {heroSlides[currentSlide].eyebrow}
@@ -306,7 +306,7 @@ export default function Home() {
           {/* Main title */}
           <h1
             key={`title-${currentSlide}`}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-4 animate-fade-in-up animation-delay-200"
+            className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-2 md:mb-4 animate-fade-in-up animation-delay-200"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
             <span className="text-white">{heroSlides[currentSlide].titleWhite} </span>
@@ -316,7 +316,7 @@ export default function Home() {
           {/* Tagline */}
           <p
             key={`tagline-${currentSlide}`}
-            className="text-white/80 text-sm sm:text-base tracking-widest mb-8 animate-fade-in-up animation-delay-400"
+            className="text-white/80 text-[9px] sm:text-base tracking-widest mb-6 md:mb-8 animate-fade-in-up animation-delay-400"
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
           >
             {heroSlides[currentSlide].tagline}
@@ -328,7 +328,7 @@ export default function Home() {
             to="/products"
             className="animate-fade-in-up animation-delay-400"
           >
-            <button className="border border-[#D4AF37] text-white text-xs sm:text-sm tracking-[0.25em] uppercase px-8 py-3 hover:bg-[#D4AF37] hover:text-black transition-all duration-300 font-medium">
+            <button className="border border-[#D4AF37] text-white text-[10px] sm:text-sm tracking-[0.25em] uppercase px-4 py-2 md:px-8 md:py-3 hover:bg-[#D4AF37] hover:text-black transition-all duration-300 font-medium">
               {heroSlides[currentSlide].cta}
             </button>
           </Link>
