@@ -682,7 +682,7 @@ export default function Home() {
                 {/* Front Main Jar */}
                 <div className="relative z-20 w-72 md:w-[450px] lg:w-[500px] transform hover:scale-105 transition-transform duration-500 animate-float">
                   <img 
-                    src="/images/products/bundle-display.jpg" 
+                    src="/images/products/shilajit-nutrition.jpg" 
                     alt="Premium Shilajit Resin Bundle" 
                     className="w-full rounded-3xl shadow-[0_0_50px_rgba(212,175,55,0.25)] border-2 border-[#D4AF37]" 
                   />
