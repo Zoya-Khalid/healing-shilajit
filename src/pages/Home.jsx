@@ -80,8 +80,6 @@ export default function Home() {
   const [showBundleModal, setShowBundleModal] = useState(false);
   const reviewsContainerRef = useRef(null);
   const shopNowRef = useRef(null);
-  const bannerRef = useRef(null);
-  const [bannerInView, setBannerInView] = useState(false);
 
 
   const featureDetails = {
@@ -301,19 +299,7 @@ export default function Home() {
     }
   }, [profile, navigate]);
 
-  // Intersection Observer for Bundle Banner
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setBannerInView(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (bannerRef.current) observer.observe(bannerRef.current);
-    return () => observer.disconnect();
-  }, []);
+
 
 
   const handleClaimBundle = () => {
@@ -576,92 +562,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Exclusive Bundle Banner */}
-        {/* Exclusive Bundle Banner */}
-        <section 
-          ref={bannerRef}
-          className="rounded-[16px] overflow-hidden my-8 max-md:!my-6 flex flex-col relative shadow-none border border-gray-200"
-        >
-          <div className="flex flex-col md:flex-row">
-            {/* Left Content - Clean White */}
-            <div className={`flex-1 bg-white p-8 md:p-12 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 bg-[#C9A84C] rounded-full"></span>
-                <span className="text-black font-bold text-[10px] tracking-widest uppercase">Limited Bundle</span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-black mb-6 leading-tight">
-                Buy 2 Get 1 <span className="text-[#C9A84C]">FREE</span>
-              </h2>
 
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex flex-col">
-                  <span className="text-gray-500 line-through text-sm tracking-wider">Rs. 45,000</span>
-                  <span className="text-4xl md:text-5xl font-black text-black">Rs. 33,800</span>
-                </div>
-              </div>
-
-              <button 
-                onClick={handleClaimBundle}
-                className="bg-black text-white font-bold py-4 px-10 rounded-full text-sm uppercase tracking-widest hover:bg-gray-900 transition-colors w-full md:w-max"
-              >
-                Claim Offer
-              </button>
-            </div>
-
-            {/* Right Visuals - Deep Matte Black */}
-            <div className={`flex-1 bg-[#111111] p-8 md:p-12 relative flex flex-col justify-center overflow-hidden min-h-[350px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
-              {/* FREE GIFT Badge */}
-              <div className="absolute top-6 right-6 bg-[#C9A84C] text-black px-3 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest z-30 shadow-none">
-                Free Gift
-              </div>
-
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8 z-20 h-full">
-                {/* Product Benefits */}
-                <div className="w-full md:w-auto order-2 md:order-1 flex-shrink-0 flex flex-col justify-center">
-                  <ul className="space-y-5">
-                    {[
-                      "Premium Himalayan Resin",
-                      "Rich in Fulvic Acid",
-                      "Lab Tested Purity"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-white font-medium text-sm md:text-base">
-                        <div className="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></div>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Product Image */}
-                <div className="w-48 md:w-56 lg:w-64 order-1 md:order-2 mx-auto flex justify-center items-center">
-                  <img 
-                    src="/images/products/shilajit-nutrition.jpg" 
-                    alt="Premium Shilajit Resin Bundle" 
-                    className="w-full h-auto object-contain rounded-md" 
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Stats Bar */}
-          <div className="bg-black py-6 px-8 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-gray-900">
-            {[
-              { label: "Servings", val: "130+" },
-              { label: "Total Jars", val: "3" },
-              { label: "Savings", val: "25%" },
-              { label: "Shipping", val: "FREE" }
-            ].map((stat, i) => (
-              <div key={i} className="text-center flex flex-col justify-center">
-                <span className="text-[#C9A84C] text-2xl md:text-3xl font-bold mb-1">
-                  <CountUpValue end={stat.val} startTrigger={bannerInView} />
-                </span>
-                <span className="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest font-semibold">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* Shop Now Section */}
         <section 
