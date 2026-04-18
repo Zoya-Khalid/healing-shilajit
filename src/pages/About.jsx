@@ -201,9 +201,9 @@ export default function About() {
               <div className="relative group mx-auto max-w-lg lg:max-w-none">
                 <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.1)] transition-transform duration-700 group-hover:scale-[1.02]">
                   <img
-                    src="/images/about/how-to-use-resin.jpg"
-                    alt="Shilajit Resin Usage"
-                    className="w-full h-full object-cover aspect-square md:aspect-[4/5]"
+                    src="/images/about/how-to-use-new.jpg"
+                    alt="Herbveda Shilajit Usage Routine"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 {/* Decorative Glow */}
