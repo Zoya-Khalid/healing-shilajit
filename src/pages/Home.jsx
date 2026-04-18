@@ -268,6 +268,35 @@ export default function Home() {
     }
   }, [profile, navigate]);
 
+  const handleClaimBundle = () => {
+    // Find the real 50g product from dynamicProducts
+    const real50gProduct = dynamicProducts.find(
+      (p) => p.weight === "50g" || p.price === 16900 || p.name.includes("50g")
+    );
+    
+    if (real50gProduct) {
+      const bundleItem = {
+        ...real50gProduct,
+        name: "Buy 2 Get 1 FREE - Premium Bundle",
+        price: 16900, // 16900 * 2 = 33800
+      };
+      addItem(bundleItem, 2);
+    } else {
+      const bundleProduct = {
+        id: "bundle-buy-2-get-1",
+        name: "Buy 2 Get 1 FREE - Premium Bundle",
+        price: 33800,
+        image_url: "/images/products/shilajit-resin.jpg",
+        category: "Bundle Offer",
+        weight: "2x50g + 1x30g FREE"
+      };
+      addItem(bundleProduct, 1);
+    }
+    
+    setShowBundleModal(false);
+    navigate("/checkout");
+  };
+
   // Don't render anything for admins (they'll be redirected)
   if (profile?.role === "admin") {
     return null;
@@ -499,6 +528,95 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Exclusive Bundle Banner */}
+        <section className="bg-white border-2 border-black rounded-[2rem] overflow-hidden my-12 max-md:!my-[24px] max-md:!rounded-[1.2rem] flex flex-col">
+          <div className="flex flex-col md:flex-row">
+            {/* Left Content */}
+            <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse"></span>
+                <span className="text-black font-black text-xs tracking-[0.3em] uppercase">Limited Time Bundle</span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-serif font-bold text-black mb-4 leading-tight">
+                Buy 2 Get 1 <span className="text-[#D4AF37]">FREE</span>
+              </h2>
+              <p className="text-gray-600 text-lg mb-8 max-md:!text-sm max-md:!mb-6">
+                Our most popular value pack. Get two 50g Premium Resin jars and we'll add a 30g jar completely free.
+              </p>
+
+              <ul className="space-y-4 mb-8">
+                {[
+                  "2x 50g Premium Himalayan Resin",
+                  "1x 30g Resin (Rs. 11,200 Value) FREE",
+                  "Free Express Shipping Nationwide",
+                  "PCSIR Certified Purity & Potency"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-black font-semibold">
+                    <CheckCircle className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex items-end gap-4 mb-8">
+                <div className="flex flex-col">
+                  <span className="text-gray-400 line-through text-lg">Rs. 45,000</span>
+                  <span className="text-4xl md:text-5xl font-black text-black">Rs. 33,800</span>
+                </div>
+                <div className="bg-[#D4AF37] text-black text-[10px] font-black px-3 py-1 rounded uppercase tracking-wider mb-2">
+                  Save 25%
+                </div>
+              </div>
+
+              <button 
+                onClick={handleClaimBundle}
+                className="bg-black text-white font-black py-5 px-10 rounded-full text-lg uppercase tracking-widest hover:bg-gray-900 transition-all hover:scale-[1.02] active:scale-95 shadow-xl max-md:!py-4 max-md:!text-[14px]"
+              >
+                Claim This Offer
+              </button>
+            </div>
+
+            {/* Right Visuals */}
+            <div className="flex-1 bg-gray-100 p-8 flex items-center justify-center relative overflow-hidden min-h-[350px]">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/5 to-transparent"></div>
+              
+              {/* Floating Jars */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Back Jar 1 */}
+                <div className="absolute transform -translate-x-20 -translate-y-10 rotate-[-15deg] w-40 md:w-56 h-auto z-10 opacity-80 blur-[1px]">
+                  <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-xl border border-black/5" />
+                </div>
+                {/* Back Jar 2 */}
+                <div className="absolute transform translate-x-20 -translate-y-10 rotate-[15deg] w-40 md:w-56 h-auto z-10 opacity-80 blur-[1px]">
+                  <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-xl border border-black/5" />
+                </div>
+                {/* Front Main Jar */}
+                <div className="relative z-20 w-48 md:w-64 transform hover:scale-105 transition-transform duration-500">
+                  <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border-2 border-black/10" />
+                  <div className="absolute -top-4 -right-4 bg-[#D4AF37] text-black font-black w-14 h-14 rounded-full flex items-center justify-center text-xs leading-tight text-center shadow-lg border-2 border-black">
+                    FREE GIFT
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Stats Bar */}
+          <div className="bg-black py-6 md:py-8 px-8 grid grid-cols-2 md:grid-cols-4 gap-4 border-t-2 border-black">
+            {[
+              { label: "Servings", val: "130+" },
+              { label: "Total Jars", val: "3" },
+              { label: "Savings", val: "25%" },
+              { label: "Shipping", val: "FREE" }
+            ].map((stat, i) => (
+              <div key={i} className="text-center flex flex-col md:border-r border-white/10 last:border-0">
+                <span className="text-[#D4AF37] text-2xl md:text-3xl font-black">{stat.val}</span>
+                <span className="text-white/60 text-[10px] md:text-xs uppercase tracking-widest mt-1">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Shop Now Section */}
         <section 
           ref={shopNowRef}
@@ -718,37 +836,7 @@ export default function Home() {
 
               {/* CTA */}
               <button 
-                onClick={() => {
-                  // Find the real 50g product from dynamicProducts
-                  const real50gProduct = dynamicProducts.find(
-                    (p) => p.weight === "50g" || p.price === 16900 || p.name.includes("50g")
-                  );
-                  
-                  if (real50gProduct) {
-                    // Use the real product data but override name for the bundle feel if desired, 
-                    // though instructions say "using the real 50g product id"
-                    const bundleItem = {
-                      ...real50gProduct,
-                      name: "Buy 2 Get 1 FREE - Premium Bundle",
-                      price: 16900, // 16900 * 2 = 33800
-                    };
-                    addItem(bundleItem, 2);
-                  } else {
-                    // Fallback to the fake ID if not found (though supabase fix handles it now)
-                    const bundleProduct = {
-                      id: "bundle-buy-2-get-1",
-                      name: "Buy 2 Get 1 FREE - Premium Bundle",
-                      price: 33800,
-                      image_url: "/images/products/shilajit-resin.jpg",
-                      category: "Bundle Offer",
-                      weight: "2x50g + 1x30g FREE"
-                    };
-                    addItem(bundleProduct, 1);
-                  }
-                  
-                  setShowBundleModal(false);
-                  navigate("/checkout");
-                }}
+                onClick={handleClaimBundle}
                 className="w-full h-11 md:h-auto md:py-5 bg-[#D4AF37] text-black font-black rounded-full text-[13px] md:text-lg shadow-lg hover:bg-[#e5c263] transition-all hover:scale-[1.02] active:scale-95 mb-2 md:mb-4 uppercase tracking-widest flex items-center justify-center"
               >
                 Claim This Offer
