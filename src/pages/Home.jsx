@@ -586,125 +586,73 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
 
           <div className="flex flex-col md:flex-row">
-            {/* Left Content - Premium Left-Aligned */}
-            <div className={`flex-1 p-8 md:p-12 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse"></span>
-                <span className="text-black font-black text-[10px] tracking-[0.3em] uppercase">Limited Time Bundle</span>
+            {/* Left Content - Minimal Layout */}
+            <div className={`flex-1 p-4 md:p-6 flex flex-col justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="w-1 h-1 bg-[#D4AF37] rounded-full animate-pulse"></span>
+                <span className="text-black font-black text-[7px] tracking-[0.2em] uppercase">Limited Bundle</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-black mb-4 leading-tight">
+              <h2 className="text-lg md:text-xl font-serif font-bold text-black mb-1.5 leading-tight">
                 Buy 2 Get 1 <span className="text-[#D4AF37]">FREE</span>
               </h2>
-              <p className="text-gray-600 text-base mb-6 max-w-md leading-relaxed">
-                Experience the ultimate value pack. Get two 50g jars and we'll include a 30g jar completely free.
+              <p className="text-gray-600 text-[10px] md:text-xs mb-3 max-w-sm leading-relaxed">
+                Our best-selling value pack. Two 50g jars + one 30g jar free.
               </p>
 
-              <ul className="space-y-3 mb-8">
-                {[
-                  "2x 50g Premium Himalayan Resin",
-                  "1x 30g Resin (FREE GIFT)",
-                  "Free Express Shipping Nationwide"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-black font-bold text-sm">
-                    <CheckCircle className="text-[#D4AF37] w-4 h-4 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex items-center gap-5 mb-8">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="flex flex-col">
-                  <span className="text-gray-400 line-through text-xs tracking-wider">Rs. 45,000</span>
-                  <span className="text-3xl md:text-4xl font-black text-black">Rs. 33,800</span>
+                  <span className="text-gray-400 line-through text-[8px]">Rs. 45,000</span>
+                  <span className="text-xl md:text-2xl font-black text-black">Rs. 33,800</span>
                 </div>
-                <div className="bg-black text-[#D4AF37] text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg animate-pulse-gold border border-[#D4AF37]/30">
-                  Save 25%
+                <div className="bg-[#D4AF37] text-black text-[7px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter">
+                  -25%
                 </div>
               </div>
 
               <button 
                 onClick={handleClaimBundle}
-                className="group relative bg-black text-white font-black py-4 px-10 rounded-full text-sm uppercase tracking-widest overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-95 shadow-[0_10px_30px_rgba(0,0,0,0.2)] w-full md:w-fit"
+                className="bg-black text-white font-black py-2.5 px-6 rounded-full text-[9px] uppercase tracking-widest hover:bg-[#222] transition-all duration-300 shadow-md w-full md:w-fit"
               >
-                <span className="relative z-10">Claim This Offer</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                Claim Offer
               </button>
             </div>
 
-            {/* Right Visuals - Cinematic & Clean */}
-            <div className={`flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
+            {/* Right Visuals - Ultra Compact */}
+            <div className={`flex-1 bg-[#0a0a0a] p-4 flex items-center justify-center relative overflow-hidden min-h-[180px] md:min-h-[250px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
               {/* Background Accents */}
-              <div 
-                className="absolute inset-0 opacity-15"
-                style={{ 
-                  backgroundImage: 'radial-gradient(circle at center, rgba(212,175,55,0.1) 0%, transparent 70%), radial-gradient(#D4AF37 0.6px, transparent 0.6px)', 
-                  backgroundSize: '100% 100%, 12px 12px' 
-                }}
-              ></div>
-
-              {/* SHILAJIT Watermark */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-                <span className="text-white/[0.03] text-[150px] md:text-[200px] font-black tracking-tighter transform -rotate-12">
-                  SHILAJIT
-                </span>
-              </div>
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)]"></div>
 
               {/* Product Visual Container */}
               <div className="relative z-20 flex flex-col items-center">
-                {/* FREE GIFT Badge - Floating above */}
-                <div className="mb-6 bg-[#D4AF37] text-black font-black px-5 py-2 rounded-full text-[10px] uppercase tracking-widest shadow-[0_0_20px_rgba(212,175,55,0.4)] border-2 border-black animate-breathing z-30">
-                  Free 30g Jar Included
-                </div>
-
-                {/* Main Graphic with Glow */}
-                <div className="relative transform hover:scale-[1.02] transition-transform duration-500 animate-float">
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-[#D4AF37]/10 blur-[60px] rounded-full"></div>
-                  
-                  <div className="relative z-20 w-72 md:w-[380px] lg:w-[450px]">
+                <div className="relative transform hover:scale-[1.02] transition-transform duration-500">
+                  <div className="relative z-20 w-40 md:w-[180px] lg:w-[220px]">
                     <img 
                       src="/images/products/shilajit-nutrition.jpg" 
                       alt="Premium Shilajit Resin Bundle" 
-                      className="w-full rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] border-2 border-[#D4AF37]/30" 
+                      className="w-full rounded-lg shadow-xl border border-[#D4AF37]/20" 
                     />
                   </div>
-
-                  {/* Smaller corner labels for premium feel */}
-                  <div className="absolute -bottom-4 -left-4 bg-black/80 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">
-                    100% Pure
+                  <div className="absolute -top-2 -right-2 bg-[#D4AF37] text-black px-2 py-0.5 rounded-full text-[7px] font-black uppercase border border-black z-30">
+                    FREE GIFT
                   </div>
-                  <div 
-                    className={`absolute bottom-4 right-0 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
-                    style={{ transitionDelay: '0.4s' }}
-                  >
-                    Lab Tested
-                  </div>
-                </div>
-
-                {/* Bottom Badge - Centered Below */}
-                <div 
-                  className={`mt-4 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-4 py-2 rounded-full text-[11px] font-black uppercase tracking-widest ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
-                  style={{ transitionDelay: '0.6s' }}
-                >
-                  PCSIR Certified Purity
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Bottom Stats Bar with Count-Up */}
-          <div className="bg-black py-6 md:py-8 px-8 grid grid-cols-2 md:grid-cols-4 gap-4 border-t-2 border-black">
+          {/* Bottom Stats Bar - Minimal */}
+          <div className="bg-black py-3 px-6 grid grid-cols-2 md:grid-cols-4 gap-2 border-t border-white/5">
             {[
               { label: "Servings", val: "130+" },
               { label: "Total Jars", val: "3" },
               { label: "Savings", val: "25%" },
               { label: "Shipping", val: "FREE" }
             ].map((stat, i) => (
-              <div key={i} className="text-center flex flex-col md:border-r border-white/10 last:border-0">
-                <span className="text-[#D4AF37] text-2xl md:text-3xl font-black">
+              <div key={i} className="text-center flex flex-col md:border-r border-white/5 last:border-0">
+                <span className="text-[#D4AF37] text-base md:text-lg font-black leading-none">
                   <CountUpValue end={stat.val} startTrigger={bannerInView} />
                 </span>
-                <span className="text-white/60 text-[10px] md:text-xs uppercase tracking-widest mt-1">{stat.label}</span>
+                <span className="text-white/30 text-[6px] md:text-[7px] uppercase tracking-[0.1em] mt-0.5">{stat.label}</span>
               </div>
             ))}
           </div>
