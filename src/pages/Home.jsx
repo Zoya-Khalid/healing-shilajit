@@ -631,8 +631,8 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Right Visuals - Reduced Size */}
-            <div className={`flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
+            {/* Right Visuals - Upsized and Refined */}
+            <div className={`flex-1 bg-[#0a0a0a] p-12 flex items-center justify-center relative overflow-hidden min-h-[500px] md:min-h-[650px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
               {/* Gold Dot Pattern Overlay with drift */}
               <div 
                 className="absolute inset-0 opacity-15 animate-bg-glow"
@@ -642,54 +642,60 @@ export default function Home() {
                 }}
               ></div>
 
+              {/* Soft Gold Radial Glow behind jar */}
+              <div 
+                className="absolute inset-0 z-10"
+                style={{ 
+                  background: 'radial-gradient(circle at center, rgba(212,175,55,0.12) 0%, transparent 65%)'
+                }}
+              ></div>
+
               {/* SHILAJIT Watermark */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <span className="text-white/[0.03] text-[150px] md:text-[200px] font-black tracking-tighter transform -rotate-12">
+                <span className="text-white/[0.03] text-[150px] md:text-[250px] font-black tracking-tighter transform -rotate-12">
                   SHILAJIT
                 </span>
               </div>
               
-              {/* Floating Badges with Staggered Fade */}
-              <div 
-                className={`absolute top-8 left-8 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
-                style={{ transitionDelay: '0s' }}
-              >
-                100% Pure
-              </div>
-              <div 
-                className={`absolute bottom-16 left-12 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float-delayed ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
-                style={{ transitionDelay: '0.3s' }}
-              >
-                Lab Tested
-              </div>
-              <div 
-                className={`absolute top-24 right-10 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
-                style={{ transitionDelay: '0.6s' }}
-              >
-                PCSIR Certified
-              </div>
+              {/* Product Visual Container */}
+              <div className="relative z-20 flex flex-col items-center">
+                
+                {/* FREE GIFT Badge - Top Centered */}
+                <div className="mb-6 bg-[#D4AF37] text-black font-black px-6 py-2 rounded-full text-xs uppercase tracking-widest shadow-[0_0_20px_rgba(212,175,55,0.4)] border-2 border-black animate-breathing z-30">
+                  Free Gift Included
+                </div>
 
-              {/* Floating Jars */}
-              <div className="relative w-full h-full flex items-center justify-center max-w-lg">
-                {/* Back Jar Left */}
-                <div className="absolute transform -translate-x-24 -translate-y-8 rotate-[-15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px] animate-float-slow">
-                  <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border border-white/5" />
-                </div>
-                {/* Back Jar Right */}
-                <div className="absolute transform translate-x-24 -translate-y-8 rotate-[15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px] animate-float-fast">
-                  <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border border-white/5" />
-                </div>
-                {/* Front Main Jar */}
-                <div className="relative z-20 w-72 md:w-[450px] lg:w-[500px] transform hover:scale-105 transition-transform duration-500 animate-float">
-                  <img 
-                    src="/images/products/shilajit-nutrition.jpg" 
-                    alt="Premium Shilajit Resin Bundle" 
-                    className="w-full rounded-3xl shadow-[0_0_50px_rgba(212,175,55,0.25)] border-2 border-[#D4AF37]" 
-                  />
-                  <div className="absolute -top-4 -right-4 bg-[#D4AF37] text-black font-black w-16 h-16 rounded-full flex flex-col items-center justify-center text-[10px] leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)] border-2 border-black animate-pulse-gold z-30">
-                    <span className="text-[12px]">FREE</span>
-                    <span>GIFT</span>
+                {/* Main Image Wrapper with Padding */}
+                <div className="relative p-8 md:p-12 transform hover:scale-[1.02] transition-transform duration-500 animate-float">
+                  <div className="relative z-20 w-80 md:w-[550px] lg:w-[650px]">
+                    <img 
+                      src="/images/products/shilajit-nutrition.jpg" 
+                      alt="Premium Shilajit Resin Bundle" 
+                      className="w-full rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.5)] border-2 border-[#D4AF37]/30" 
+                    />
                   </div>
+
+                  {/* Corner Badges */}
+                  <div 
+                    className={`absolute bottom-4 left-0 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
+                    style={{ transitionDelay: '0.2s' }}
+                  >
+                    100% Pure
+                  </div>
+                  <div 
+                    className={`absolute bottom-4 right-0 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
+                    style={{ transitionDelay: '0.4s' }}
+                  >
+                    Lab Tested
+                  </div>
+                </div>
+
+                {/* Bottom Badge - Centered Below */}
+                <div 
+                  className={`mt-4 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-4 py-2 rounded-full text-[11px] font-black uppercase tracking-widest ${bannerInView ? "animate-fade-in-staggered opacity-100" : "opacity-0"}`}
+                  style={{ transitionDelay: '0.6s' }}
+                >
+                  PCSIR Certified Purity
                 </div>
               </div>
             </div>
