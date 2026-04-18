@@ -529,105 +529,105 @@ export default function Home() {
         </section>
 
         {/* Exclusive Bundle Banner */}
-        <section className="bg-white border-2 border-black rounded-[2rem] overflow-hidden my-12 max-md:!my-[24px] max-md:!rounded-[1.2rem] flex flex-col relative">
+        <section className="bg-white border-2 border-black rounded-[2rem] overflow-hidden my-8 max-md:!my-[20px] max-md:!rounded-[1.2rem] flex flex-col relative">
           {/* Framing Gold Lines */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
 
           <div className="flex flex-col md:flex-row">
             {/* Left Content */}
-            <div className="flex-1 p-8 md:p-16 flex flex-col justify-center relative z-20">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse"></span>
-                <span className="text-black font-black text-xs tracking-[0.3em] uppercase">Limited Time Bundle</span>
+            <div className="flex-1 p-8 md:p-12 flex flex-col justify-center relative z-20">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse"></span>
+                <span className="text-black font-black text-[10px] tracking-[0.3em] uppercase">Limited Time Bundle</span>
               </div>
-              <h2 className="text-4xl md:text-7xl font-serif font-bold text-black mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-4 leading-tight">
                 Buy 2 Get 1 <span className="text-[#D4AF37]">FREE</span>
               </h2>
-              <p className="text-gray-600 text-xl mb-10 max-md:!text-base max-md:!mb-8 max-w-lg leading-relaxed">
-                Our most popular value pack. Get two 50g Premium Resin jars and we'll add a 30g jar completely free.
+              <p className="text-gray-600 text-lg mb-8 max-md:!text-sm max-md:!mb-6 max-w-md leading-relaxed">
+                Our most popular value pack. Get two 50g jars and we'll add a 30g jar completely free.
               </p>
 
-              <ul className="space-y-5 mb-10">
+              <ul className="space-y-3 mb-8">
                 {[
                   "2x 50g Premium Himalayan Resin",
                   "1x 30g Resin (Rs. 11,200 Value) FREE",
                   "Free Express Shipping Nationwide",
                   "PCSIR Certified Purity & Potency"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-black font-bold text-lg max-md:!text-[15px]">
-                    <CheckCircle className="text-[#D4AF37] w-6 h-6 flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-3 text-black font-bold text-base max-md:!text-[14px]">
+                    <CheckCircle className="text-[#D4AF37] w-5 h-5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex items-end gap-6 mb-10">
+              <div className="flex items-end gap-5 mb-8">
                 <div className="flex flex-col">
-                  <span className="text-gray-400 line-through text-xl">Rs. 45,000</span>
-                  <span className="text-5xl md:text-6xl font-black text-black">Rs. 33,800</span>
+                  <span className="text-gray-400 line-through text-lg">Rs. 45,000</span>
+                  <span className="text-4xl md:text-5xl font-black text-black">Rs. 33,800</span>
                 </div>
-                <div className="bg-[#D4AF37] text-black text-[12px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-2 shadow-lg">
+                <div className="bg-[#D4AF37] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2 shadow-md">
                   Save 25%
                 </div>
               </div>
 
               <button 
                 onClick={handleClaimBundle}
-                className="bg-black text-white font-black py-6 px-12 rounded-full text-xl uppercase tracking-widest hover:bg-gray-900 transition-all hover:scale-[1.02] active:scale-95 shadow-2xl max-md:!py-4 max-md:!text-[14px] w-full md:w-fit"
+                className="bg-black text-white font-black py-4 px-10 rounded-full text-lg uppercase tracking-widest hover:bg-gray-900 transition-all hover:scale-[1.02] active:scale-95 shadow-xl max-md:!py-3.5 max-md:!text-[13px] w-full md:w-fit"
               >
                 Claim This Offer
               </button>
             </div>
 
-            {/* Right Visuals - Refined */}
-            <div className="flex-1 bg-[#0a0a0a] p-12 flex items-center justify-center relative overflow-hidden min-h-[500px] md:min-h-[600px]">
+            {/* Right Visuals - Reduced Size */}
+            <div className="flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px]">
               {/* Gold Dot Pattern Overlay */}
               <div 
-                className="absolute inset-0 opacity-20"
+                className="absolute inset-0 opacity-15"
                 style={{ 
-                  backgroundImage: 'radial-gradient(#D4AF37 0.8px, transparent 0.8px)', 
-                  backgroundSize: '12px 12px' 
+                  backgroundImage: 'radial-gradient(#D4AF37 0.6px, transparent 0.6px)', 
+                  backgroundSize: '10px 10px' 
                 }}
               ></div>
 
               {/* SHILAJIT Watermark */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <span className="text-white/[0.03] text-[180px] md:text-[250px] font-black tracking-tighter transform -rotate-12">
+                <span className="text-white/[0.03] text-[150px] md:text-[200px] font-black tracking-tighter transform -rotate-12">
                   SHILAJIT
                 </span>
               </div>
               
               {/* Floating Badges */}
-              <div className="absolute top-10 left-10 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest animate-float">
+              <div className="absolute top-8 left-8 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float">
                 100% Pure
               </div>
-              <div className="absolute bottom-20 left-16 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest animate-float-delayed">
+              <div className="absolute bottom-16 left-12 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float-delayed">
                 Lab Tested
               </div>
-              <div className="absolute top-32 right-12 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest animate-float">
+              <div className="absolute top-24 right-10 z-30 bg-[#D4AF37]/10 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest animate-float">
                 PCSIR Certified
               </div>
 
               {/* Floating Jars */}
-              <div className="relative w-full h-full flex items-center justify-center max-w-xl">
+              <div className="relative w-full h-full flex items-center justify-center max-w-lg">
                 {/* Back Jar Left */}
-                <div className="absolute transform -translate-x-28 -translate-y-12 rotate-[-15deg] w-48 md:w-64 h-auto z-10 opacity-60 blur-[1px]">
+                <div className="absolute transform -translate-x-24 -translate-y-8 rotate-[-15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px]">
                   <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border border-white/5" />
                 </div>
                 {/* Back Jar Right */}
-                <div className="absolute transform translate-x-28 -translate-y-12 rotate-[15deg] w-48 md:w-64 h-auto z-10 opacity-60 blur-[1px]">
+                <div className="absolute transform translate-x-24 -translate-y-8 rotate-[15deg] w-40 md:w-56 h-auto z-10 opacity-50 blur-[1px]">
                   <img src="/images/products/shilajit-resin.jpg" alt="Shilajit Jar" className="w-full rounded-2xl shadow-2xl border border-white/5" />
                 </div>
-                {/* Front Main Jar (The 30g Free Gift) */}
-                <div className="relative z-20 w-64 md:w-80 transform hover:scale-105 transition-transform duration-500">
+                {/* Front Main Jar */}
+                <div className="relative z-20 w-56 md:w-72 transform hover:scale-105 transition-transform duration-500">
                   <img 
                     src="/images/products/shilajit-resin.jpg" 
                     alt="Premium Shilajit Resin" 
-                    className="w-full rounded-3xl shadow-[0_0_50px_rgba(212,175,55,0.2)] border-2 border-[#D4AF37]" 
+                    className="w-full rounded-3xl shadow-[0_0_40px_rgba(212,175,55,0.15)] border-2 border-[#D4AF37]" 
                   />
-                  <div className="absolute -top-6 -right-6 bg-[#D4AF37] text-black font-black w-20 h-20 rounded-full flex flex-col items-center justify-center text-[11px] leading-tight text-center shadow-[0_0_20px_rgba(212,175,55,0.5)] border-2 border-black animate-pulse-gold z-30">
-                    <span className="text-[14px]">FREE</span>
+                  <div className="absolute -top-4 -right-4 bg-[#D4AF37] text-black font-black w-16 h-16 rounded-full flex flex-col items-center justify-center text-[10px] leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)] border-2 border-black animate-pulse-gold z-30">
+                    <span className="text-[12px]">FREE</span>
                     <span>GIFT</span>
                   </div>
                 </div>
