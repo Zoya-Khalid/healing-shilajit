@@ -49,6 +49,14 @@ export default function Home() {
 
   const heroSlides = [
     {
+      image: "/green-mountain-hero.png",
+      eyebrow: "HERBVEDA SHILAJIT",
+      titleWhite: "Nature's",
+      titleGold: "Vitality",
+      tagline: "Sun-soaked mountains · 100% Pure Resin · Lab Certified",
+      cta: "CLAIM OFFER NOW",
+    },
+    {
       image: "/mountain-1.jpg",
       eyebrow: "SOURCED ABOVE THE CLOUDS",
       titleWhite: "Ancient",
