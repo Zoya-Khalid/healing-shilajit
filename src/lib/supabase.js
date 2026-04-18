@@ -77,7 +77,26 @@ export const db = {
   },
 
   createOrderItems: async (items) => {
-    const { data, error } = await supabase.from("order_items").insert(items).select();
+    // Get all unique product IDs from the items
+    const productIds = [...new Set(items.map(item => item.product_id).filter(id => id))];
+    
+    let validIds = new Set();
+    if (productIds.length > 0) {
+      const { data: existingProducts } = await supabase
+        .from("products")
+        .select("id")
+        .in("id", productIds);
+      
+      validIds = new Set(existingProducts?.map(p => p.id) || []);
+    }
+
+    // Sanitize items: if product_id doesn't exist in DB, set it to null
+    const sanitizedItems = items.map(item => ({
+      ...item,
+      product_id: validIds.has(item.product_id) ? item.product_id : null
+    }));
+
+    const { data, error } = await supabase.from("order_items").insert(sanitizedItems).select();
     return { data, error };
   },
 

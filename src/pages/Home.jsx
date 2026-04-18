@@ -719,17 +719,35 @@ export default function Home() {
               {/* CTA */}
               <button 
                 onClick={() => {
-                  const bundleProduct = {
-                    id: "bundle-buy-2-get-1",
-                    name: "Buy 2 Get 1 FREE - Premium Bundle",
-                    price: 33800,
-                    image_url: "/images/products/shilajit-resin.jpg",
-                    category: "Bundle Offer",
-                    weight: "2x50g + 1x30g FREE"
-                  };
-                  addItem(bundleProduct, 1);
+                  // Find the real 50g product from dynamicProducts
+                  const real50gProduct = dynamicProducts.find(
+                    (p) => p.weight === "50g" || p.price === 16900 || p.name.includes("50g")
+                  );
+                  
+                  if (real50gProduct) {
+                    // Use the real product data but override name for the bundle feel if desired, 
+                    // though instructions say "using the real 50g product id"
+                    const bundleItem = {
+                      ...real50gProduct,
+                      name: "Buy 2 Get 1 FREE - Premium Bundle",
+                      price: 16900, // 16900 * 2 = 33800
+                    };
+                    addItem(bundleItem, 2);
+                  } else {
+                    // Fallback to the fake ID if not found (though supabase fix handles it now)
+                    const bundleProduct = {
+                      id: "bundle-buy-2-get-1",
+                      name: "Buy 2 Get 1 FREE - Premium Bundle",
+                      price: 33800,
+                      image_url: "/images/products/shilajit-resin.jpg",
+                      category: "Bundle Offer",
+                      weight: "2x50g + 1x30g FREE"
+                    };
+                    addItem(bundleProduct, 1);
+                  }
+                  
                   setShowBundleModal(false);
-                  shopNowRef.current?.scrollIntoView({ behavior: 'smooth' });
+                  navigate("/checkout");
                 }}
                 className="w-full h-11 md:h-auto md:py-5 bg-[#D4AF37] text-black font-black rounded-full text-[13px] md:text-lg shadow-lg hover:bg-[#e5c263] transition-all hover:scale-[1.02] active:scale-95 mb-2 md:mb-4 uppercase tracking-widest flex items-center justify-center"
               >
