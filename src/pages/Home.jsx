@@ -622,7 +622,7 @@ export default function Home() {
                 {/* Front Main Jar (The 30g Free Gift) */}
                 <div className="relative z-20 w-64 md:w-80 transform hover:scale-105 transition-transform duration-500">
                   <img 
-                    src="/images/products/bundle-display.jpg" 
+                    src="/images/products/shilajit-resin.jpg" 
                     alt="Premium Shilajit Resin" 
                     className="w-full rounded-3xl shadow-[0_0_50px_rgba(212,175,55,0.2)] border-2 border-[#D4AF37]" 
                   />
