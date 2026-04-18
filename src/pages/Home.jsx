@@ -58,11 +58,11 @@ export default function Home() {
     },
     {
       image: "/mountain-1.jpg",
-      eyebrow: "SOURCED ABOVE THE CLOUDS",
-      titleWhite: "Ancient",
-      titleGold: "Purity",
-      tagline: "Hand-harvested  ·  Glacier-purified  ·  Sun-dried",
-      cta: "DISCOVER THE ORIGIN",
+      eyebrow: "PURE HIMALAYAN PEAKS",
+      titleWhite: "Sun-Kissed",
+      titleGold: "Snow",
+      tagline: "Sourced from 17,000 ft · Eternal Purity · Sunkissed Vitality",
+      cta: "EXPLORE THE ORIGIN",
     },
     {
       image: "/mountain-2.jpg",
