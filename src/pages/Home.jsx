@@ -49,14 +49,6 @@ export default function Home() {
 
   const heroSlides = [
     {
-      image: "/snowy-mountain-product.jpg",
-      eyebrow: "SOURCED ABOVE THE CLOUDS",
-      titleWhite: "Ancient",
-      titleGold: "Purity",
-      tagline: "Hand-harvested · Glacier-purified · Sun-dried",
-      cta: "DISCOVER THE ORIGIN",
-    },
-    {
       image: "/green-mountain-hero.png",
       eyebrow: "HERBVEDA SHILAJIT",
       titleWhite: "Nature's",
