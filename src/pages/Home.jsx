@@ -579,59 +579,59 @@ export default function Home() {
         {/* Exclusive Bundle Banner */}
         <section 
           ref={bannerRef}
-          className="bg-white border-2 border-black rounded-[2rem] overflow-hidden my-8 max-md:!my-[20px] max-md:!rounded-[1.2rem] flex flex-col relative"
+          className="bg-white border-2 border-black rounded-[1.5rem] overflow-hidden my-4 max-md:!my-[12px] max-md:!rounded-[1rem] flex flex-col relative shadow-sm"
         >
           {/* Framing Gold Lines */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
 
           <div className="flex flex-col md:flex-row">
-            {/* Left Content - Center Aligned & Bigger */}
-            <div className={`flex-1 p-8 md:p-10 flex flex-col items-center text-center justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse"></span>
-                <span className="text-black font-black text-[10px] tracking-[0.3em] uppercase">Limited Offer</span>
+            {/* Left Content - More Compact */}
+            <div className={`flex-1 p-6 md:p-8 flex flex-col items-center text-center justify-center relative z-20 transition-all duration-700 ${bannerInView ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="w-1 h-1 bg-[#D4AF37] rounded-full animate-pulse"></span>
+                <span className="text-black font-black text-[8px] tracking-[0.3em] uppercase">Limited Offer</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-black mb-3 leading-tight">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-black mb-2 leading-tight">
                 Buy 2 Get 1 <span className="text-[#D4AF37]">FREE</span>
               </h2>
-              <p className="text-gray-600 text-base mb-6 max-w-md leading-relaxed">
+              <p className="text-gray-600 text-sm mb-4 max-w-sm leading-relaxed">
                 Our best-selling value bundle. Get a 30g jar free with two 50g jars.
               </p>
 
-              <ul className="space-y-2 mb-6 flex flex-col items-center">
+              <ul className="space-y-1.5 mb-5 flex flex-col items-center">
                 {[
                   "2x 50g Premium Resin",
-                  "1x 30g Resin (Rs. 11,200) FREE",
-                  "Free Express Shipping Nationwide"
+                  "1x 30g Resin (FREE)",
+                  "Free Express Shipping"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-black font-bold text-sm">
-                    <CheckCircle className="text-[#D4AF37] w-4 h-4 flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-2 text-black font-bold text-xs">
+                    <CheckCircle className="text-[#D4AF37] w-3.5 h-3.5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex items-end gap-4 mb-6">
-                <div className="flex flex-col">
-                  <span className="text-gray-400 line-through text-sm">Rs. 45,000</span>
-                  <span className="text-3xl md:text-4xl font-black text-black">Rs. 33,800</span>
+              <div className="flex items-end gap-3 mb-5">
+                <div className="flex flex-col text-left">
+                  <span className="text-gray-400 line-through text-[10px]">Rs. 45,000</span>
+                  <span className="text-2xl md:text-3xl font-black text-black">Rs. 33,800</span>
                 </div>
-                <div className="bg-[#D4AF37] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-1.5 shadow-md animate-shimmer">
+                <div className="bg-[#D4AF37] text-black text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider mb-1 shadow-sm animate-shimmer">
                   -25%
                 </div>
               </div>
 
               <button 
                 onClick={handleClaimBundle}
-                className="bg-black text-white font-black py-4 px-10 rounded-full text-sm uppercase tracking-widest hover:bg-[#222] transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl w-full md:w-fit animate-breathing"
+                className="bg-black text-white font-black py-3 px-8 rounded-full text-xs uppercase tracking-widest hover:bg-[#222] transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg w-full md:w-fit animate-breathing"
               >
-                Claim This Offer
+                Claim Offer
               </button>
             </div>
 
-            {/* Right Visuals - Bigger Pic */}
-            <div className={`flex-1 bg-[#0a0a0a] p-8 flex items-center justify-center relative overflow-hidden min-h-[300px] md:min-h-[400px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
+            {/* Right Visuals - Compact but Impactful */}
+            <div className={`flex-1 bg-[#0a0a0a] p-6 flex items-center justify-center relative overflow-hidden min-h-[280px] md:min-h-[350px] transition-all duration-700 ${bannerInView ? "animate-slide-in-right opacity-100" : "opacity-0"}`}>
               {/* Gold Dot Pattern Overlay with drift */}
               <div 
                 className="absolute inset-0 opacity-12 animate-bg-glow"
