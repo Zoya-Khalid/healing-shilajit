@@ -201,7 +201,7 @@ export default function About() {
               <div className="relative group mx-auto max-w-lg lg:max-w-none">
                 <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.1)] transition-transform duration-700 group-hover:scale-[1.02]">
                   <img
-                    src="/images/about/how-to-use-new.jpg"
+                    src="/images/about/how-to-use-new.png"
                     alt="Herbveda Shilajit Usage Routine"
                     className="w-full h-full object-cover"
                   />
