@@ -525,7 +525,10 @@ export default function Home() {
                 <div className="absolute inset-0 rounded-[12px] md:rounded-[3rem] bg-gradient-to-tr from-amber-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             ))}
-                  {/* Exclusive Bundle Banner */}
+          </div>
+        </section>
+
+        {/* Exclusive Bundle Banner */}
         <section className="bg-white border-2 border-black rounded-[2rem] overflow-hidden my-12 max-md:!my-[24px] max-md:!rounded-[1.2rem] flex flex-col relative">
           {/* Framing Gold Lines */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-[#D4AF37]/40 z-10"></div>
