@@ -5,7 +5,7 @@
 // ============================================
 import React, { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Award, Truck, Shield, Star, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { Award, Truck, Shield, Star, CheckCircle, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useAuthStore } from "../store/authStore";
 import { supabase } from "../lib/supabase";
 import ProductCard from "../components/products/ProductCard";
@@ -44,7 +44,31 @@ export default function Home() {
   const [dynamicReviews, setDynamicReviews] = useState([]);
   const [dynamicProducts, setDynamicProducts] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
+  const [selectedFeature, setSelectedFeature] = useState(null);
   const reviewsContainerRef = useRef(null);
+
+  const featureDetails = {
+    "Lab Tested": {
+      title: "PCSIR Certified",
+      detail: "Our Shilajit is certified for purity and potency by PCSIR (Pakistan Council of Scientific and Industrial Research), one of Pakistan's top testing laboratories. Every batch is tested for heavy metals, microbial contamination, and active compound levels.",
+    },
+    "100% Natural": {
+      title: "Pure & Natural",
+      detail: "Our Shilajit contains zero additives, fillers, or heavy metals. It is raw, unprocessed resin sourced directly from high-altitude Himalayan rocks and sun-dried naturally to preserve all minerals and fulvic acid.",
+    },
+    "Free Shipping": {
+      title: "Free Express Shipping",
+      detail: "We offer complimentary express shipping on all orders across Pakistan. Orders are dispatched within 24 hours and delivered within 2-4 business days.",
+    },
+    "Top Rated": {
+      title: "Loved by Thousands",
+      detail: "Trusted by thousands of customers across Pakistan and worldwide. Our customers report increased energy, better focus, and improved stamina within weeks of consistent use.",
+    },
+    "Trusted Products": {
+      title: "Professionally Trusted",
+      detail: "Our products are recommended by health professionals and used by athletes, executives, and wellness enthusiasts. We maintain strict quality control at every step from sourcing to delivery.",
+    },
+  };
 
   const reviews = [
     {
@@ -374,7 +398,10 @@ export default function Home() {
       <div className="pt-20 px-[12px] md:px-4 max-w-[1600px] mx-auto space-y-20 max-md:!space-y-0 max-md:!pt-0 max-md:!pb-[24px]">
         {/* Features */}
         <section className="flex overflow-x-auto pb-4 gap-4 sm:gap-8 snap-x snap-mandatory md:grid md:grid-cols-5 hide-scrollbar max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!pt-[16px] max-md:!pb-[16px]">
-          <div className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px]">
+          <div 
+            onClick={() => setSelectedFeature("Lab Tested")}
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+          >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
               <Award className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
             </div>
@@ -382,7 +409,10 @@ export default function Home() {
             <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Certified for purity and potency by top USA labs.</p>
           </div>
 
-          <div className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px]">
+          <div 
+            onClick={() => setSelectedFeature("100% Natural")}
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+          >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
               <Shield className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
             </div>
@@ -390,7 +420,10 @@ export default function Home() {
             <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Pure resin, no additives, fillers, or heavy metals.</p>
           </div>
 
-          <div className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px]">
+          <div 
+            onClick={() => setSelectedFeature("Free Shipping")}
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+          >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
               <Truck className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
             </div>
@@ -398,7 +431,10 @@ export default function Home() {
             <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Complimentary express shipping on all orders.</p>
           </div>
 
-          <div className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px]">
+          <div 
+            onClick={() => setSelectedFeature("Top Rated")}
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+          >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
               <Star className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
             </div>
@@ -406,7 +442,10 @@ export default function Home() {
             <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Loved by thousands of customers worldwide.</p>
           </div>
 
-          <div className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px]">
+          <div 
+            onClick={() => setSelectedFeature("Trusted Products")}
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+          >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
               <Shield className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
             </div>
@@ -548,6 +587,41 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      {/* Feature Modal */}
+      {selectedFeature && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+          onClick={() => setSelectedFeature(null)}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in" />
+          
+          {/* Modal Content */}
+          <div 
+            className="relative bg-white w-full max-w-lg rounded-[2rem] overflow-hidden shadow-2xl animate-scale-in max-md:w-[90vw] max-md:rounded-[1.5rem]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedFeature(null)}
+              className="absolute top-4 right-4 z-10 w-11 h-11 flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-black rounded-full transition-colors"
+              aria-label="Close modal"
+            >
+              <X size={24} />
+            </button>
+
+            <div className="p-8 sm:p-10 max-h-[80vh] overflow-y-auto custom-scrollbar">
+              <h2 className="text-3xl font-serif font-bold text-black mb-6 border-b-4 border-[#D4AF37] pb-2 inline-block max-md:text-2xl">
+                {featureDetails[selectedFeature].title}
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed max-md:text-base">
+                {featureDetails[selectedFeature].detail}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
