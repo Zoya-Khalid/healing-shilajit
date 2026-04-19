@@ -264,13 +264,13 @@ export default function Home() {
       if (error) throw error;
       // Enhance database products with local images/hover images for demo
       const enhancedData = data.map((p) => {
-        const localJar = "/images/products/shilajit-jar-main.png";
-        const localInfographic = "/images/products/shilajit-infographic-main.jpg";
+        const localJar = "/images/products/shilajit-display-jar.jpg";
+        const localNutrition = "/images/products/shilajit-nutrition-infographic.jpg";
 
         return {
           ...p,
           image_url: localJar,
-          hover_image_url: localInfographic,
+          hover_image_url: localNutrition,
         };
       });
       setDynamicProducts(enhancedData);
@@ -335,7 +335,7 @@ export default function Home() {
         id: "bundle-buy-2-get-1",
         name: "Buy 2 Get 1 FREE - Premium Bundle",
         price: 33800,
-        image_url: "/images/products/shilajit-jar-main.png",
+        image_url: "/images/products/shilajit-display-jar.jpg",
         category: "Bundle Offer",
         weight: "2x50g + 1x30g FREE"
       };
