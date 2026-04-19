@@ -76,9 +76,9 @@ export default function About() {
             <div className="relative group max-md:!w-full max-md:!flex-shrink-0 max-md:!mb-[12px] max-md:!px-[12px]">
               <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] max-md:!rounded-[12px] max-md:!h-[220px]">
                 <img
-                  src="/shilajit-lifestyle-cup.png"
+                  src="/green-mountain-hero.png"
                   alt="About Us Hero"
-                  className="w-full h-full object-contain aspect-[4/5] max-md:!h-[220px]"
+                  className="w-full h-full object-cover aspect-[4/5] object-center max-md:!h-[220px]"
                 />
               </div>
               <div className="absolute -inset-4 bg-amber-500/10 rounded-[3.5rem] blur-2xl -z-10 group-hover:bg-amber-500/20 transition-all duration-700 max-md:!hidden"></div>
