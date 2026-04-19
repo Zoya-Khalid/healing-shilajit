@@ -399,7 +399,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-[60vh] md:h-[75vh] min-h-[400px] md:min-h-[500px] max-h-[900px] overflow-hidden bg-black">
+      <section className="relative w-full h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[600px] md:max-h-none overflow-hidden bg-black">
         {/* Slide backgrounds */}
         {heroSlides.map((slide, index) => (
           <div
