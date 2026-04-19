@@ -49,6 +49,14 @@ export default function Home() {
 
   const heroSlides = [
     {
+      image: "/shilajit-lifestyle-cup.png",
+      eyebrow: "THE PERFECT RITUAL",
+      titleWhite: "Daily",
+      titleGold: "Wellness",
+      tagline: "Pure Himalayan Resin · Natural Energy · Dissolve in Warmth",
+      cta: "START YOUR RITUAL",
+    },
+    {
       image: "/green-mountain-hero.png",
       eyebrow: "HERBVEDA SHILAJIT",
       titleWhite: "Nature's",
@@ -57,7 +65,7 @@ export default function Home() {
       cta: "CLAIM OFFER NOW",
     },
     {
-      image: "/mountain-1.jpg",
+      image: "/images/products/shilajit-jar-main.png",
       eyebrow: "SOURCED ABOVE THE CLOUDS",
       titleWhite: "Ancient",
       titleGold: "Purity",
@@ -256,14 +264,13 @@ export default function Home() {
       if (error) throw error;
       // Enhance database products with local images/hover images for demo
       const enhancedData = data.map((p) => {
-        const localJar = "/images/products/shilajit-resin.jpg";
-        const localNutrition = "/images/products/shilajit-nutrition.jpg";
+        const localJar = "/images/products/shilajit-jar-main.png";
+        const localInfographic = "/images/products/shilajit-infographic-main.jpg";
 
         return {
           ...p,
-          // Swapped assignments to fix "opposite" order
-          image_url: localNutrition,
-          hover_image_url: localJar,
+          image_url: localJar,
+          hover_image_url: localInfographic,
         };
       });
       setDynamicProducts(enhancedData);
@@ -328,7 +335,7 @@ export default function Home() {
         id: "bundle-buy-2-get-1",
         name: "Buy 2 Get 1 FREE - Premium Bundle",
         price: 33800,
-        image_url: "/images/products/shilajit-resin.jpg",
+        image_url: "/images/products/shilajit-jar-main.png",
         category: "Bundle Offer",
         weight: "2x50g + 1x30g FREE"
       };

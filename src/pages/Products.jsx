@@ -53,8 +53,8 @@ export default function Products() {
           name: seoName,
           review_count: reviewCount,
           weight: weight,
-          image_url: "/images/products/shilajit-display-jar.jpg",
-          hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg"
+          image_url: "/images/products/shilajit-jar-main.png",
+          hover_image_url: "/images/products/shilajit-infographic-main.jpg"
         };
       });
       setProducts(enhancedData);
