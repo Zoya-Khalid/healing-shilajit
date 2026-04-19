@@ -78,7 +78,7 @@ export default function About() {
                 <img
                   src="/shilajit-lifestyle-cup.png"
                   alt="About Us Hero"
-                  className="w-full h-full object-cover aspect-[4/5] object-center max-md:!h-[220px]"
+                  className="w-full h-full object-cover aspect-[4/5] object-[20%_center] max-md:!h-[220px]"
                 />
               </div>
               <div className="absolute -inset-4 bg-amber-500/10 rounded-[3.5rem] blur-2xl -z-10 group-hover:bg-amber-500/20 transition-all duration-700 max-md:!hidden"></div>
