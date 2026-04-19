@@ -381,6 +381,7 @@ export default function Home() {
       title: "Anti-Aging Properties",
       description: "Rich in powerful antioxidants that help slow visible aging, improve skin texture, and support youthful cellular health.",
       image: "/images/benefits/anti-aging.jpg",
+      objectPosition: "object-[center_20%]",
     },
   ];
 
@@ -567,7 +568,11 @@ export default function Home() {
             {benefits.map((benefit, index) => (
               <div key={index} className="group relative bg-black text-white rounded-[12px] md:rounded-[3rem] p-[10px] md:p-8 flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-900/50 border border-gray-800">
                 <div className="w-full h-[120px] md:h-48 mb-[10px] md:mb-6 rounded-[10px] md:rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-amber-500/50 transition-all duration-500">
-                  <img src={benefit.image} alt={benefit.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                  <img 
+                    src={benefit.image} 
+                    alt={benefit.title} 
+                    className={`w-full h-full object-cover ${benefit.objectPosition || 'object-center'} transform group-hover:scale-110 transition-transform duration-700`} 
+                  />
                 </div>
                 <h3 className="text-[13px] md:text-2xl font-bold mb-1 md:mb-4 text-amber-500 group-hover:text-amber-400">{benefit.title}</h3>
                 <p className="text-gray-300 leading-[1.4] md:leading-relaxed text-[11px] md:text-sm group-hover:text-white transition-colors">{benefit.description}</p>
