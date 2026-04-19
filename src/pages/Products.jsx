@@ -27,32 +27,10 @@ export default function Products() {
     if (error) {
       console.error("Error loading products:", error);
     } else {
-      // Apply SEO titles, review counts, and fix sizes as requested
+      // Use database products and apply local images for demo consistency
       const enhancedData = (data || []).map(p => {
-        let seoName = p.name;
-        let reviewCount = "1.2k";
-        let weight = p.weight;
-
-        // Map by price to identify the variants correctly
-        if (p.price === 9500 || p.name.includes("20g")) {
-          seoName = "Pure Himalayan Shilajit Resin 20g | 40 Servings | PCSIR Certified";
-          reviewCount = "12k";
-          weight = "20g";
-        } else if (p.price === 11200 || p.name.includes("30g")) {
-          seoName = "Himalayan Shilajit Resin 30g | 60 Servings | Lab Tested Pure Resin";
-          reviewCount = "14k";
-          weight = "30g";
-        } else if (p.price === 16900 || p.name.includes("50g")) {
-          seoName = "Premium Himalayan Shilajit Resin 50g | 100 Servings | High Potency Natural Resin";
-          reviewCount = "15k";
-          weight = "50g";
-        }
-
         return {
           ...p,
-          name: seoName,
-          review_count: reviewCount,
-          weight: weight,
           image_url: "/images/products/shilajit-display-jar.jpg",
           hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg"
         };
