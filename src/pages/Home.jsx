@@ -55,7 +55,7 @@ export default function Home() {
       titleGold: "Wellness",
       tagline: "Pure Himalayan Resin · Natural Energy · Dissolve in Warmth",
       cta: "START YOUR RITUAL",
-      objectFit: "object-contain",
+      objectPosition: "object-bottom",
     },
     {
       image: "/green-mountain-hero.png",
