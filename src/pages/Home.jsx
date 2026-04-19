@@ -399,7 +399,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-[60vh] md:h-screen min-h-[400px] md:min-h-[500px] max-h-[900px] overflow-hidden bg-black">
+      <section className="relative w-full h-[60vh] md:h-[75vh] min-h-[400px] md:min-h-[500px] max-h-[900px] overflow-hidden bg-black">
         {/* Slide backgrounds */}
         {heroSlides.map((slide, index) => (
           <div
@@ -409,7 +409,7 @@ export default function Home() {
             <img
               src={slide.image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover object-bottom"
+              className="w-full h-full object-cover object-center"
             />
             {/* Dark gradient overlay - heavier at bottom and top */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
