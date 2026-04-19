@@ -409,7 +409,7 @@ export default function Home() {
             <img
               src={slide.image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-bottom"
             />
             {/* Dark gradient overlay - heavier at bottom and top */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
