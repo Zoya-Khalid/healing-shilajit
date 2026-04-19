@@ -49,7 +49,7 @@ export default function Home() {
 
   const heroSlides = [
     {
-      image: "/shilajit-lifestyle-cup.png",
+      image: "/green-mountain-hero.png",
       eyebrow: "HERBVEDA SHILAJIT",
       titleWhite: "Nature's",
       titleGold: "Vitality",
