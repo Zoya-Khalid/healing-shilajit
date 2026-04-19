@@ -49,15 +49,6 @@ export default function Home() {
 
   const heroSlides = [
     {
-      image: "/shilajit-lifestyle-cup.png",
-      eyebrow: "THE PERFECT RITUAL",
-      titleWhite: "Daily",
-      titleGold: "Wellness",
-      tagline: "Pure Himalayan Resin · Natural Energy · Dissolve in Warmth",
-      cta: "START YOUR RITUAL",
-      objectPosition: "object-bottom",
-    },
-    {
       image: "/green-mountain-hero.png",
       eyebrow: "HERBVEDA SHILAJIT",
       titleWhite: "Nature's",
