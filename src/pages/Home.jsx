@@ -139,48 +139,41 @@ export default function Home() {
 
   const featuredProducts = [
     {
-      id: "shilajit-resin-premium",
-      name: "Premium Himalayan Shilajit Resin",
+      id: "shilajit-resin-20g",
+      name: "Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified",
+      price: 12500,
+      image_url: "/images/products/shilajit-premium-packaging.jpg",
+      hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg",
+      category: "Pure Resin",
+      weight: "20g",
+      servings: 100,
+      stock: 50,
+      review_count: "847"
+    },
+    {
+      id: "shilajit-resin-30g",
+      name: "Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural",
       price: 18500,
-      image_url: "/images/products/shilajit-resin.jpg",
-      hover_image_url: "/images/products/shilajit-nutrition.jpg",
+      image_url: "/images/products/shilajit-premium-packaging.jpg",
+      hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg",
       category: "Pure Resin",
       weight: "30g",
       servings: 150,
-      stock: 50,
-    },
-    {
-      id: "shilajit-honey-blend",
-      name: "Gold Grade Shilajit Honey",
-      price: 12500,
-      image_url: "/images/products/shilajit-resin.jpg",
-      hover_image_url: "/images/products/shilajit-nutrition.jpg",
-      category: "Honey Blend",
-      weight: "250g",
-      servings: 50,
       stock: 30,
+      review_count: "1,134"
     },
     {
-      id: "shilajit-capsules",
-      name: "Potent Shilajit Capsules",
-      price: 9500,
-      image_url: "/images/products/shilajit-resin.jpg",
-      hover_image_url: "/images/products/shilajit-nutrition.jpg",
-      category: "Capsules",
-      weight: "60 Capsules",
-      servings: 60,
+      id: "shilajit-resin-50g",
+      name: "Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested",
+      price: 28500,
+      image_url: "/images/products/shilajit-premium-packaging.jpg",
+      hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg",
+      category: "Pure Resin",
+      weight: "50g",
+      servings: 250,
       stock: 100,
-    },
-    {
-      id: "shilajit-extract",
-      name: "Liquid Shilajit Extract",
-      price: 15000,
-      image_url: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600",
-      category: "Liquid",
-      weight: "50ml",
-      servings: 100,
-      stock: 25,
-    },
+      review_count: "2,310"
+    }
   ];
 
   useEffect(() => {
@@ -246,17 +239,29 @@ export default function Home() {
 
   const loadFeaturedProducts = async () => {
     try {
-      const { data, error } = await supabase.from("products").select("*").eq("is_active", true).limit(4);
+      const { data, error } = await supabase.from("products").select("*").eq("is_active", true).limit(3);
 
       if (error) throw error;
+      
+      // SEO-Friendly Titles and Unique Review Counts for the 3 products
+      const seoTitles = [
+        "Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified",
+        "Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural",
+        "Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested"
+      ];
+      
+      const reviewCounts = ["847", "1,134", "2,310"];
+
       // Enhance database products with local images/hover images for demo
-      const enhancedData = data.map((p) => {
-        const localJar = "/images/products/shilajit-display-jar.jpg";
+      const enhancedData = data.map((p, idx) => {
+        const localBox = "/images/products/shilajit-premium-packaging.jpg";
         const localNutrition = "/images/products/shilajit-nutrition-infographic.jpg";
 
         return {
           ...p,
-          image_url: localJar,
+          name: seoTitles[idx] || p.name,
+          review_count: reviewCounts[idx] || "1.2k",
+          image_url: localBox,
           hover_image_url: localNutrition,
         };
       });
