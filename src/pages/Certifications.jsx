@@ -32,7 +32,7 @@ export default function Certifications() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 md:pt-32 pb-12 max-md:!pt-[80px] max-md:!px-[16px] max-md:!pb-[0px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 md:pt-32 pb-0 max-md:!pt-[80px] max-md:!px-[16px] max-md:!pb-[0px]">
         <div className="text-center mb-12 max-md:!mb-[16px]">
           <h1 className="text-6xl md:text-7xl font-serif font-bold inline-block border-b-8 border-[#D4AF37] pb-4 tracking-tight max-md:!text-[28px] max-md:!font-[700] max-md:!pb-0 max-md:!border-b-0 max-md:!mb-0">
             Certifications
@@ -45,7 +45,7 @@ export default function Certifications() {
       </div>
 
       {/* Main Content */}
-      <section className="py-20 max-md:!py-[40px]">
+      <section className="pb-20 pt-8 max-md:!pb-[40px] max-md:!pt-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Reports Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-md:!gap-6">
