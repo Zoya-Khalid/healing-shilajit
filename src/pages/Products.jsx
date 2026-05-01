@@ -213,7 +213,7 @@ export default function Products() {
       </div>
 
       {/* Benefits of Shilajit Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white max-md:!py-[16px]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-md:!mb-[16px]">
             <div className="inline-block group max-md:flex max-md:flex-col max-md:items-center">
@@ -274,7 +274,7 @@ export default function Products() {
       </section>
 
       {/* How to Use Section */}
-      <section className="bg-white text-black py-20">
+      <section className="bg-white text-black py-20 max-md:!py-[16px]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-md:!mb-[24px]">
             <h2 className="text-4xl md:text-6xl font-serif font-bold inline-block border-b-8 border-[#D4AF37] pb-4 tracking-tight max-md:!text-[22px] max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[4px]">How to Use</h2>
