@@ -233,7 +233,7 @@ export default function About() {
                     desc: "Best taken on an empty stomach for maximum absorption."
                   }
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 md:gap-8 items-start max-lg:justify-center max-lg:text-left">
+                  <div key={i} className="flex gap-4 md:gap-8 items-start max-lg:justify-center max-lg:text-center">
                     <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-lg md:text-2xl shadow-[0_0_20px_rgba(212,175,55,0.1)]">
                       {item.step}
                     </div>
