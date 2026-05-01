@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 import { format } from "date-fns";
-import { Star, MessageSquare, Send, Home, CheckCircle2 } from "lucide-react";
+import { Star, MessageSquare, Send, Home, CheckCircle2, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
 
 export default function AdminReviews() {
@@ -79,6 +79,25 @@ export default function AdminReviews() {
     } catch (error) {
       console.error("Error:", error);
       toast.error("Failed to update status. Please ensure 'show_on_home' column exists in Supabase.");
+    }
+  };
+
+  const handleDelete = async (reviewId) => {
+    if (!window.confirm("Are you sure you want to delete this review? This action cannot be undone.")) return;
+
+    try {
+      const { error } = await supabase
+        .from("reviews")
+        .delete()
+        .eq("id", reviewId);
+
+      if (error) throw error;
+
+      toast.success("Review deleted successfully");
+      loadReviews();
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Failed to delete review");
     }
   };
 
@@ -164,6 +183,14 @@ export default function AdminReviews() {
                     <span className="hidden max-md:!inline">Home</span>
                   </button>
                 </div>
+                <button
+                  onClick={() => handleDelete(review.id)}
+                  className="mt-3 flex items-center justify-center gap-1.5 w-full py-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all text-xs font-bold border border-transparent hover:border-red-100 max-md:!mt-2"
+                  title="Delete Review"
+                >
+                  <Trash2 className="h-3 w-3" />
+                  <span>Delete Review</span>
+                </button>
               </div>
             </div>
 
