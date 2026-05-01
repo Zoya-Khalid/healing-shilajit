@@ -108,7 +108,34 @@ export default function Home() {
     },
   };
 
-  const allReviews = [...dynamicReviews];
+  const reviews = [
+    {
+      name: "James Thompson",
+      text: "I bought this for my father and he's seen a very positive effect. His joint and back pain was gone within a week. Very impressed with the quality.",
+      rating: 5,
+    },
+    {
+      name: "David Richardson",
+      text: "Beautiful packaging and excellent quality. You can feel its purity and effectiveness from the very first use. Highly recommended.",
+      rating: 5,
+    },
+    {
+      name: "Oliver Wright",
+      text: "Best Shilajit brand around. Tired of using fakes, I finally found the real deal. It helped me feel more active and focused throughout the day. Definitely worth trying.",
+      rating: 5,
+    },
+    {
+      name: "Sophie Evans",
+      text: "I ordered this for my husband. I can't believe how effective it is. His performance has increased tenfold. Highly recommended.",
+      rating: 5,
+    },
+    {
+      name: "George Miller",
+      text: "Premium quality at its finest. Tried both of their products, the Shilajit Resin and Honey Shilajit. Both were perfect. I'd recommend the Honey Shilajit especially.",
+      rating: 5,
+    },
+  ];
+  const allReviews = [...dynamicReviews, ...reviews];
 
   const featuredProducts = [
     {
