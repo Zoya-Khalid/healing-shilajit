@@ -195,30 +195,27 @@ export default function About() {
             <h2 className="text-5xl md:text-7xl font-serif font-bold inline-block border-b-8 border-amber-600 pb-4 tracking-tight max-md:!text-[22px] max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[4px]">How to Use</h2>
             <div className="hidden max-md:!block max-md:!w-[60px] max-md:!h-[4px] max-md:!bg-amber-600 max-md:!rounded-full max-md:!mx-auto max-md:!mt-0"></div>
           </div>
-
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-            {/* Left Column - Product Image */}
-            <div className="w-full lg:flex-1 max-md:px-4">
-              <div className="relative group mx-auto max-w-lg lg:max-w-none">
-                <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-black/5 shadow-[0_0_50px_rgba(212,175,55,0.05)] transition-transform duration-700 group-hover:scale-[1.02] aspect-square md:aspect-[4/5] max-md:max-h-[350px]">
+          <div className="flex flex-col items-center gap-10 lg:gap-16 max-w-4xl mx-auto">
+            {/* Top - Product Image */}
+            <div className="w-full max-md:px-4">
+              <div className="relative group mx-auto max-w-lg">
+                <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-black/5 shadow-[0_0_50px_rgba(212,175,55,0.05)] transition-transform duration-700 group-hover:scale-[1.02] aspect-square md:aspect-square">
                   <img
                     src="/images/about/how-to-use-drops.jpg"
                     alt="Herbveda Shilajit Usage Routine"
                     className="w-full h-full object-contain bg-white"
                   />
                 </div>
-                {/* Decorative Glow */}
-                <div className="absolute -inset-4 bg-amber-500/5 rounded-[3.5rem] blur-2xl -z-10 group-hover:bg-amber-500/10 transition-all duration-700 max-md:hidden"></div>
               </div>
             </div>
 
-            {/* Right Column - Steps */}
-            <div className="w-full lg:flex-1 space-y-8 md:space-y-10 px-6 md:px-0">
-              <div className="space-y-2 max-md:text-center lg:text-left">
+            {/* Bottom - Steps */}
+            <div className="w-full space-y-8 md:space-y-12 px-6 md:px-0 text-center">
+              <div className="space-y-2">
                 <span className="text-[#D4AF37] font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Simple 3-Step Routine</span>
               </div>
 
-              <div className="space-y-6 md:space-y-8">
+              <div className="space-y-8 md:space-y-12">
                 {[
                   {
                     step: 1,
@@ -236,23 +233,17 @@ export default function About() {
                     desc: "Best taken on an empty stomach for maximum absorption."
                   }
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 md:gap-6 items-start">
-                    <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-lg md:text-2xl shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                  <div key={i} className="flex flex-col items-center gap-4 md:gap-6">
+                    <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-xl md:text-3xl shadow-[0_0_20px_rgba(212,175,55,0.1)]">
                       {item.step}
                     </div>
-                    <div className="space-y-1 md:space-y-2">
-                      <h3 className="text-lg md:text-2xl font-bold text-black max-md:text-[15px]">{item.title}</h3>
-                      <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-md:text-[13px]">{item.desc}</p>
+                    <div className="space-y-2">
+                      <h3 className="text-xl md:text-3xl font-bold text-black">{item.title}</h3>
+                      <p className="text-gray-600 text-base md:text-xl leading-relaxed max-w-2xl mx-auto">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* Pro Tip Box */}
-              <div className="bg-gray-50 border-l-4 border-[#D4AF37] p-5 md:p-8 rounded-r-2xl mx-2 md:mx-0">
-                <p className="text-gray-700 text-sm md:text-lg italic leading-relaxed max-md:text-[12px]">
-                  <strong className="text-[#D4AF37] not-italic">Pro Tip —</strong> Consistency is key. Use daily for at least 2–3 weeks to feel the full benefit.
-                </p>
               </div>
             </div>
           </div>
