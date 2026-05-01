@@ -96,8 +96,8 @@ export default function AdminReviews() {
       toast.success("Review deleted successfully");
       loadReviews();
     } catch (error) {
-      console.error("Error:", error);
-      toast.error("Failed to delete review");
+      console.error("Error deleting review:", error);
+      toast.error(`Failed to delete: ${error.message || "Unknown error"}`);
     }
   };
 
