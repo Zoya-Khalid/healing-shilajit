@@ -215,34 +215,36 @@ export default function About() {
                 <span className="text-[#D4AF37] font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Simple 3-Step Routine</span>
               </div>
 
-              <div className="space-y-8 md:space-y-10">
-                {[
-                  {
-                    step: 1,
-                    title: "Take a pea-sized amount",
-                    desc: "Around 250–500 mg, roughly the size of a grain of rice."
-                  },
-                  {
-                    step: 2,
-                    title: "Dissolve in warm water or milk",
-                    desc: "Stir until fully dissolved. Never use boiling water, keep it warm."
-                  },
-                  {
-                    step: 3,
-                    title: "Drink in the morning or before bed",
-                    desc: "Best taken on an empty stomach for maximum absorption."
-                  }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4 md:gap-8 items-start max-lg:max-w-fit max-lg:mx-auto max-lg:text-left">
-                    <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-lg md:text-2xl shadow-[0_0_20px_rgba(212,175,55,0.1)]">
-                      {item.step}
+              <div className="flex max-lg:justify-center w-full">
+                <div className="space-y-8 md:space-y-10">
+                  {[
+                    {
+                      step: 1,
+                      title: "Take a pea-sized amount",
+                      desc: "Around 250–500 mg, roughly the size of a grain of rice."
+                    },
+                    {
+                      step: 2,
+                      title: "Dissolve in warm water or milk",
+                      desc: "Stir until fully dissolved. Never use boiling water, keep it warm."
+                    },
+                    {
+                      step: 3,
+                      title: "Drink in the morning or before bed",
+                      desc: "Best taken on an empty stomach for maximum absorption."
+                    }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4 md:gap-8 items-start text-left">
+                      <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-lg md:text-2xl shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                        {item.step}
+                      </div>
+                      <div className="space-y-1 md:space-y-2">
+                        <h3 className="text-lg md:text-2xl font-bold text-black max-md:text-[15px]">{item.title}</h3>
+                        <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-md:text-[13px]">{item.desc}</p>
+                      </div>
                     </div>
-                    <div className="space-y-1 md:space-y-2">
-                      <h3 className="text-lg md:text-2xl font-bold text-black max-md:text-[15px]">{item.title}</h3>
-                      <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-md:text-[13px]">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
