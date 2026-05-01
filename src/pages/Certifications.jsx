@@ -32,19 +32,17 @@ export default function Certifications() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-40 pb-20 bg-black text-white rounded-b-[3rem] max-md:!pt-[100px] max-md:!pb-[40px] max-md:!rounded-b-[20px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block p-3 bg-amber-500/10 rounded-2xl mb-6 max-md:!mb-4">
-            <Shield className="h-10 w-10 text-amber-500 max-md:!h-8 max-md:!w-8" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 max-md:!text-[32px] max-md:!mb-4">
-            Our <span className="text-amber-500">Certifications</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 md:pt-32 pb-12 max-md:!pt-[80px] max-md:!px-[16px] max-md:!pb-[0px]">
+        <div className="text-center mb-12 max-md:!mb-[16px]">
+          <h1 className="text-6xl md:text-7xl font-serif font-bold inline-block border-b-8 border-[#D4AF37] pb-4 tracking-tight max-md:!text-[28px] max-md:!font-[700] max-md:!pb-0 max-md:!border-b-0 max-md:!mb-0">
+            Certifications
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed max-md:!text-[14px] max-md:!leading-[1.6]">
+          <div className="hidden max-md:!block max-md:!w-[60px] max-md:!h-[4px] max-md:!bg-[#D4AF37] max-md:!rounded-full max-md:!mx-auto max-md:!mt-0"></div>
+          <p className="text-gray-500 text-lg max-w-3xl mx-auto mt-6 max-md:!text-[13px] max-md:!mt-[8px] max-md:!px-[16px] max-md:!leading-[1.6] max-md:!mb-[16px]">
             At Herbveda, transparency is our priority. Every batch of our Himalayan Shilajit is rigorously tested by the Pakistan Council of Scientific & Industrial Research (PCSIR) to ensure 100% purity, safety, and potency.
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Main Content */}
       <section className="py-20 max-md:!py-[40px]">
