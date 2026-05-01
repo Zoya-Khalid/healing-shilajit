@@ -512,7 +512,7 @@ export default function Home() {
         <section className="flex overflow-x-auto pb-8 gap-4 md:gap-8 snap-x snap-mandatory xl:grid xl:grid-cols-5 hide-scrollbar max-xl:px-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-xl:!h-auto max-xl:!min-h-0 max-xl:!my-0 max-xl:!pt-4 max-xl:!pb-4">
           <div 
             onClick={() => setSelectedFeature("Lab Tested")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[175px] max-md:!min-w-[175px] max-md:!min-h-[200px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
               <Award className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
@@ -523,7 +523,7 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("100% Natural")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[175px] max-md:!min-w-[175px] max-md:!min-h-[200px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
               <Shield className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
@@ -534,7 +534,7 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("Free Shipping")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[175px] max-md:!min-w-[175px] max-md:!min-h-[200px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
               <Truck className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
@@ -545,7 +545,7 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("Top Rated")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[175px] max-md:!min-w-[175px] max-md:!min-h-[200px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
               <Star className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
@@ -556,7 +556,7 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("Trusted Products")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[175px] max-md:!min-w-[175px] max-md:!min-h-[200px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
               <Shield className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
