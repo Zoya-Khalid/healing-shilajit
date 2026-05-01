@@ -95,7 +95,7 @@ export default function ProductCard({ product }) {
         <div className="flex gap-3 max-md:!gap-[6px] mt-auto">
           <button
             onClick={handleAddToCart}
-            className="flex-1 w-full bg-black text-white font-bold py-2.5 rounded-full text-sm hover:bg-gray-800 transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
+            className="flex-1 w-full border-2 border-black bg-white text-black font-bold py-2.5 rounded-full text-sm hover:bg-gray-100 transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
           >
             Add to Cart
           </button>
