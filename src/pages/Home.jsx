@@ -509,60 +509,60 @@ export default function Home() {
       {/* Main Content Container */}
       <div className="pt-20 px-[12px] md:px-4 max-w-[1600px] mx-auto space-y-20 max-md:!space-y-0 max-md:!pt-0 max-md:!pb-[24px]">
         {/* Features */}
-        <section className="flex overflow-x-auto pb-4 gap-4 sm:gap-8 snap-x snap-mandatory lg:grid lg:grid-cols-5 hide-scrollbar max-lg:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-lg:!h-auto max-lg:!min-h-0 max-lg:!my-0 max-lg:!pt-[16px] max-lg:!pb-[16px]">
+        <section className="flex overflow-x-auto pb-8 gap-4 md:gap-8 snap-x snap-mandatory xl:grid xl:grid-cols-5 hide-scrollbar max-xl:px-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-xl:!h-auto max-xl:!min-h-0 max-xl:!my-0 max-xl:!pt-4 max-xl:!pb-4">
           <div 
             onClick={() => setSelectedFeature("Lab Tested")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Award className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
+              <Award className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
             </div>
-            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Lab Tested</h3>
-            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Certified for purity and potency by top USA labs.</p>
+            <h3 className="max-md:text-[13px] max-md:font-bold max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Lab Tested</h3>
+            <p className="text-gray-500 max-md:text-[10px] max-md:leading-tight md:text-base">Certified for purity and potency by top USA labs.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("100% Natural")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Shield className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
+              <Shield className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
             </div>
-            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">100% Natural</h3>
-            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Pure resin, no additives, fillers, or heavy metals.</p>
+            <h3 className="max-md:text-[13px] max-md:font-bold max-md:mb-1 md:font-bold md:text-2xl md:mb-4">100% Natural</h3>
+            <p className="text-gray-500 max-md:text-[10px] max-md:leading-tight md:text-base">Pure resin, no additives, fillers, or heavy metals.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("Free Shipping")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Truck className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
+              <Truck className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
             </div>
-            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Free Shipping</h3>
-            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Complimentary express shipping on all orders.</p>
+            <h3 className="max-md:text-[13px] max-md:font-bold max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Free Shipping</h3>
+            <p className="text-gray-500 max-md:text-[10px] max-md:leading-tight md:text-base">Complimentary express shipping on all orders.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("Top Rated")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Star className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
+              <Star className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
             </div>
-            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Top Rated</h3>
-            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Loved by thousands of customers worldwide.</p>
+            <h3 className="max-md:text-[13px] max-md:font-bold max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Top Rated</h3>
+            <p className="text-gray-500 max-md:text-[10px] max-md:leading-tight md:text-base">Loved by thousands of customers worldwide.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("Trusted Products")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-md:!rounded-[1.5rem] max-md:!p-4 max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-[220px] md:w-[240px] md:min-w-[240px] md:min-h-[320px] xl:w-auto xl:min-w-0 lg:p-10 cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Shield className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[40px] max-md:h-[40px] max-md:mb-3 md:w-20 md:h-20 md:mb-8">
+              <Shield className="text-[#D4AF37] max-md:w-[22px] max-md:h-[22px] md:h-10 md:w-10" />
             </div>
-            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Trusted Products</h3>
-            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Premium quality products trusted by professionals.</p>
+            <h3 className="max-md:text-[13px] max-md:font-bold max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Trusted Products</h3>
+            <p className="text-gray-500 max-md:text-[10px] max-md:leading-tight md:text-base">Premium quality products trusted by professionals.</p>
           </div>
         </section>
 
