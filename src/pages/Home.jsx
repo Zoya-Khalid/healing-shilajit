@@ -389,7 +389,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-[75vh] md:h-[92vh] min-h-[500px] md:min-h-[700px] md:max-h-none overflow-hidden bg-black">
+      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[75vh] lg:h-[92vh] min-h-[280px] md:min-h-[600px] overflow-hidden bg-black">
         {/* Slide backgrounds */}
         {heroSlides.map((slide, index) => (
           <div
@@ -401,10 +401,10 @@ export default function Home() {
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
-                  className={`w-full h-full ${slide.objectFit || 'object-cover'} ${slide.objectPosition || 'object-top'} transition-all duration-700`}
+                  className={`w-full h-full ${slide.objectFit || 'max-md:object-contain object-cover'} ${slide.objectPosition || 'object-top md:object-center'} transition-all duration-700`}
                   style={{ 
                     filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
-                    imageRendering: 'crisp-edges'
+                    imageRendering: 'auto'
                   }}
                 />
               </Link>
@@ -412,10 +412,10 @@ export default function Home() {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className={`w-full h-full ${slide.objectFit || 'object-cover'} ${slide.objectPosition || 'object-top'} transition-all duration-700`}
+                className={`w-full h-full ${slide.objectFit || 'max-md:object-contain object-cover'} ${slide.objectPosition || 'object-top md:object-center'} transition-all duration-700`}
                 style={{ 
                   filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
-                  imageRendering: 'crisp-edges'
+                  imageRendering: 'auto'
                 }}
               />
             )}
