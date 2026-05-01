@@ -399,7 +399,7 @@ export default function Home() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
+            className={`absolute top-10 md:top-[300px] inset-x-0 bottom-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
           >
             {slide.isFullClickable ? (
               <Link to={slide.link} className="block w-full h-full">
