@@ -717,7 +717,7 @@ export default function Home() {
               Discover the story behind Herbveda Shilajit and how we bring the purest minerals from the heart of the Himalayas to your doorstep.
             </p>
             <Link to="/about">
-              <button className="bg-black text-white px-12 py-4 text-lg font-bold rounded-full hover:bg-gray-900 transition-all shadow-lg hover:scale-105 max-md:!text-[14px] max-md:!py-[12px] max-md:!px-[32px]">
+              <button className="bg-[#D4AF37] text-black px-14 py-5 text-xl font-bold rounded-full hover:bg-[#B8860B] transition-all shadow-lg hover:scale-105 max-md:!text-[16px] max-md:!py-[14px] max-md:!px-[40px]">
                 About Us
               </button>
             </Link>
