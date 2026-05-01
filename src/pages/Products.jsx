@@ -206,7 +206,7 @@ export default function Products() {
 
       {/* Benefits of Shilajit Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-md:!mb-[16px]">
             <div className="inline-block group max-md:flex max-md:flex-col max-md:items-center">
               <h2 className="text-4xl md:text-5xl max-md:!text-[22px] font-serif font-bold inline-block text-black border-b-8 border-[#D4AF37] pb-4 max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[12px]">Benefits Of Shilajit</h2>
@@ -214,7 +214,7 @@ export default function Products() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[12px] md:gap-8">
             {[
               {
                 title: "Boost Testosterone",
@@ -248,17 +248,17 @@ export default function Products() {
                 objectPosition: "object-[center_20%]",
               },
             ].map((benefit, index) => (
-              <div key={index} className="group relative bg-black text-white rounded-[20px] md:rounded-[3rem] p-8 md:p-12 flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-900/50 border-2 border-[#D4AF37]">
-                <div className="w-full h-[180px] md:h-80 mb-6 md:mb-10 rounded-[15px] md:rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-amber-500/50 transition-all duration-500">
+              <div key={index} className="group relative bg-black text-white rounded-[12px] md:rounded-[3rem] p-[10px] md:p-8 flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-900/50 border-2 border-[#D4AF37]">
+                <div className="w-full h-[120px] md:h-48 mb-[10px] md:mb-6 rounded-[10px] md:rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-amber-500/50 transition-all duration-500">
                   <img 
                     src={benefit.image} 
                     alt={benefit.title} 
                     className={`w-full h-full object-cover ${benefit.objectPosition || 'object-center'} transform group-hover:scale-110 transition-transform duration-700`} 
                   />
                 </div>
-                <h3 className="text-xl md:text-4xl font-bold mb-4 md:mb-8 text-amber-500 group-hover:text-amber-400">{benefit.title}</h3>
-                <p className="text-gray-300 leading-relaxed text-sm md:text-lg group-hover:text-white transition-colors max-w-2xl">{benefit.description}</p>
-                <div className="absolute inset-0 rounded-[20px] md:rounded-[3rem] bg-gradient-to-tr from-amber-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <h3 className="text-[13px] md:text-2xl font-bold mb-1 md:mb-4 text-amber-500 group-hover:text-amber-400">{benefit.title}</h3>
+                <p className="text-gray-300 leading-[1.4] md:leading-relaxed text-[11px] md:text-sm group-hover:text-white transition-colors">{benefit.description}</p>
+                <div className="absolute inset-0 rounded-[12px] md:rounded-[3rem] bg-gradient-to-tr from-amber-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             ))}
           </div>
