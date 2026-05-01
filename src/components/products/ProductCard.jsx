@@ -45,23 +45,23 @@ export default function ProductCard({ product }) {
   };
 
   return (
-    <div onClick={handleCardClick} className="group cursor-pointer bg-white p-6 rounded-[2.5rem] border-2 border-black shadow-sm hover:shadow-xl transition-all duration-500 max-md:!p-[10px] max-md:!rounded-[12px] md:p-5 max-md:flex max-md:flex-col max-md:justify-between h-full">
+    <div onClick={handleCardClick} className="group cursor-pointer bg-white p-6 rounded-[2.5rem] border-2 border-black shadow-sm hover:shadow-xl transition-all duration-500 max-md:!p-[8px] max-md:!rounded-[10px] md:p-5 max-md:flex max-md:flex-col max-md:justify-between h-full">
       {/* 1. Image Container - Full Wrap, No Padding */}
-      <div className="relative mb-6 overflow-hidden aspect-square rounded-[1.5rem] border border-gray-100 max-md:!mb-[8px] max-md:!aspect-auto max-md:!h-[140px] max-md:!rounded-[10px] md:aspect-square md:rounded-[1.5rem]">
+      <div className="relative mb-6 overflow-hidden aspect-square rounded-[1.5rem] border border-gray-100 bg-white max-md:!mb-[6px] max-md:!aspect-square max-md:!h-[110px] max-md:!rounded-[8px] md:aspect-square md:rounded-[1.5rem]">
         {/* Product Images */}
-        <div className="w-full h-full relative">
+        <div className="w-full h-full relative p-2 max-md:!p-1">
           {/* Main Image */}
           <img
             src={product.image_url || "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600"}
             alt={product.name}
-            className={`w-full h-full object-cover transition-all duration-700 rounded-[1.5rem] max-md:!rounded-[10px] ${product.hover_image_url ? "group-hover:opacity-0 group-hover:scale-110" : "group-hover:scale-105"}`}
+            className={`w-full h-full object-contain transition-all duration-700 rounded-[1.5rem] max-md:!rounded-[10px] ${product.hover_image_url ? "group-hover:opacity-0 group-hover:scale-110" : "group-hover:scale-105"}`}
           />
           {/* Hover Image (Nutrition Facts) */}
           {product.hover_image_url && (
             <img
               src={product.hover_image_url}
               alt={`${product.name} Nutrition`}
-              className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100 rounded-[1.5rem] max-md:!rounded-[10px]"
+              className="absolute inset-0 w-full h-full object-contain p-2 max-md:!p-1 opacity-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100 rounded-[1.5rem] max-md:!rounded-[10px]"
             />
           )}
         </div>
@@ -72,12 +72,12 @@ export default function ProductCard({ product }) {
         {/* Title & Price Row */}
         <div className="flex flex-col mb-1 max-md:mb-0">
           <h3 
-            className="font-bold text-lg text-black leading-[1.4] group-hover:text-gray-700 transition-colors max-md:!text-[12px] max-md:!leading-[1.4] max-md:min-h-[36px] max-md:mb-0 md:text-[16px] md:font-semibold md:mt-[12px] md:mb-[6px]"
-            style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'visible' }}
+            className="font-bold text-lg text-black leading-[1.4] group-hover:text-gray-700 transition-colors max-md:!text-[10px] max-md:!leading-[1.3] max-md:min-h-[26px] max-md:mb-0 md:text-[16px] md:font-semibold md:mt-[12px] md:mb-[6px]"
+            style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
           >
             {product.name}
           </h3>
-          <div className="text-black font-bold text-lg max-md:!text-[13px] max-md:!font-[600] max-md:!my-[6px] md:text-[18px] md:font-bold md:mb-[6px]">
+          <div className="text-black font-bold text-lg max-md:!text-[11px] max-md:!font-[700] max-md:!my-[4px] md:text-[18px] md:font-bold md:mb-[6px]">
             Rs.{product.price?.toLocaleString()}
           </div>
         </div>
@@ -86,27 +86,28 @@ export default function ProductCard({ product }) {
         <div className="flex items-center gap-2 mb-6 max-md:!mb-[4px] md:mb-[12px]">
           <div className="flex text-[#D4AF37]">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-3.5 w-3.5 fill-current max-md:!w-[10px] max-md:!h-[10px]" />
+              <Star key={i} className="h-3.5 w-3.5 fill-current max-md:!w-[8px] max-md:!h-[8px]" />
             ))}
           </div>
-          <span className="text-xs text-gray-500 font-medium max-md:!text-[11px] md:text-[13px]">({product.review_count || "1.2k"} Reviews)</span>
+          <span className="text-xs text-gray-500 font-medium max-md:!text-[9px] md:text-[13px]">({product.review_count || "1.2k"})</span>
         </div>
 
-        <div className="flex gap-3 max-md:!gap-[6px] mt-auto">
+        <div className="flex gap-2 max-md:!gap-[4px] mt-auto">
           <button
             onClick={handleAddToCart}
-            className="flex-1 w-full border-2 border-black bg-white text-black font-bold py-2.5 rounded-full text-sm hover:bg-gray-100 transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
+            className="flex-1 w-full border-2 border-black bg-white text-black font-bold py-2.5 rounded-full text-sm hover:bg-gray-100 transition-all max-md:!text-[9px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[28px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
           >
-            Add to Cart
+            Add
           </button>
           <button
             onClick={handleBuyNow}
-            className="flex-1 w-full bg-[#D4AF37] text-black font-bold py-2.5 rounded-full text-sm hover:bg-[#B8860B] transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
+            className="flex-1 w-full bg-[#D4AF37] text-black font-bold py-2.5 rounded-full text-sm hover:bg-[#B8860B] transition-all max-md:!text-[9px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[28px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
           >
-            Buy Now
+            Buy
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

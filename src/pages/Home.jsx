@@ -608,11 +608,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex overflow-x-auto gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mb-16 max-md:mb-[24px] hide-scrollbar max-md:px-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 mb-16 max-md:mb-[24px]">
             {dynamicProducts.slice(0, 3).map((product) => (
-              <div key={product.id} className="flex-shrink-0 w-[280px] max-md:w-[85vw] md:w-auto snap-center">
-                <ProductCard product={product} />
-              </div>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
