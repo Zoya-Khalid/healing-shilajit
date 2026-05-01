@@ -87,11 +87,11 @@ export default function About() {
             {/* Right Content */}
             <div className="space-y-8 pl-0 lg:pl-10 max-lg:!w-full max-lg:!space-y-[20px] max-lg:!px-[12px] max-lg:!text-center">
 
-              <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight max-lg:text-center">
+              <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight max-lg:text-center max-md:!text-[24px]">
                 About <span className="text-[#D4AF37]">Us</span>
               </h1>
 
-              <div className="space-y-6 text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl mx-auto max-lg:!leading-[1.6]">
+              <div className="space-y-6 text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl mx-auto max-lg:!leading-[1.6] max-md:!text-[13px] max-md:!space-y-4">
                 <p>
                   Welcome to Herbveda, where ancient herbal wisdom meets contemporary wellness. We are committed to bringing you the most authentic and potent herbal products to support your health and wellbeing from the inside out.
                 </p>
@@ -102,7 +102,7 @@ export default function About() {
 
               <div className="pt-4 max-lg:!pt-[16px] max-lg:!text-center">
                 <Link to="/products" className="max-lg:!inline-block max-lg:!w-auto">
-                  <button className="bg-[#D4AF37] hover:bg-[#B8962E] text-black px-10 py-4 font-bold rounded-full tracking-widest uppercase shadow-xl transition-all hover:scale-105 active:scale-95 max-lg:!px-[32px] max-lg:!py-[12px] max-lg:!w-auto max-lg:!inline-block max-lg:!mt-[8px]">
+                  <button className="bg-[#D4AF37] hover:bg-[#B8962E] text-black px-10 py-4 font-bold rounded-full tracking-widest uppercase shadow-xl transition-all hover:scale-105 active:scale-95 max-lg:!px-[32px] max-lg:!py-[12px] max-lg:!w-auto max-lg:!inline-block max-lg:!mt-[8px] max-md:!text-[13px]">
                     Explore Shop
                   </button>
                 </Link>

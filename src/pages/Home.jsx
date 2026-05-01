@@ -456,7 +456,7 @@ export default function Home() {
             {/* Tagline */}
             <p
               key={`tagline-${currentSlide}`}
-              className="text-white/80 text-[9px] sm:text-base tracking-widest mb-6 md:mb-8 animate-fade-in-up animation-delay-400"
+              className="text-white/80 text-[8px] sm:text-base tracking-widest mb-6 md:mb-8 animate-fade-in-up animation-delay-400"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
             >
               {heroSlides[currentSlide].tagline}
@@ -717,11 +717,11 @@ export default function Home() {
         {/* About CTA Section */}
         <section className="pb-8 pt-0 text-center max-md:!pt-0 max-md:!pb-[20px]">
           <div className="max-w-4xl mx-auto px-4">
-            <p className="text-gray-600 text-lg mb-6 max-md:!text-[13px] max-md:!mb-4 mt-0">
+            <p className="text-gray-600 text-lg mb-6 max-md:!text-[12px] max-md:!mb-4 mt-0">
               Discover the story behind Herbveda Shilajit and how we bring the purest minerals from the heart of the Himalayas to your doorstep.
             </p>
             <Link to="/about">
-              <button className="bg-[#D4AF37] text-black px-20 py-5 text-xl font-bold rounded-full hover:bg-[#B8860B] transition-all shadow-lg hover:scale-105 max-md:!text-[16px] max-md:!py-[14px] max-md:!px-[60px]">
+              <button className="bg-[#D4AF37] text-black px-20 py-5 text-xl font-bold rounded-full hover:bg-[#B8860B] transition-all shadow-lg hover:scale-105 max-md:!text-[14px] max-md:!py-[12px] max-md:!px-[40px]">
                 About Us
               </button>
             </Link>
