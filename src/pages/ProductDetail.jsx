@@ -317,12 +317,9 @@ export default function ProductDetail() {
               <div>
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="text-2xl font-bold">Customer Reviews</h3>
-                  {user && (
-                    <button onClick={() => setShowReviewForm(!showReviewForm)} className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all">
-                      {showReviewForm ? "Cancel" : "Write a Review"}
-                    </button>
-                  )}
-                  {!user && <p className="text-sm text-gray-600">Please login to write a review</p>}
+                  <button onClick={() => setShowReviewForm(!showReviewForm)} className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all">
+                    {showReviewForm ? "Cancel" : "Write a Review"}
+                  </button>
                 </div>
 
                 {/* Review Form */}
@@ -369,7 +366,7 @@ export default function ProductDetail() {
                               <Star key={i} className={`h-4 w-4 ${i < review.rating ? "fill-current" : "text-gray-300"} max-md:!w-[10px] max-md:!h-[10px]`} />
                             ))}
                           </div>
-                          <span className="font-semibold max-md:!text-[13px]">{review.profiles?.full_name || "Anonymous"}</span>
+                          <span className="font-semibold max-md:!text-[13px]">{review.full_name || review.profiles?.full_name || "Anonymous"}</span>
                           <span className="text-sm text-gray-500 max-md:!text-[11px]">{format(new Date(review.created_at), "MMM d, yyyy")}</span>
                         </div>
                         {review.title && <h4 className="font-semibold mb-2 max-md:!text-[13px]">{review.title}</h4>}

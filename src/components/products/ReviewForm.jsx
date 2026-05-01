@@ -12,6 +12,7 @@ import Input from "../common/Input";
 
 export default function ReviewForm({ productId, productName, onReviewAdded }) {
   const { user } = useAuthStore();
+  const [name, setName] = useState(user?.user_metadata?.full_name || "");
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
   const [title, setTitle] = useState("");
@@ -20,6 +21,11 @@ export default function ReviewForm({ productId, productName, onReviewAdded }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name.trim()) {
+      toast.error("Please enter your name");
+      return;
+    }
 
     if (rating === 0) {
       toast.error("Please select a rating");
@@ -39,11 +45,12 @@ export default function ReviewForm({ productId, productName, onReviewAdded }) {
         .insert([
           {
             product_id: productId,
-            user_id: user.id,
+            user_id: user?.id || null,
+            full_name: name, // We store the name directly for anonymous reviews
             rating,
             title,
             comment,
-            is_verified_purchase: false, // You can check if user bought this product
+            is_verified_purchase: false,
           },
         ])
         .select();
@@ -53,6 +60,7 @@ export default function ReviewForm({ productId, productName, onReviewAdded }) {
       toast.success("Review submitted successfully!");
 
       // Reset form
+      if (!user) setName("");
       setRating(0);
       setTitle("");
       setComment("");
@@ -60,25 +68,28 @@ export default function ReviewForm({ productId, productName, onReviewAdded }) {
       if (onReviewAdded) onReviewAdded();
     } catch (error) {
       console.error("Error:", error);
-      toast.error("Failed to submit review");
+      toast.error("Failed to submit review. If you're an admin, please ensure 'full_name' column exists in Supabase.");
     } finally {
       setLoading(false);
     }
   };
-
-  if (!user) {
-    return (
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
-        <p className="text-yellow-800">Please log in to write a review</p>
-      </div>
-    );
-  }
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-6">
       <h3 className="text-xl font-bold mb-4">Write a Review</h3>
 
       <form onSubmit={handleSubmit}>
+        {/* Name Field */}
+        <div className="mb-4">
+          <Input 
+            label="Your Name *" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            placeholder="Enter your name" 
+            required 
+          />
+        </div>
+
         {/* Star Rating */}
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 mb-2">Your Rating *</label>

@@ -167,7 +167,7 @@ export default function AdminReviews() {
                   </div>
                   <span className="font-semibold max-md:!text-[13px]">{review.rating}/5</span>
                 </div>
-                <p className="font-semibold text-lg max-md:!text-[13px] max-md:!font-bold">{review.profiles?.full_name || "Anonymous"}</p>
+                <p className="font-semibold text-lg max-md:!text-[13px] max-md:!font-bold">{review.full_name || review.profiles?.full_name || "Anonymous"}</p>
                 <p className="text-sm text-gray-600 max-md:!text-[11px] max-md:!text-gray-500">{review.profiles?.email}</p>
                 <p className="text-sm text-gray-500 mt-1 max-md:!text-[10px]">{format(new Date(review.created_at), "MMM d, yyyy h:mm a")}</p>
               </div>

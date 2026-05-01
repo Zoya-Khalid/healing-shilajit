@@ -257,7 +257,7 @@ export default function Home() {
       if (error) throw error;
 
       const formattedReviews = (data || []).map((r) => ({
-        name: r.profiles?.full_name || "Anonymous",
+        name: r.full_name || r.profiles?.full_name || "Anonymous",
         text: r.comment,
         rating: r.rating,
         isDynamic: true,
