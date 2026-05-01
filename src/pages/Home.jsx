@@ -708,6 +708,21 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
+        {/* About CTA Section */}
+        <section className="py-20 text-center max-md:!py-[40px]">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-black max-md:!text-[22px]">Learn more about our mission and sourcing</h2>
+            <p className="text-gray-600 text-lg mb-10 max-md:!text-[13px] max-md:!mb-6">
+              Discover the story behind Herbveda Shilajit and how we bring the purest minerals from the heart of the Himalayas to your doorstep.
+            </p>
+            <Link to="/about">
+              <button className="bg-black text-white px-12 py-4 text-lg font-bold rounded-full hover:bg-gray-900 transition-all shadow-lg hover:scale-105 max-md:!text-[14px] max-md:!py-[12px] max-md:!px-[32px]">
+                About Us
+              </button>
+            </Link>
+          </div>
+        </section>
       </div>
 
       {/* Feature Modal */}
