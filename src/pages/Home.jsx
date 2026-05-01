@@ -389,7 +389,12 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-[210px] sm:h-[60vh] md:h-[75vh] lg:h-[92vh] min-h-[210px] md:min-h-[600px] overflow-hidden bg-white">
+      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-white">
+        {/* Mobile Spacer to define natural height based on image aspect ratio */}
+        <div className="md:hidden invisible pointer-events-none w-full">
+          <img src={heroSlides[0].image} className="w-full h-auto" alt="spacer" />
+        </div>
+
         {/* Slide backgrounds */}
         {heroSlides.map((slide, index) => (
           <div
@@ -401,7 +406,7 @@ export default function Home() {
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
-                  className={`w-full h-full max-md:object-contain object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
+                  className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                   style={{ 
                     filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                     imageRendering: 'auto'
@@ -412,7 +417,7 @@ export default function Home() {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className={`w-full h-full max-md:object-contain object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
+                className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                 style={{ 
                   filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                   imageRendering: 'auto'
