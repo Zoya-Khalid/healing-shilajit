@@ -197,7 +197,7 @@ export default function About() {
           </div>
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
             {/* Left Column - Product Image */}
-            <div className="w-full lg:flex-1 max-md:px-4">
+            <div className="w-full lg:flex-1 max-md:px-4 flex justify-center">
               <div className="relative group mx-auto max-w-lg lg:max-w-none">
                 <div className="relative z-10 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-black/5 shadow-[0_0_50px_rgba(212,175,55,0.05)] transition-transform duration-700 group-hover:scale-[1.02] aspect-square md:aspect-[4/5] max-md:max-h-[350px]">
                   <img
