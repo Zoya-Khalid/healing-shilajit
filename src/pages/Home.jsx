@@ -639,13 +639,13 @@ export default function Home() {
               {/* First set of reviews */}
               {allReviews.map((review, idx) => (
                 <div key={`rev-1-${idx}`} className="w-[300px] md:w-[350px] max-md:!w-[220px] max-md:!min-w-[220px] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[16px] border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col">
-                  <div className="flex gap-1 mb-6 max-md:!mb-4 justify-center">
+                  <div className="flex gap-1 mb-6 max-md:!mb-2 justify-center">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 max-md:!w-[18px] max-md:!h-[18px] fill-amber-500 text-amber-500" />
                     ))}
                   </div>
 
-                  <p className="text-gray-300 text-sm max-md:!text-[13px] max-md:!leading-[1.6] leading-relaxed mb-8 max-md:!min-h-0 max-md:!mb-4 min-h-[80px] text-center">"{review.text}"</p>
+                  <p className="text-gray-300 text-sm max-md:!text-[13px] max-md:!leading-[1.6] leading-relaxed mb-8 max-md:!min-h-0 max-md:!mb-2 min-h-[80px] text-center">"{review.text}"</p>
 
                   <div className="text-center mt-auto">
                     <div className="flex items-center justify-center gap-2 mb-1">
