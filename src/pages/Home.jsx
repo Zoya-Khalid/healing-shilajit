@@ -389,7 +389,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-black">
+      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-white">
         {/* Mobile Spacer to define natural height based on image aspect ratio */}
         <div className="md:hidden invisible pointer-events-none w-full">
           <img src={heroSlides[0].image} className="w-full h-auto" alt="spacer" />
@@ -399,40 +399,31 @@ export default function Home() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
           >
-            {/* Blurred color-matched background to fill any gaps at the top */}
-            <img
-              src={slide.image}
-              className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-40 pointer-events-none"
-              alt=""
-            />
-            
-            <div className="absolute top-4 md:top-10 inset-x-0 bottom-0">
-              {slide.isFullClickable ? (
-                <Link to={slide.link} className="block w-full h-full">
-                  <img
-                    src={slide.image}
-                    alt={`Slide ${index + 1}`}
-                    className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
-                    style={{ 
-                      filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
-                      imageRendering: 'auto'
-                    }}
-                  />
-                </Link>
-              ) : (
+            {slide.isFullClickable ? (
+              <Link to={slide.link} className="block w-full h-full">
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
-                  className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
+                  className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-top'} transition-all duration-700`}
                   style={{ 
                     filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                     imageRendering: 'auto'
                   }}
                 />
-              )}
-            </div>
+              </Link>
+            ) : (
+              <img
+                src={slide.image}
+                alt={`Slide ${index + 1}`}
+                className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-top'} transition-all duration-700`}
+                style={{ 
+                  filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
+                  imageRendering: 'auto'
+                }}
+              />
+            )}
             {/* Dark gradient overlay - hidden on mobile to avoid black bars */}
             <div className={`absolute inset-0 pointer-events-none bg-gradient-to-b ${slide.overlay || 'from-black/40 via-black/20 to-black/60'} max-md:hidden`} />
           </div>
