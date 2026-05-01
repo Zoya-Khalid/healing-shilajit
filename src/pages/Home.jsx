@@ -389,9 +389,9 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-auto xl:h-[92vh] xl:min-h-[600px] overflow-hidden bg-white">
-        {/* Mobile & Medium Spacer to define natural height based on image aspect ratio */}
-        <div className="xl:hidden invisible pointer-events-none w-full">
+      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-white">
+        {/* Mobile Spacer to define natural height based on image aspect ratio */}
+        <div className="md:hidden invisible pointer-events-none w-full">
           <img src={heroSlides[0].image} className="w-full h-auto" alt="spacer" />
         </div>
 
