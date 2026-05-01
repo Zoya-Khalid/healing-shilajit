@@ -616,7 +616,7 @@ export default function Home() {
 
           <div className="text-center">
             <Link to="/products" className="max-md:!inline-block max-md:!w-full max-md:!max-w-[200px] max-md:!mx-auto">
-              <button className="bg-black text-white px-12 py-4 text-lg font-bold rounded-full hover:bg-gray-900 transition-all shadow-lg hover:scale-105 max-md:!w-full max-md:!block max-md:!text-[14px] max-md:!py-[12px] max-md:!px-[24px] max-md:!mx-auto">View All Products</button>
+              <button className="bg-[#D4AF37] text-black px-12 py-4 text-lg font-bold rounded-full hover:bg-[#B8860B] transition-all shadow-lg hover:scale-105 max-md:!w-full max-md:!block max-md:!text-[14px] max-md:!py-[12px] max-md:!px-[24px] max-md:!mx-auto">View All Products</button>
             </Link>
           </div>
         </section>
