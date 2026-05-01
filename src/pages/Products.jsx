@@ -43,7 +43,7 @@ export default function Products() {
           ...p,
           name: seoTitles[idx] || p.name,
           review_count: reviewCounts[idx] || "1.2k",
-          image_url: "/images/products/shilajit-resin.jpg",
+          image_url: "/images/products/shilajit-box-spoon.jpg",
           hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg"
         };
       });
