@@ -68,9 +68,7 @@ export default function About() {
       <section className="bg-black text-white pt-24 pb-20 overflow-hidden max-md:!pt-[80px] max-md:!pb-[16px] max-md:!px-[12px]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 max-md:!px-0">
           {/* Mobile-only heading above the side-by-side layout */}
-          <h1 className="hidden max-md:!block max-md:!text-[22px] max-md:!font-[700] font-serif max-md:!text-center max-md:!mb-[10px] max-md:!px-[12px]">
-            About <span className="text-[#D4AF37]">Us</span>
-          </h1>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-md:!flex max-md:!flex-col max-md:!gap-0 max-md:!items-center">
             {/* Left Image */}
             <div className="relative group max-md:!w-full max-md:!flex-shrink-0 max-md:!mb-[12px] max-md:!px-[12px] flex justify-center">
