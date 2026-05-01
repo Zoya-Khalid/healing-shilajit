@@ -24,32 +24,40 @@ export default function Products() {
 
   const loadProducts = async () => {
     const { data, error } = await db.getProducts();
-    if (error) {
-      console.error("Error loading products:", error);
-    } else {
-      // Use database products and apply local images for demo consistency
-      // SEO-Friendly Titles and Unique Review Counts for the 3 products
-      const seoTitles = [
-        "Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified",
-        "Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural",
-        "Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested"
-      ];
-      
-      const reviewCounts = ["847", "1,134", "2,310"];
+    
+    // Fallback data if DB is empty or error
+    const defaultProducts = [
+      { id: '1', name: 'Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified', price: 11200, category: 'Resin', weight: '20g' },
+      { id: '2', name: 'Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural', price: 16900, category: 'Resin', weight: '30g' },
+      { id: '3', name: 'Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested', price: 9500, category: 'Resin', weight: '50g' }
+    ];
 
-      // Use database products and apply local images for demo consistency
-      const enhancedData = (data || []).map((p, idx) => {
-        return {
-          ...p,
-          name: seoTitles[idx] || p.name,
-          review_count: reviewCounts[idx] || "1.2k",
-          image_url: "/images/products/shilajit-box-spoon.jpg",
-          hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg"
-        };
-      });
-      setProducts(enhancedData);
-      setFilteredProducts(enhancedData);
+    const displayData = (data && data.length > 0) ? data : defaultProducts;
+
+    if (error && (!data || data.length === 0)) {
+      console.error("Error loading products:", error);
     }
+
+    // Apply local images and meta for demo consistency
+    const seoTitles = [
+      "Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified",
+      "Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural",
+      "Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested"
+    ];
+    
+    const reviewCounts = ["847", "1,134", "2,310"];
+
+    const enhancedData = displayData.map((p, idx) => {
+      return {
+        ...p,
+        name: seoTitles[idx] || p.name,
+        review_count: reviewCounts[idx] || "1.2k",
+        image_url: "/images/products/shilajit-box-spoon.jpg",
+        hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg"
+      };
+    });
+    setProducts(enhancedData);
+    setFilteredProducts(enhancedData);
     setLoading(false);
   };
 
@@ -100,7 +108,7 @@ export default function Products() {
 
         {/* Filters Bar */}
         <div className="mb-12 sticky top-24 z-30 bg-white/90 backdrop-blur-md py-4 max-md:!static max-md:!mb-[16px] max-md:!py-[10px] max-md:!z-auto max-md:!bg-white max-md:!backdrop-blur-none max-md:!shadow-none">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-md:!gap-[10px] max-w-[1500px] mx-auto px-[40px] max-md:!px-0">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-8 max-w-[1500px] mx-auto px-2 md:px-[40px]">
             {/* Search (Light Grey Rectangle) */}
             <div className="relative group bg-gray-100 rounded-lg px-6 py-3 shadow-sm flex items-center border border-gray-200/50 max-md:!px-[14px] max-md:!py-0 max-md:!h-[44px] max-md:!rounded-[8px]">
               <Search className="text-gray-500 h-4 w-4 mr-3" />

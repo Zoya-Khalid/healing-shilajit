@@ -14,7 +14,7 @@ export default function ProductGrid({ products }) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-md:grid-cols-2 max-md:gap-2 max-md:items-stretch max-md:[&>*:nth-child(3)]:col-span-full max-md:[&>*:nth-child(3)]:max-w-[calc(50%-4px)] max-md:[&>*:nth-child(3)]:mx-auto md:gap-6 md:max-w-[1500px] md:mx-auto md:px-[40px]">
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 max-w-[1500px] mx-auto px-2 md:px-[40px]">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
