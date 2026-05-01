@@ -426,9 +426,6 @@ export default function Home() {
             )}
             {/* Dark gradient overlay - hidden on mobile to avoid black bars */}
             <div className={`absolute inset-0 pointer-events-none bg-gradient-to-b ${slide.overlay || 'from-black/40 via-black/20 to-black/60'} max-md:hidden`} />
-            
-            {/* Logo Mask - Subtle white gradient in the bottom right corner for mobile to hide watermark */}
-            <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-white via-white/80 to-transparent pointer-events-none max-md:block hidden" />
           </div>
         ))}
 
