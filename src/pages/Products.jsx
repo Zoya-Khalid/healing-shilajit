@@ -301,7 +301,7 @@ export default function Products() {
                 <span className="text-[#D4AF37] font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Simple 3-Step Routine</span>
               </div>
 
-              <div className="space-y-8 md:space-y-12">
+              <div className="space-y-10 md:space-y-16 max-w-2xl mx-auto text-left">
                 {[
                   {
                     step: 1,
@@ -319,13 +319,13 @@ export default function Products() {
                     desc: "Best taken on an empty stomach for maximum absorption."
                   }
                 ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center gap-4 md:gap-6">
+                  <div key={i} className="flex gap-6 md:gap-10 items-start">
                     <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-xl md:text-3xl shadow-[0_0_20px_rgba(212,175,55,0.1)]">
                       {item.step}
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 md:space-y-3">
                       <h3 className="text-xl md:text-3xl font-bold text-black">{item.title}</h3>
-                      <p className="text-gray-600 text-base md:text-xl leading-relaxed max-w-2xl mx-auto">{item.desc}</p>
+                      <p className="text-gray-600 text-base md:text-xl leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
