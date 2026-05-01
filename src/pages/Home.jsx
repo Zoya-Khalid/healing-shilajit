@@ -510,10 +510,10 @@ export default function Home() {
         <section className="flex overflow-x-auto pb-4 gap-4 sm:gap-8 snap-x snap-mandatory lg:grid lg:grid-cols-5 hide-scrollbar max-lg:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-lg:!h-auto max-lg:!min-h-0 max-lg:!my-0 max-lg:!pt-[16px] max-lg:!pb-[16px]">
           <div 
             onClick={() => setSelectedFeature("Lab Tested")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Award className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+              <Award className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
             <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Lab Tested</h3>
             <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Certified for purity and potency by top USA labs.</p>
@@ -521,10 +521,10 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("100% Natural")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Shield className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+              <Shield className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
             <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">100% Natural</h3>
             <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Pure resin, no additives, fillers, or heavy metals.</p>
@@ -532,10 +532,10 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("Free Shipping")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Truck className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+              <Truck className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
             <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Free Shipping</h3>
             <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Complimentary express shipping on all orders.</p>
@@ -543,10 +543,10 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("Top Rated")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Star className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+              <Star className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
             <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Top Rated</h3>
             <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Loved by thousands of customers worldwide.</p>
@@ -554,10 +554,10 @@ export default function Home() {
 
           <div 
             onClick={() => setSelectedFeature("Trusted Products")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 border-2 border-[#D4AF37] max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
             <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
-              <Shield className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
+              <Shield className="text-[#D4AF37] max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
             <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Trusted Products</h3>
             <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Premium quality products trusted by professionals.</p>
@@ -575,7 +575,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[12px] md:gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="group relative bg-black text-white rounded-[12px] md:rounded-[3rem] p-[10px] md:p-8 flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-900/50 border border-gray-800">
+              <div key={index} className="group relative bg-black text-white rounded-[12px] md:rounded-[3rem] p-[10px] md:p-8 flex flex-col items-center text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-amber-900/50 border-2 border-[#D4AF37]">
                 <div className="w-full h-[120px] md:h-48 mb-[10px] md:mb-6 rounded-[10px] md:rounded-[2rem] overflow-hidden border-2 border-white/10 group-hover:border-amber-500/50 transition-all duration-500">
                   <img 
                     src={benefit.image} 
@@ -631,7 +631,7 @@ export default function Home() {
             <div ref={reviewsContainerRef} className="animate-marquee max-md:animate-none flex max-md:!w-full max-md:items-stretch gap-6 max-md:!gap-[12px] max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
               {/* First set of reviews */}
               {allReviews.map((review, idx) => (
-                <div key={`rev-1-${idx}`} className="w-[350px] max-md:!w-[85vw] max-md:!min-w-[85vw] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[16px] border-2 border-amber-500 shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col">
+                <div key={`rev-1-${idx}`} className="w-[350px] max-md:!w-[85vw] max-md:!min-w-[85vw] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[16px] border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col">
                   <div className="flex gap-1 mb-6 max-md:!mb-4 justify-center">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 max-md:!w-[18px] max-md:!h-[18px] fill-amber-500 text-amber-500" />
@@ -651,7 +651,7 @@ export default function Home() {
               ))}
               {/* Duplicate set for seamless loop - Hidden on mobile so scrolling naturally terminates */}
               {allReviews.map((review, idx) => (
-                <div key={`rev-2-${idx}`} className="w-[350px] max-md:hidden flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 border-2 border-amber-500 shadow-xl transition-all duration-500 hover:scale-105">
+                <div key={`rev-2-${idx}`} className="w-[350px] max-md:hidden flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105">
                   <div className="flex gap-1 mb-6 justify-center">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-amber-500 text-amber-500" />
