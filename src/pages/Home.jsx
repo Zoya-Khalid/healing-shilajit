@@ -633,7 +633,7 @@ export default function Home() {
             <div ref={reviewsContainerRef} className="animate-marquee max-md:animate-none flex max-md:!w-full max-md:items-stretch gap-6 max-md:!gap-[12px] max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
               {/* First set of reviews */}
               {allReviews.map((review, idx) => (
-                <div key={`rev-1-${idx}`} className="w-[350px] max-md:!w-[85vw] max-md:!min-w-[85vw] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[16px] border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col">
+                <div key={`rev-1-${idx}`} className="w-[300px] md:w-[350px] max-md:!w-[280px] max-md:!min-w-[280px] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[24px] border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col">
                   <div className="flex gap-1 mb-6 max-md:!mb-4 justify-center">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 max-md:!w-[18px] max-md:!h-[18px] fill-amber-500 text-amber-500" />
@@ -653,7 +653,7 @@ export default function Home() {
               ))}
               {/* Duplicate set for seamless loop - Hidden on mobile so scrolling naturally terminates */}
               {allReviews.map((review, idx) => (
-                <div key={`rev-2-${idx}`} className="w-[350px] max-md:hidden flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105">
+                <div key={`rev-2-${idx}`} className="w-[300px] md:w-[350px] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105">
                   <div className="flex gap-1 mb-6 justify-center">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-amber-500 text-amber-500" />
