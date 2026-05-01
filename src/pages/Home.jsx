@@ -635,7 +635,7 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div ref={reviewsContainerRef} className="animate-marquee max-md:animate-none flex max-md:!w-full max-md:items-start gap-6 max-md:!gap-[12px] max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
+            <div ref={reviewsContainerRef} className="animate-marquee max-md:animate-none flex max-md:!w-full max-md:items-stretch gap-6 max-md:!gap-[12px] max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
               {/* First set of reviews */}
               {allReviews.map((review, idx) => (
                 <div key={`rev-1-${idx}`} className="w-[300px] md:w-[350px] max-md:!w-[220px] max-md:!min-w-[220px] flex-shrink-0 bg-black text-white rounded-[2.5rem] p-8 max-md:!p-[10px] border-2 border-[#D4AF37] shadow-xl transition-all duration-500 hover:scale-105 max-md:snap-center flex flex-col">
@@ -645,9 +645,9 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <p className="text-gray-300 text-sm max-md:!text-[11px] max-md:!leading-[1.5] leading-relaxed mb-8 max-md:!min-h-0 max-md:!mb-1 min-h-[80px] text-center">"{review.text}"</p>
+                  <p className="text-gray-300 text-sm max-md:!text-[11px] max-md:!leading-[1.5] leading-relaxed mb-8 max-md:!min-h-0 max-md:!mb-2 min-h-[80px] text-center max-md:line-clamp-4">"{review.text}"</p>
 
-                  <div className="text-center mt-auto max-md:!mt-0">
+                  <div className="text-center mt-auto">
                     <div className="flex items-center justify-center gap-2 mb-1">
                       <span className="font-bold text-lg max-md:!text-[12px] max-md:!font-[600] text-amber-500">{review.name}</span>
                       <CheckCircle className="w-5 h-5 max-md:!w-[14px] max-md:!h-[14px] text-amber-500 fill-amber-500/20" />
