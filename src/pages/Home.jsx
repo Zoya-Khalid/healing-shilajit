@@ -389,7 +389,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-[40vh] sm:h-[60vh] md:h-[75vh] lg:h-[92vh] min-h-[280px] md:min-h-[600px] overflow-hidden bg-black">
+      <section className="relative w-full h-[210px] sm:h-[60vh] md:h-[75vh] lg:h-[92vh] min-h-[210px] md:min-h-[600px] overflow-hidden bg-white">
         {/* Slide backgrounds */}
         {heroSlides.map((slide, index) => (
           <div
@@ -401,7 +401,7 @@ export default function Home() {
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
-                  className={`w-full h-full ${slide.objectFit || 'max-md:object-contain object-cover'} ${slide.objectPosition || 'object-top md:object-center'} transition-all duration-700`}
+                  className={`w-full h-full object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                   style={{ 
                     filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                     imageRendering: 'auto'
@@ -412,15 +412,15 @@ export default function Home() {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className={`w-full h-full ${slide.objectFit || 'max-md:object-contain object-cover'} ${slide.objectPosition || 'object-top md:object-center'} transition-all duration-700`}
+                className={`w-full h-full object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                 style={{ 
                   filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                   imageRendering: 'auto'
                 }}
               />
             )}
-            {/* Dark gradient overlay - dynamically adjusted */}
-            <div className={`absolute inset-0 pointer-events-none bg-gradient-to-b ${slide.overlay || 'from-black/40 via-black/20 to-black/60'}`} />
+            {/* Dark gradient overlay - hidden on mobile to avoid black bars */}
+            <div className={`absolute inset-0 pointer-events-none bg-gradient-to-b ${slide.overlay || 'from-black/40 via-black/20 to-black/60'} max-md:hidden`} />
           </div>
         ))}
 
