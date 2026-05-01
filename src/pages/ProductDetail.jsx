@@ -1,9 +1,10 @@
 // ============================================
 // UPDATED FILE: src/pages/ProductDetail.jsx
-// Added Review Section and Write Review Button
+// Added Review Section, Write Review Button,
+// Benefits of Shilajit, and How to Use sections
 // ============================================
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Star, ShoppingCart, Heart, Share2, Shield, Truck, RotateCcw, ChevronLeft, ChevronRight, Package, Award, CheckCircle } from "lucide-react";
 import { db, supabase } from "../lib/supabase";
 import { useCartStore } from "../store/cartStore";
@@ -15,6 +16,7 @@ import { format } from "date-fns";
 
 export default function ProductDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -422,8 +424,7 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-      </div>
-      
+
       {/* Benefits of Shilajit Section */}
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -525,11 +526,7 @@ export default function ProductDetail() {
                     title: "Dissolve in warm water or milk",
                     desc: "Stir until fully dissolved. Never use boiling water, keep it warm."
                   },
-                  {
-                    step: 3,
-                    title: "Drink in the morning or before bed",
-                    desc: "Best taken on an empty stomach for maximum absorption."
-                  }
+                  { step: 3, title: "Drink in the morning or before bed", desc: "Best taken on an empty stomach for maximum absorption." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 md:gap-6 items-start">
                     <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-[#D4AF37] text-black rounded-full flex items-center justify-center font-bold text-lg md:text-2xl shadow-[0_0_20px_rgba(212,175,55,0.1)]">
