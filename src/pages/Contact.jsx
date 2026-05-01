@@ -109,56 +109,56 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-white font-light flex flex-col items-center justify-start pt-24 pb-8 md:pt-32 md:pb-12 px-4">
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-0 lg:min-h-[700px] bg-black text-white rounded-3xl lg:rounded-[4rem] shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:hover:scale-[1.01] group border border-gray-900/50 max-md:!flex max-md:!flex-row max-md:!gap-0 max-md:!rounded-[16px] max-md:!border-0 max-md:!shadow-none max-md:!h-auto max-md:!overflow-visible max-md:!p-[20px_16px]">
+    <div className="min-h-screen bg-white font-light flex flex-col items-center justify-start pt-24 pb-8 md:pt-32 md:pb-12 px-2 sm:px-4">
+      <div className="max-w-7xl w-full mx-auto flex flex-row min-h-0 bg-black text-white rounded-[1.5rem] md:rounded-[4rem] shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-900/50">
 
         {/* Left Column - Form Section */}
-        <div className="lg:col-span-7 p-10 md:p-16 relative max-md:!w-[60%] max-md:!p-0 max-md:!pr-[8px]">
-          <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-4 transition-colors group-hover:text-white max-md:!text-[10px] max-md:!tracking-[0.08em] max-md:!mb-[6px]">say hi to the team</p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-6 tracking-tight max-md:!text-[18px] max-md:!mb-[16px]">Contact Us</h1>
-          <p className="text-gray-400 mb-12 max-w-md text-sm leading-relaxed max-md:!text-[12px] max-md:!leading-[1.5] max-md:!mb-[16px]">
+        <div className="w-[60%] p-4 sm:p-10 md:p-16 relative">
+          <p className="text-[9px] sm:text-xs uppercase tracking-[0.2em] text-gray-400 mb-2 sm:mb-4 transition-colors group-hover:text-white">say hi to the team</p>
+          <h1 className="text-xl sm:text-4xl md:text-7xl font-serif mb-4 sm:mb-6 tracking-tight">Contact Us</h1>
+          <p className="text-gray-400 mb-6 sm:mb-12 max-w-md text-[10px] sm:text-sm leading-relaxed">
             Feel free to contact us and we will get back to you as soon as we can.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-8 lg:space-y-10 max-w-lg mt-8 lg:mt-0 max-md:!mt-0 max-md:!space-y-0">
-            <div className="space-y-1 group/input max-md:!mb-[16px]">
-              <label className="text-xs text-gray-500 uppercase tracking-wider block mb-2 group-hover/input:text-white transition-colors max-md:!text-[11px] max-md:!mb-[6px] max-md:!block">name</label>
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-8 lg:space-y-10 max-w-lg">
+            <div className="space-y-1 group/input">
+              <label className="text-[9px] sm:text-xs text-gray-500 uppercase tracking-wider block mb-1 sm:mb-2 group-hover/input:text-white transition-colors">name</label>
               <input
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="w-full bg-transparent border-b border-gray-700 py-2 focus:border-white outline-none transition-colors text-lg placeholder-gray-800 max-md:!h-[36px] max-md:!text-[13px] max-md:!pb-[6px] max-md:!border-white/20"
+                className="w-full bg-transparent border-b border-gray-700 py-1 sm:py-2 focus:border-white outline-none transition-colors text-sm sm:text-lg placeholder-gray-800"
               />
             </div>
 
-            <div className="space-y-1 group/input max-md:!mb-[16px]">
-              <label className="text-xs text-gray-500 uppercase tracking-wider block mb-2 group-hover/input:text-white transition-colors max-md:!text-[11px] max-md:!mb-[6px] max-md:!block">email address</label>
+            <div className="space-y-1 group/input">
+              <label className="text-[9px] sm:text-xs text-gray-500 uppercase tracking-wider block mb-1 sm:mb-2 group-hover/input:text-white transition-colors">email address</label>
               <input
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="w-full bg-transparent border-b border-gray-700 py-2 focus:border-white outline-none transition-colors text-lg placeholder-gray-800 max-md:!h-[36px] max-md:!text-[13px] max-md:!pb-[6px] max-md:!border-white/20"
+                className="w-full bg-transparent border-b border-gray-700 py-1 sm:py-2 focus:border-white outline-none transition-colors text-sm sm:text-lg placeholder-gray-800"
               />
             </div>
 
-            <div className="space-y-1 group/input max-md:!mb-[16px]">
-              <label className="text-xs text-gray-500 uppercase tracking-wider block mb-2 group-hover/input:text-white transition-colors max-md:!text-[11px] max-md:!mb-[6px] max-md:!block">phone (optional)</label>
+            <div className="space-y-1 group/input">
+              <label className="text-[9px] sm:text-xs text-gray-500 uppercase tracking-wider block mb-1 sm:mb-2 group-hover/input:text-white transition-colors">phone (optional)</label>
               <input
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full bg-transparent border-b border-gray-700 py-2 focus:border-white outline-none transition-colors text-lg placeholder-gray-800 max-md:!h-[36px] max-md:!text-[13px] max-md:!pb-[6px] max-md:!border-white/20"
+                className="w-full bg-transparent border-b border-gray-700 py-1 sm:py-2 focus:border-white outline-none transition-colors text-sm sm:text-lg placeholder-gray-800"
               />
             </div>
 
-            <div className="space-y-1 group/input max-md:!mb-[16px]">
-              <label className="text-xs text-gray-500 uppercase tracking-wider block mb-2 group-hover/input:text-white transition-colors max-md:!text-[11px] max-md:!mb-[6px] max-md:!block">tell us all about it</label>
+            <div className="space-y-1 group/input">
+              <label className="text-[9px] sm:text-xs text-gray-500 uppercase tracking-wider block mb-1 sm:mb-2 group-hover/input:text-white transition-colors">tell us all about it</label>
               <textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full bg-transparent border-b border-gray-700 py-2 focus:border-white outline-none transition-colors text-lg min-h-[100px] resize-none placeholder-gray-800 max-md:!min-h-[80px] max-md:!h-[80px] max-md:!text-[13px] max-md:!border-white/20"
+                className="w-full bg-transparent border-b border-gray-700 py-1 sm:py-2 focus:border-white outline-none transition-colors text-sm sm:text-lg min-h-[60px] sm:min-h-[100px] resize-none placeholder-gray-800"
                 rows="1"
                 required
               />
@@ -167,7 +167,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-white/10 text-white py-4 rounded-full uppercase tracking-[0.15em] text-xs font-bold hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-4 shadow-lg hover:shadow-white/20 max-md:!text-[13px] max-md:!h-[42px] max-md:!py-0 max-md:!mt-[8px]"
+              className="w-full bg-white/10 text-white py-2 sm:py-4 rounded-full uppercase tracking-[0.15em] text-[10px] sm:text-xs font-bold hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-2 sm:mt-4 shadow-lg hover:shadow-white/20"
             >
               {loading ? "sending..." : "send message"}
             </button>
@@ -175,7 +175,7 @@ export default function Contact() {
         </div>
 
         {/* Right Column - Info Section */}
-        <div className="lg:col-span-5 flex flex-col justify-between p-10 md:p-16 bg-[#0a0a0a] relative overflow-hidden max-md:!w-[40%] max-md:!p-0 max-md:!pl-[8px] max-md:!pt-[48px]">
+        <div className="w-[40%] flex flex-col justify-between p-4 sm:p-10 md:p-16 bg-[#0a0a0a] relative overflow-hidden">
           {/* Decorative Circle */}
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none max-md:!hidden"></div>
 
