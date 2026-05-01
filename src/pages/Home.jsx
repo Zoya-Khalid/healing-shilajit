@@ -253,16 +253,13 @@ export default function Home() {
       const reviewCounts = ["847", "1,134", "2,310"];
 
       // Enhance database products with local images/hover images for demo
-      const enhancedData = data.map((p, idx) => {
-        const localBox = "/images/products/shilajit-premium-packaging.jpg";
-        const localNutrition = "/images/products/shilajit-nutrition-infographic.jpg";
-
+      const enhancedData = (data || []).map((p, idx) => {
         return {
           ...p,
           name: seoTitles[idx] || p.name,
           review_count: reviewCounts[idx] || "1.2k",
-          image_url: localBox,
-          hover_image_url: localNutrition,
+          image_url: "/images/products/shilajit-resin.jpg",
+          hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg",
         };
       });
       setDynamicProducts(enhancedData);
