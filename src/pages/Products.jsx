@@ -264,7 +264,7 @@ export default function Products() {
                     className={`w-full h-full object-cover ${benefit.objectPosition || 'object-center'} transform group-hover:scale-110 transition-transform duration-700`} 
                   />
                 </div>
-                <h3 className="text-[13px] md:text-2xl font-bold mb-1 md:mb-4 text-amber-500 group-hover:text-amber-400">{benefit.title}</h3>
+                <h3 className="text-[13px] md:text-2xl font-bold mb-1 md:mb-4 text-amber-500 group-hover:text-amber-400 max-md:!leading-tight">{benefit.title}</h3>
                 <p className="text-gray-300 leading-[1.4] md:leading-relaxed text-[11px] md:text-sm group-hover:text-white transition-colors">{benefit.description}</p>
                 <div className="absolute inset-0 rounded-[12px] md:rounded-[3rem] bg-gradient-to-tr from-amber-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
