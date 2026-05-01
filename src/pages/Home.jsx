@@ -676,7 +676,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="pt-0 pb-20 max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!py-[16px]">
+        <section className="pt-0 pb-12 max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!py-[16px]">
           <div className="text-center mb-16 px-4 max-md:!mb-[16px]">
             <div className="inline-block group max-md:flex max-md:flex-col max-md:items-center">
               <h2 className="text-4xl md:text-5xl max-md:!text-[22px] font-serif font-bold inline-block text-black border-b-8 border-[#D4AF37] pb-4 max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[12px]">Frequently Asked Questions</h2>
@@ -710,7 +710,7 @@ export default function Home() {
         </section>
         
         {/* About CTA Section */}
-        <section className="py-20 text-center max-md:!py-[40px]">
+        <section className="py-12 text-center max-md:!py-[20px]">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-black max-md:!text-[22px]">Learn more about our mission and sourcing</h2>
             <p className="text-gray-600 text-lg mb-10 max-md:!text-[13px] max-md:!mb-6">
