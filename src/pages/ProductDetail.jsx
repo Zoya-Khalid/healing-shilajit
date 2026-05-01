@@ -25,12 +25,14 @@ export default function ProductDetail() {
   const addItem = useCartStore((state) => state.addItem);
   const { user } = useAuthStore();
 
-  // Sample images (since we're using single image_url from database)
+  // Hardcoded gallery images + dynamic main image
   const images = [
-    "/images/products/shilajit-jar-main.png",
-    "/shilajit-lifestyle-cup.png",
+    product?.image_url || "/images/products/shilajit-display-jar.jpg",
     "/images/products/shilajit-infographic-main.jpg",
-    "/images/products/shilajit-jar-floral.png"
+    "/images/products/shilajit-infographic-1.jpg",
+    "/images/products/shilajit-infographic-2.jpg",
+    "/images/products/shilajit-nutrition-infographic.jpg",
+    "/images/products/shilajit-infographic-3.png",
   ];
 
   useEffect(() => {
