@@ -68,7 +68,7 @@ export default function ReviewForm({ productId, productName, onReviewAdded }) {
       if (onReviewAdded) onReviewAdded();
     } catch (error) {
       console.error("Error:", error);
-      toast.error("Failed to submit review. If you're an admin, please ensure 'full_name' column exists in Supabase.");
+      toast.error(`Failed to submit: ${error.message || "Unknown error"}`);
     } finally {
       setLoading(false);
     }
