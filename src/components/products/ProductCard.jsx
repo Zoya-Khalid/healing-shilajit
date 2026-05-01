@@ -92,17 +92,16 @@ export default function ProductCard({ product }) {
           <span className="text-xs text-gray-500 font-medium max-md:!text-[11px] md:text-[13px]">({product.review_count || "1.2k"} Reviews)</span>
         </div>
 
-        {/* Buttons Row */}
         <div className="flex gap-3 max-md:!gap-[6px] mt-auto">
           <button
             onClick={handleAddToCart}
-            className="flex-1 w-full border-2 border-[#D4AF37] bg-transparent text-black font-bold py-2.5 rounded-full text-sm hover:bg-[#D4AF37] hover:text-white transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
+            className="flex-1 w-full bg-black text-white font-bold py-2.5 rounded-full text-sm hover:bg-gray-800 transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
           >
             Add to Cart
           </button>
           <button
             onClick={handleBuyNow}
-            className="flex-1 w-full bg-[#D4AF37] text-black font-bold py-2.5 rounded-full text-sm hover:bg-[#B8860B] transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
+            className="flex-1 w-full bg-black text-white font-bold py-2.5 rounded-full text-sm hover:bg-gray-800 transition-all max-md:!text-[11px] max-md:tracking-tighter max-md:!px-0 max-md:!py-0 max-md:!h-[34px] max-md:flex max-md:items-center max-md:justify-center md:h-[44px] md:text-[14px] md:px-[20px]"
           >
             Buy Now
           </button>
