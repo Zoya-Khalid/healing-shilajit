@@ -86,12 +86,17 @@ export default function AdminReviews() {
     if (!window.confirm("Are you sure you want to delete this review? This action cannot be undone.")) return;
 
     try {
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from("reviews")
         .delete()
-        .eq("id", reviewId);
+        .eq("id", reviewId)
+        .select();
 
       if (error) throw error;
+      
+      if (!data || data.length === 0) {
+        throw new Error("Database refused deletion. This is usually due to missing 'Delete' permissions (RLS) in Supabase.");
+      }
 
       toast.success("Review deleted successfully");
       loadReviews();
