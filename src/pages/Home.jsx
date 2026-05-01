@@ -406,7 +406,7 @@ export default function Home() {
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
-                  className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
+                  className={`w-full h-full object-cover md:object-cover transition-all duration-700 ${slide.objectPosition || 'object-center md:object-[50%_10%] md:scale-[1.1]'}`}
                   style={{ 
                     filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                     imageRendering: 'auto'
@@ -417,7 +417,7 @@ export default function Home() {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
+                className={`w-full h-full object-cover md:object-cover transition-all duration-700 ${slide.objectPosition || 'object-center md:object-[50%_10%] md:scale-[1.1]'}`}
                 style={{ 
                   filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                   imageRendering: 'auto'
