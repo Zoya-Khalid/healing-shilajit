@@ -401,7 +401,7 @@ export default function Home() {
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
-                  className={`w-full h-full object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
+                  className={`w-full h-full max-md:object-contain object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                   style={{ 
                     filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                     imageRendering: 'auto'
@@ -412,7 +412,7 @@ export default function Home() {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className={`w-full h-full object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
+                className={`w-full h-full max-md:object-contain object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                 style={{ 
                   filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                   imageRendering: 'auto'
