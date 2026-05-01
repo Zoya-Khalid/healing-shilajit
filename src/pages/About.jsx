@@ -85,13 +85,13 @@ export default function About() {
             </div>
 
             {/* Right Content */}
-            <div className="space-y-8 pl-0 lg:pl-10 max-md:!w-full max-md:!space-y-[10px] max-md:!px-[12px] max-md:text-center">
+            <div className="space-y-8 pl-0 lg:pl-10 max-lg:!w-full max-lg:!space-y-[10px] max-lg:!px-[12px] max-lg:!text-center">
 
-              <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight max-md:!hidden">
+              <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight max-md:!hidden max-lg:text-center">
                 About <span className="text-[#D4AF37]">Us</span>
               </h1>
 
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed max-w-xl mx-auto max-md:!space-y-[10px] max-md:!text-[13px] max-md:!leading-[1.6]">
+              <div className="space-y-6 text-gray-300 text-lg leading-relaxed max-w-xl mx-auto max-lg:!space-y-[10px] max-lg:!text-[13px] max-lg:!leading-[1.6]">
                 <p>
                   Welcome to Herbveda, where ancient herbal wisdom meets contemporary wellness. We are committed to bringing you the most authentic and potent herbal products to support your health and wellbeing from the inside out.
                 </p>
@@ -100,9 +100,9 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="pt-4 max-md:!pt-[8px] max-md:!text-center">
-                <Link to="/products" className="max-md:!inline-block max-md:!w-auto">
-                  <button className="bg-[#D4AF37] hover:bg-[#B8962E] text-black px-10 py-4 font-bold rounded-full tracking-widest uppercase shadow-xl transition-all hover:scale-105 active:scale-95 max-md:!text-[12px] max-md:!px-[20px] max-md:!py-0 max-md:!h-[36px] max-md:!rounded-[20px] max-md:!w-auto max-md:!inline-block max-md:!mt-[8px]">
+              <div className="pt-4 max-lg:!pt-[8px] max-lg:!text-center">
+                <Link to="/products" className="max-lg:!inline-block max-lg:!w-auto">
+                  <button className="bg-[#D4AF37] hover:bg-[#B8962E] text-black px-10 py-4 font-bold rounded-full tracking-widest uppercase shadow-xl transition-all hover:scale-105 active:scale-95 max-lg:!text-[12px] max-lg:!px-[20px] max-lg:!py-0 max-lg:!h-[36px] max-lg:!rounded-[20px] max-lg:!w-auto max-lg:!inline-block max-lg:!mt-[8px]">
                     Explore Shop
                   </button>
                 </Link>
