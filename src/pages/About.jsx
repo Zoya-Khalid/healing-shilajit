@@ -74,11 +74,11 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-md:!flex max-md:!flex-col max-md:!gap-0 max-md:!items-center">
             {/* Left Image */}
             <div className="relative group max-md:!w-full max-md:!flex-shrink-0 max-md:!mb-[12px] max-md:!px-[12px] flex justify-center">
-              <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] max-md:!rounded-[20px] max-md:!h-[300px] max-w-md w-full">
+              <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] max-md:!rounded-[12px] max-md:!h-[240px] max-w-none w-full">
                 <img
                   src="/images/about/dawn-landscape-mountains-247478.jpg"
                   alt="About Us Hero"
-                  className="w-full h-full object-cover aspect-video md:aspect-[4/5] object-center max-md:!h-[300px]"
+                  className="w-full h-full object-cover aspect-[21/9] md:aspect-[4/5] object-center max-md:!h-[240px]"
                 />
               </div>
               <div className="absolute -inset-4 bg-amber-500/10 rounded-[3.5rem] blur-2xl -z-10 group-hover:bg-amber-500/20 transition-all duration-700 max-md:!hidden"></div>
