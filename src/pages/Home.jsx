@@ -389,7 +389,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-white">
+      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-[#fdfdfd]">
         {/* Mobile Spacer to define natural height based on image aspect ratio */}
         <div className="md:hidden invisible pointer-events-none w-full">
           <img src={heroSlides[0].image} className="w-full h-auto" alt="spacer" />
@@ -399,14 +399,14 @@ export default function Home() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
+            className={`absolute top-4 md:top-8 inset-x-0 bottom-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
           >
             {slide.isFullClickable ? (
               <Link to={slide.link} className="block w-full h-full">
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
-                  className={`w-full h-full object-cover md:object-cover transition-all duration-700 ${slide.objectPosition || 'object-center md:object-[50%_10%] md:scale-[1.1]'}`}
+                  className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                   style={{ 
                     filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                     imageRendering: 'auto'
@@ -417,7 +417,7 @@ export default function Home() {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className={`w-full h-full object-cover md:object-cover transition-all duration-700 ${slide.objectPosition || 'object-center md:object-[50%_10%] md:scale-[1.1]'}`}
+                className={`w-full h-full object-cover md:object-cover ${slide.objectPosition || 'object-center'} transition-all duration-700`}
                 style={{ 
                   filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
                   imageRendering: 'auto'
