@@ -27,12 +27,10 @@ export default function ProductDetail() {
 
   // Hardcoded gallery images + dynamic main image
   const images = [
-    product?.image_url || "/images/products/shilajit-display-jar.jpg",
     "/images/products/shilajit-infographic-main.jpg",
     "/images/products/shilajit-infographic-1.jpg",
     "/images/products/shilajit-infographic-2.jpg",
     "/images/products/shilajit-nutrition-infographic.jpg",
-    "/images/products/shilajit-infographic-3.png",
   ];
 
   useEffect(() => {
