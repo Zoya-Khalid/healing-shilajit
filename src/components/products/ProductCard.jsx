@@ -83,13 +83,13 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* Rating Row */}
-        <div className="flex items-center gap-2 mb-6 max-md:!mb-[4px] md:mb-[12px]">
+        <div className="flex items-center gap-1 mb-6 max-md:!mb-[2px] md:mb-[12px]">
           <div className="flex text-[#D4AF37]">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="h-3.5 w-3.5 fill-current max-md:!w-[8px] max-md:!h-[8px]" />
             ))}
           </div>
-          <span className="text-xs text-gray-500 font-medium max-md:!text-[9px] md:text-[13px]">({product.review_count || "1.2k"})</span>
+          <span className="text-xs text-gray-500 font-medium max-md:!text-[9px]">({product.review_count || "1.2k"})</span>
         </div>
 
         <div className="flex gap-2 max-md:!gap-[4px] mt-auto">
