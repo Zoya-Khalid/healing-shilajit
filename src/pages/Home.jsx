@@ -389,7 +389,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-white pt-6 md:pt-72">
+      <section className="relative w-full h-auto md:h-[92vh] md:min-h-[600px] overflow-hidden bg-white">
         {/* Mobile Spacer to define natural height based on image aspect ratio */}
         <div className="md:hidden invisible pointer-events-none w-full">
           <img src={heroSlides[0].image} className="w-full h-auto" alt="spacer" />
@@ -399,7 +399,7 @@ export default function Home() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute top-10 md:top-[300px] inset-x-0 bottom-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
           >
             {slide.isFullClickable ? (
               <Link to={slide.link} className="block w-full h-full">
