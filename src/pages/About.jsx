@@ -71,10 +71,10 @@ export default function About() {
           <h1 className="hidden max-md:!block max-md:!text-[22px] max-md:!font-[700] font-serif max-md:!text-center max-md:!mb-[10px] max-md:!px-[12px]">
             About <span className="text-[#D4AF37]">Us</span>
           </h1>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-md:!flex max-md:!flex-col max-md:!gap-0 max-md:!items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-md:!flex max-md:!flex-col max-md:!gap-0 max-md:!items-start">
             {/* Left Image */}
-            <div className="relative group max-md:!w-full max-md:!flex-shrink-0 max-md:!mb-[12px] max-md:!px-[12px] flex justify-center">
-              <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] max-md:!rounded-[12px] max-md:!h-[220px] max-w-sm">
+            <div className="relative group max-md:!w-full max-md:!flex-shrink-0 max-md:!mb-[12px] max-md:!px-[12px]">
+              <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] max-md:!rounded-[12px] max-md:!h-[220px]">
                 <img
                   src="/images/about/dawn-landscape-mountains-247478.jpg"
                   alt="About Us Hero"
@@ -85,13 +85,13 @@ export default function About() {
             </div>
 
             {/* Right Content */}
-            <div className="space-y-8 pl-0 lg:pl-10 max-md:!w-full max-md:!space-y-[10px] max-md:!px-[12px] max-md:text-center">
+            <div className="space-y-8 pl-0 lg:pl-10 max-md:!w-full max-md:!space-y-[10px] max-md:!px-[12px]">
 
               <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight max-md:!hidden">
                 About <span className="text-[#D4AF37]">Us</span>
               </h1>
 
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed max-w-xl mx-auto max-md:!space-y-[10px] max-md:!text-[13px] max-md:!leading-[1.6]">
+              <div className="space-y-6 text-gray-300 text-lg leading-relaxed max-w-xl max-md:!space-y-[10px] max-md:!text-[13px] max-md:!leading-[1.6]">
                 <p>
                   Welcome to Herbveda, where ancient herbal wisdom meets contemporary wellness. We are committed to bringing you the most authentic and potent herbal products to support your health and wellbeing from the inside out.
                 </p>
