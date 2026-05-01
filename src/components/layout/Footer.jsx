@@ -30,6 +30,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/certifications" className="text-gray-400 hover:text-white max-md:!text-[11px] max-md:!py-[2px] max-md:!block">
+                    Certifications
+                  </Link>
+                </li>
+                <li>
                   <Link to="/about" className="text-gray-400 hover:text-white max-md:!text-[11px] max-md:!py-[2px] max-md:!block">
                     About Us
                   </Link>
