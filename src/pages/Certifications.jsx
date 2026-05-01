@@ -49,21 +49,6 @@ export default function Certifications() {
       {/* Main Content */}
       <section className="py-20 max-md:!py-[40px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 max-md:!gap-4 max-md:!mb-10">
-            {[
-              { icon: Award, text: "PCSIR Certified" },
-              { icon: CheckCircle, text: "100% Pure" },
-              { icon: Shield, text: "Lab Tested" },
-              { icon: FileText, text: "Batch Traceable" }
-            ].map((badge, i) => (
-              <div key={i} className="flex flex-col items-center p-6 bg-gray-50 rounded-3xl border border-gray-100 max-md:!p-4 max-md:!rounded-2xl">
-                <badge.icon className="h-8 w-8 text-amber-600 mb-3 max-md:!h-6 max-md:!w-6 max-md:!mb-2" />
-                <span className="font-bold text-gray-900 max-md:!text-[12px]">{badge.text}</span>
-              </div>
-            ))}
-          </div>
-
           {/* Reports Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-md:!gap-6">
             {reports.map((report, index) => (
