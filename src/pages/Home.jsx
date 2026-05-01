@@ -710,9 +710,9 @@ export default function Home() {
         </section>
         
         {/* About CTA Section */}
-        <section className="pb-12 pt-0 text-center max-md:!py-[10px]">
+        <section className="pb-8 pt-0 text-center max-md:!pt-0 max-md:!pb-[20px]">
           <div className="max-w-4xl mx-auto px-4">
-            <p className="text-gray-600 text-lg mb-10 max-md:!text-[13px] max-md:!mb-6">
+            <p className="text-gray-600 text-lg mb-6 max-md:!text-[13px] max-md:!mb-4 mt-0">
               Discover the story behind Herbveda Shilajit and how we bring the purest minerals from the heart of the Himalayas to your doorstep.
             </p>
             <Link to="/about">
