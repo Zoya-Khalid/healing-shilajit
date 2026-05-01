@@ -676,7 +676,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="pt-0 pb-12 max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!py-[16px]">
+        <section className="pt-0 pb-0 max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!py-[8px]">
           <div className="text-center mb-16 px-4 max-md:!mb-[16px]">
             <div className="inline-block group max-md:flex max-md:flex-col max-md:items-center">
               <h2 className="text-4xl md:text-5xl max-md:!text-[22px] font-serif font-bold inline-block text-black border-b-8 border-[#D4AF37] pb-4 max-md:!pb-0 max-md:!border-b-0 max-md:!mb-[12px]">Frequently Asked Questions</h2>
