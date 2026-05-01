@@ -49,37 +49,32 @@ export default function Home() {
 
   const heroSlides = [
     {
-      image: "/green-mountain-hero.png",
-      eyebrow: "HERBVEDA SHILAJIT",
-      titleWhite: "Nature's",
-      titleGold: "Vitality",
-      tagline: "Sun-soaked mountains · 100% Pure Resin · Lab Certified",
-      cta: "CLAIM OFFER NOW",
+      image: "/slider-1.jpg",
+      isFullClickable: true,
+      link: "/products",
+      brightness: "1",
+      contrast: "1",
+      saturate: "1",
+      overlay: "bg-transparent pointer-events-none"
     },
     {
-      image: "/images/products/shilajit-jar-main.png",
-      eyebrow: "SOURCED ABOVE THE CLOUDS",
-      titleWhite: "Ancient",
-      titleGold: "Purity",
-      tagline: "Hand-harvested · Glacier-purified · Sun-dried",
-      cta: "DISCOVER THE ORIGIN",
+      image: "/slider-2.jpg",
+      isFullClickable: true,
+      link: "/products",
+      brightness: "1",
+      contrast: "1",
+      saturate: "1",
+      overlay: "bg-transparent pointer-events-none"
     },
     {
-      image: "/mountain-2.jpg",
-      eyebrow: "FORGED BY THE HIMALAYAS",
-      titleWhite: "Raw",
-      titleGold: "Power",
-      tagline: "Million-year minerals  ·  100% Natural  ·  Lab Tested",
-      cta: "EXPLORE THE RANGE",
-    },
-    {
-      image: "/mountain-3.avif",
-      eyebrow: "NATURE'S FINEST GIFT",
-      titleWhite: "Eternal",
-      titleGold: "Vitality",
-      tagline: "Boost Energy  ·  Heal Joints  ·  Elevate Performance",
-      cta: "SHOP COLLECTION",
-    },
+      image: "/slider-3.jpg",
+      isFullClickable: true,
+      link: "/products",
+      brightness: "1",
+      contrast: "1",
+      saturate: "1",
+      overlay: "bg-transparent pointer-events-none"
+    }
   ];
   const [dynamicReviews, setDynamicReviews] = useState([]);
   const [dynamicProducts, setDynamicProducts] = useState([]);
@@ -190,7 +185,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3);
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
 
     let isTouching = false;
@@ -392,64 +387,86 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Cinematic Mountain Slider */}
-      <section className="relative w-full h-[60vh] md:h-[85vh] md:max-w-[95%] md:mx-auto md:rounded-[5rem] min-h-[400px] md:min-h-[600px] md:max-h-none overflow-hidden bg-black md:mt-8 md:shadow-2xl">
+      <section className="relative w-full h-[75vh] md:h-[92vh] min-h-[500px] md:min-h-[700px] md:max-h-none overflow-hidden bg-black">
         {/* Slide backgrounds */}
         {heroSlides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
           >
-            <img
-              src={slide.image}
-              alt={`Slide ${index + 1}`}
-              className={`w-full h-full ${slide.objectFit || 'object-cover'} ${slide.objectPosition || 'object-[center_60%]'}`}
-            />
-            {/* Dark gradient overlay - heavier at bottom and top */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+            {slide.isFullClickable ? (
+              <Link to={slide.link} className="block w-full h-full">
+                <img
+                  src={slide.image}
+                  alt={`Slide ${index + 1}`}
+                  className={`w-full h-full ${slide.objectFit || 'object-cover'} ${slide.objectPosition || 'object-top'} transition-all duration-700`}
+                  style={{ 
+                    filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
+                    imageRendering: 'crisp-edges'
+                  }}
+                />
+              </Link>
+            ) : (
+              <img
+                src={slide.image}
+                alt={`Slide ${index + 1}`}
+                className={`w-full h-full ${slide.objectFit || 'object-cover'} ${slide.objectPosition || 'object-top'} transition-all duration-700`}
+                style={{ 
+                  filter: `brightness(${slide.brightness || 1}) contrast(${slide.contrast || 1}) saturate(${slide.saturate || 1})`,
+                  imageRendering: 'crisp-edges'
+                }}
+              />
+            )}
+            {/* Dark gradient overlay - dynamically adjusted */}
+            <div className={`absolute inset-0 pointer-events-none bg-gradient-to-b ${slide.overlay || 'from-black/40 via-black/20 to-black/60'}`} />
           </div>
         ))}
 
-        {/* Centered Text Content */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
-          {/* Eyebrow text */}
-          <p
-            key={`eyebrow-${currentSlide}`}
-            className="text-[#D4AF37] text-[10px] sm:text-sm tracking-[0.3em] uppercase font-medium mb-2 md:mb-4 animate-fade-in-up"
-            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
-          >
-            {heroSlides[currentSlide].eyebrow}
-          </p>
+        {/* Slide Text Content - Hidden if full slide is a clickable image banner */}
+        {!heroSlides[currentSlide].isFullClickable && (
+          <div className={`absolute inset-0 z-10 flex flex-col ${heroSlides[currentSlide].align === 'left' ? 'items-start text-left px-12 md:px-32' : 'items-center text-center px-4'} justify-center`}>
+            {/* Eyebrow text */}
+            <p
+              key={`eyebrow-${currentSlide}`}
+              className="text-[#D4AF37] text-[10px] sm:text-sm tracking-[0.3em] uppercase font-medium mb-2 md:mb-4 animate-fade-in-up"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+            >
+              {heroSlides[currentSlide].eyebrow}
+            </p>
+            
+            {/* Main title */}
+            <h1
+              key={`title-${currentSlide}`}
+              className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-2 md:mb-4 animate-fade-in-up animation-delay-200"
+              style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+            >
+              <span className="text-white">{heroSlides[currentSlide].titleWhite} </span>
+              <span className={heroSlides[currentSlide].align === 'left' ? "text-shiny-gold" : "text-[#D4AF37]"}>
+                {heroSlides[currentSlide].titleGold}
+              </span>
+            </h1>
 
-          {/* Main title */}
-          <h1
-            key={`title-${currentSlide}`}
-            className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-2 md:mb-4 animate-fade-in-up animation-delay-200"
-            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
-          >
-            <span className="text-white">{heroSlides[currentSlide].titleWhite} </span>
-            <span className="text-[#D4AF37]">{heroSlides[currentSlide].titleGold}</span>
-          </h1>
+            {/* Tagline */}
+            <p
+              key={`tagline-${currentSlide}`}
+              className="text-white/80 text-[9px] sm:text-base tracking-widest mb-6 md:mb-8 animate-fade-in-up animation-delay-400"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+            >
+              {heroSlides[currentSlide].tagline}
+            </p>
 
-          {/* Tagline */}
-          <p
-            key={`tagline-${currentSlide}`}
-            className="text-white/80 text-[9px] sm:text-base tracking-widest mb-6 md:mb-8 animate-fade-in-up animation-delay-400"
-            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
-          >
-            {heroSlides[currentSlide].tagline}
-          </p>
-
-          {/* CTA Button */}
-          <Link
-            key={`cta-${currentSlide}`}
-            to="/products"
-            className="animate-fade-in-up animation-delay-400"
-          >
-            <button className="border border-[#D4AF37] text-white text-[10px] sm:text-sm tracking-[0.25em] uppercase px-4 py-2 md:px-8 md:py-3 hover:bg-[#D4AF37] hover:text-black transition-all duration-300 font-medium">
-              {heroSlides[currentSlide].cta}
-            </button>
-          </Link>
-        </div>
+            {/* CTA Button */}
+            <Link
+              key={`cta-${currentSlide}`}
+              to={heroSlides[currentSlide].link || "/products"}
+              className="animate-fade-in-up animation-delay-400"
+            >
+              <button className="border border-[#D4AF37] text-white text-[10px] sm:text-sm tracking-[0.25em] uppercase px-4 py-2 md:px-8 md:py-3 hover:bg-[#D4AF37] hover:text-black transition-all duration-300 font-medium">
+                {heroSlides[currentSlide].cta}
+              </button>
+            </Link>
+          </div>
+        )}
 
         {/* Left Arrow */}
         <button
@@ -490,60 +507,60 @@ export default function Home() {
       {/* Main Content Container */}
       <div className="pt-20 px-[12px] md:px-4 max-w-[1600px] mx-auto space-y-20 max-md:!space-y-0 max-md:!pt-0 max-md:!pb-[24px]">
         {/* Features */}
-        <section className="flex overflow-x-auto pb-4 gap-4 sm:gap-8 snap-x snap-mandatory md:grid md:grid-cols-5 hide-scrollbar max-md:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-md:!h-auto max-md:!min-h-0 max-md:!my-0 max-md:!pt-[16px] max-md:!pb-[16px]">
+        <section className="flex overflow-x-auto pb-4 gap-4 sm:gap-8 snap-x snap-mandatory lg:grid lg:grid-cols-5 hide-scrollbar max-lg:px-[12px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-lg:!h-auto max-lg:!min-h-0 max-lg:!my-0 max-lg:!pt-[16px] max-lg:!pb-[16px]">
           <div 
             onClick={() => setSelectedFeature("Lab Tested")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
-              <Award className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
+              <Award className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
-            <h3 className="max-md:text-[13px] max-md:font-[600] max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Lab Tested</h3>
-            <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Certified for purity and potency by top USA labs.</p>
+            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Lab Tested</h3>
+            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Certified for purity and potency by top USA labs.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("100% Natural")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
-              <Shield className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
+              <Shield className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
-            <h3 className="max-md:text-[13px] max-md:font-[600] max-md:mb-1 md:font-bold md:text-2xl md:mb-4">100% Natural</h3>
-            <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Pure resin, no additives, fillers, or heavy metals.</p>
+            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">100% Natural</h3>
+            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Pure resin, no additives, fillers, or heavy metals.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("Free Shipping")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
-              <Truck className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
+              <Truck className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
-            <h3 className="max-md:text-[13px] max-md:font-[600] max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Free Shipping</h3>
-            <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Complimentary express shipping on all orders.</p>
+            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Free Shipping</h3>
+            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Complimentary express shipping on all orders.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("Top Rated")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
-              <Star className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
+              <Star className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
-            <h3 className="max-md:text-[13px] max-md:font-[600] max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Top Rated</h3>
-            <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Loved by thousands of customers worldwide.</p>
+            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Top Rated</h3>
+            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Loved by thousands of customers worldwide.</p>
           </div>
 
           <div 
             onClick={() => setSelectedFeature("Trusted Products")}
-            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-md:!rounded-[12px] max-md:!px-[10px] max-md:!py-[12px] max-md:!w-[140px] max-md:!min-w-[140px] max-md:!min-h-0 md:w-auto md:p-10 md:min-h-[320px] cursor-pointer"
+            className="card-white flex flex-col items-center text-center justify-center flex-shrink-0 snap-start transition-all hover:shadow-2xl hover:bg-gray-50 max-lg:!rounded-[12px] max-lg:!px-[10px] max-lg:!py-[12px] max-lg:!w-[160px] max-lg:!min-w-[160px] max-lg:!min-h-0 lg:w-auto lg:p-10 lg:min-h-[320px] cursor-pointer"
           >
-            <div className="bg-black rounded-full flex items-center justify-center max-md:w-[36px] max-md:h-[36px] max-md:mb-2 md:w-24 md:h-24 md:mb-8">
-              <Shield className="text-white max-md:w-[20px] max-md:h-[20px] md:h-12 md:w-12" />
+            <div className="bg-black rounded-full flex items-center justify-center max-lg:w-[36px] max-lg:h-[36px] max-lg:mb-2 lg:w-24 lg:h-24 lg:mb-8">
+              <Shield className="text-white max-lg:w-[20px] max-lg:h-[20px] lg:h-12 lg:w-12" />
             </div>
-            <h3 className="max-md:text-[13px] max-md:font-[600] max-md:mb-1 md:font-bold md:text-2xl md:mb-4">Trusted Products</h3>
-            <p className="text-gray-500 max-md:text-[11px] max-md:leading-tight md:text-lg">Premium quality products trusted by professionals.</p>
+            <h3 className="max-lg:text-[13px] max-lg:font-[600] max-lg:mb-1 lg:font-bold lg:text-2xl lg:mb-4">Trusted Products</h3>
+            <p className="text-gray-500 max-lg:text-[11px] max-lg:leading-tight lg:text-lg">Premium quality products trusted by professionals.</p>
           </div>
         </section>
 
