@@ -103,14 +103,14 @@ export default function Certifications() {
           </div>
 
           {/* Footer Note */}
-          <div className="mt-20 p-10 bg-black text-white rounded-[3rem] text-center max-md:!mt-10 max-md:!p-6 max-md:!rounded-[20px]">
+          <div className="mt-20 p-10 bg-white text-black border-2 border-[#D4AF37] rounded-[3rem] text-center max-md:!mt-10 max-md:!p-6 max-md:!rounded-[20px]">
             <h4 className="text-2xl font-serif font-bold mb-4 max-md:!text-[18px]">Need a specific batch report?</h4>
-            <p className="text-gray-400 mb-8 max-md:!text-[13px] max-md:!mb-6">
+            <p className="text-gray-600 mb-8 max-md:!text-[13px] max-md:!mb-6">
               If you have recently purchased Herbveda Shilajit and would like the specific lab report for your batch number, please contact our support team.
             </p>
             <a 
               href="/contact" 
-              className="inline-block bg-amber-500 text-black px-10 py-4 rounded-full font-bold hover:bg-amber-400 transition-all max-md:!px-6 max-md:!py-3 max-md:!text-[14px]"
+              className="inline-block bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-gray-900 transition-all max-md:!px-6 max-md:!py-3 max-md:!text-[14px]"
             >
               Contact Support
             </a>
