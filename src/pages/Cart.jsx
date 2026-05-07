@@ -58,7 +58,7 @@ export default function Cart() {
             <div className="space-y-2 mb-4 max-md:!mb-0">
               <div className="flex justify-between max-md:!text-[13px] max-md:!mb-[8px] max-md:!items-center">
                 <span>Subtotal</span>
-                <span>Rs.{total.toLocaleString()}</span>
+                <span>£{total.toLocaleString()}</span>
               </div>
               <div className="flex justify-between max-md:!text-[13px] max-md:!mb-[8px] max-md:!items-center">
                 <span>Shipping</span>
@@ -66,7 +66,7 @@ export default function Cart() {
               </div>
               <div className="border-t pt-2 flex justify-between font-bold text-lg max-md:!text-[15px] max-md:!border-t-[#f0f0f0] max-md:!pt-[10px] max-md:!mt-[4px] max-md:!items-center">
                 <span>Total</span>
-                <span className="text-black">Rs.{total.toLocaleString()}</span>
+                <span className="text-black">£{total.toLocaleString()}</span>
               </div>
             </div>
 

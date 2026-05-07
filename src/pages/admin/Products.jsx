@@ -125,7 +125,7 @@ export default function AdminProducts() {
                       <div className="font-semibold max-md:!text-[12px] max-md:!leading-[1.4] max-md:!font-semibold truncate">{product.name}</div>
                       <div className="text-sm text-gray-600 max-md:!text-[11px] max-md:!text-gray-500">{product.weight}</div>
                       <div className="hidden max-md:!flex max-md:!items-center max-md:!gap-[10px] max-md:!mt-[4px]">
-                        <span className="max-md:!text-[12px] max-md:!font-semibold max-md:!text-[#8B4513]">Rs.{product.price}</span>
+                        <span className="max-md:!text-[12px] max-md:!font-semibold max-md:!text-[#8B4513]">£{product.price}</span>
                         <span className="max-md:!text-[11px] max-md:!text-gray-400">Stock: {product.stock}</span>
                       </div>
                     </div>
@@ -140,8 +140,8 @@ export default function AdminProducts() {
                   </div>
                 </td>
                 <td className="px-6 py-4 max-md:!hidden">
-                  <div className="font-semibold">${product.price}</div>
-                  {product.original_price && <div className="text-sm text-gray-500 line-through">${product.original_price}</div>}
+                  <div className="font-semibold">£{product.price}</div>
+                  {product.original_price && <div className="text-sm text-gray-500 line-through">£{product.original_price}</div>}
                 </td>
                 <td className="px-6 py-4 max-md:!hidden">{product.stock}</td>
                 <td className="px-6 py-4 max-md:!hidden">
@@ -170,9 +170,9 @@ export default function AdminProducts() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <Input label="Price ($)" type="number" step="0.01" value={formData.price} onChange={(e) => setFormData({ ...formData, price: e.target.value })} required />
+            <Input label="Price (£)" type="number" step="0.01" value={formData.price} onChange={(e) => setFormData({ ...formData, price: e.target.value })} required />
 
-            <Input label="Original Price ($)" type="number" step="0.01" value={formData.original_price} onChange={(e) => setFormData({ ...formData, original_price: e.target.value })} />
+            <Input label="Original Price (£)" type="number" step="0.01" value={formData.original_price} onChange={(e) => setFormData({ ...formData, original_price: e.target.value })} />
           </div>
 
           <div className="grid grid-cols-2 gap-4">

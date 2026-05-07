@@ -33,7 +33,7 @@ export default function CartDrawer({ isOpen, onClose }) {
             <div className="border-t p-6">
               <div className="flex justify-between mb-4 text-lg font-bold">
                 <span>Total:</span>
-                <span>${total.toFixed(2)}</span>
+                <span>£{total.toFixed(2)}</span>
               </div>
               <Link to="/checkout" onClick={onClose}>
                 <Button fullWidth>Proceed to Checkout</Button>

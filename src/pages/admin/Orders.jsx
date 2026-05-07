@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { admin, supabase } from "../../lib/supabase";
 import { format } from "date-fns";
-import { Mail, Package, Truck, CheckCircle, XCircle, DollarSign } from "lucide-react";
+import { Mail, Package, Truck, CheckCircle, XCircle, PoundSterling } from "lucide-react";
 import toast from "react-hot-toast";
 
 export default function AdminOrders() {
@@ -187,7 +187,7 @@ export default function AdminOrders() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 max-md:!text-[11px] max-md:!text-gray-500">Total Amount</p>
-                    <p className="font-semibold text-lg text-[#8B4513] max-md:!text-[14px] max-md:!font-bold max-md:!text-orange-600">Rs.{parseFloat(order.total_amount).toLocaleString()}</p>
+                    <p className="font-semibold text-lg text-[#8B4513] max-md:!text-[14px] max-md:!font-bold max-md:!text-orange-600">£{parseFloat(order.total_amount).toLocaleString()}</p>
                   </div>
                 </div>
               </div>
@@ -201,13 +201,13 @@ export default function AdminOrders() {
                       <span className="text-gray-700">
                         {item.quantity}x {item.product_name}
                       </span>
-                      <span className="font-semibold">Rs.{(item.price * item.quantity).toLocaleString()}</span>
+                      <span className="font-semibold">£{(item.price * item.quantity).toLocaleString()}</span>
                     </div>
                   ))}
                 </div>
                 <div className="border-t mt-3 pt-3 flex justify-between items-center font-bold max-md:!pt-2 max-md:!mt-2 max-md:!text-[13px]">
                   <span>Total:</span>
-                  <span className="text-[#8B4513] text-lg max-md:!text-[14px]">Rs.{parseFloat(order.total_amount).toLocaleString()}</span>
+                  <span className="text-[#8B4513] text-lg max-md:!text-[14px]">£{parseFloat(order.total_amount).toLocaleString()}</span>
                 </div>
               </div>
 

@@ -78,7 +78,7 @@ export default function ProductCard({ product }) {
             {product.name}
           </h3>
           <div className="text-black font-bold text-lg max-md:!text-[11px] max-md:!font-[700] max-md:!my-[4px] md:text-[18px] md:font-bold md:mb-[6px]">
-            Rs.{product.price?.toLocaleString()}
+            £{product.price?.toLocaleString()}
           </div>
         </div>
 

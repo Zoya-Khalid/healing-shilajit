@@ -166,16 +166,16 @@ export default function ProductDetail() {
               {product.original_price ? (
                 <div className="space-y-2 max-md:!space-y-0 text-left">
                   <div className="flex items-baseline gap-4 max-md:!gap-2 max-md:!mb-[6px]">
-                    <span className="text-4xl font-bold text-black max-md:!text-[20px]">Rs.{product.price.toLocaleString()}</span>
-                    <span className="text-xl text-gray-500 line-through max-md:!text-[13px]">Rs.{product.original_price.toLocaleString()}</span>
+                    <span className="text-4xl font-bold text-black max-md:!text-[20px]">£{product.price.toLocaleString()}</span>
+                    <span className="text-xl text-gray-500 line-through max-md:!text-[13px]">£{product.original_price.toLocaleString()}</span>
                   </div>
                   <div className="flex items-center gap-2 max-md:!mb-[6px]">
-                    <span className="bg-black text-white px-3 py-1 rounded-full text-sm font-bold max-md:!text-[11px] max-md:!px-[8px] max-md:!py-[3px]">SAVE Rs.{(product.original_price - product.price).toLocaleString()}</span>
+                    <span className="bg-black text-white px-3 py-1 rounded-full text-sm font-bold max-md:!text-[11px] max-md:!px-[8px] max-md:!py-[3px]">SAVE £{(product.original_price - product.price).toLocaleString()}</span>
                     <span className="text-green-600 font-semibold max-md:!text-[12px]">({discountPercent}% OFF)</span>
                   </div>
                 </div>
               ) : (
-                <span className="text-4xl font-bold text-black max-md:!text-[20px]">Rs.{product.price.toLocaleString()}</span>
+                <span className="text-4xl font-bold text-black max-md:!text-[20px]">£{product.price.toLocaleString()}</span>
               )}
             </div>
 

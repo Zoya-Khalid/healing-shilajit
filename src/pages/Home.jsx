@@ -821,13 +821,13 @@ export default function Home() {
               {/* Pricing Section with Dividers */}
               <div className="w-full py-3 md:py-6 border-y border-[#D4AF37]/30 mb-4 md:mb-8">
                 <div className="text-gray-500 text-[13px] md:text-xl line-through decoration-gray-600 decoration-2 mb-1 md:mb-2">
-                  Rs.45,000
+                  £45,000
                 </div>
                 <div className="text-[24px] md:text-6xl font-black text-white mb-2 md:mb-4 flex items-center justify-center gap-2">
-                  <span className="text-[#D4AF37] text-lg md:text-3xl font-serif">Rs.</span>33,800
+                  <span className="text-[#D4AF37] text-lg md:text-3xl font-serif">£</span>33,800
                 </div>
                 <div className="inline-block bg-[#D4AF37] text-black font-black text-[11px] md:text-xs px-4 md:px-6 py-1 md:py-2 rounded-full uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-                  YOU SAVE Rs.11,200!
+                  YOU SAVE £11,200!
                 </div>
               </div>
 

@@ -45,7 +45,7 @@ export default function OrderConfirmation() {
             <strong>Order Number:</strong> {order.order_number}
           </p>
           <p>
-            <strong>Total:</strong> ${order.total_amount}
+            <strong>Total:</strong> £{order.total_amount}
           </p>
           <p>
             <strong>Status:</strong> <span className="capitalize">{order.status}</span>

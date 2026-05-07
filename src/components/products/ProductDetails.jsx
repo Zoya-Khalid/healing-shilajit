@@ -39,12 +39,12 @@ export default function ProductDetails({ product }) {
         <div className="mb-6">
           {product.original_price ? (
             <div className="flex items-center space-x-3">
-              <span className="text-3xl font-bold text-black">${product.price}</span>
-              <span className="text-xl text-gray-500 line-through">${product.original_price}</span>
-              <span className="bg-red-500 text-white px-2 py-1 rounded text-sm">SAVE ${(product.original_price - product.price).toFixed(2)}</span>
+              <span className="text-3xl font-bold text-black">£{product.price}</span>
+              <span className="text-xl text-gray-500 line-through">£{product.original_price}</span>
+              <span className="bg-red-500 text-white px-2 py-1 rounded text-sm">SAVE £{(product.original_price - product.price).toFixed(2)}</span>
             </div>
           ) : (
-            <span className="text-3xl font-bold text-[#8B4513]">${product.price}</span>
+            <span className="text-3xl font-bold text-[#8B4513]">£{product.price}</span>
           )}
         </div>
 

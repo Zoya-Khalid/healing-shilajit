@@ -146,10 +146,10 @@ export default function Products() {
                   className="w-full bg-transparent border-none outline-none text-black appearance-none cursor-pointer text-sm font-medium max-md:!text-[13px]"
                 >
                   <option value="all">All Prices</option>
-                  <option value="under-15000">Under Rs.15,000</option>
-                  <option value="15000-50000">Rs.15,000 - Rs.50,000</option>
-                  <option value="50000-100000">Rs.50,000 - Rs.100,000</option>
-                  <option value="over-100000">Over Rs.100,000</option>
+                  <option value="under-15000">Under £15,000</option>
+                  <option value="15000-50000">£15,000 - £50,000</option>
+                  <option value="50000-100000">£50,000 - £100,000</option>
+                  <option value="over-100000">Over £100,000</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-gray-500 max-md:!px-[12px]">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>

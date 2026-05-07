@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { admin, supabase } from "../../lib/supabase";
-import { DollarSign, ShoppingBag, Users, Package, Star, MessageSquare, Mail } from "lucide-react";
+import { PoundSterling, ShoppingBag, Users, Package, Star, MessageSquare, Mail } from "lucide-react";
 import { format } from "date-fns";
 
 export default function AdminDashboard() {
@@ -61,8 +61,8 @@ export default function AdminDashboard() {
   const statCards = [
     {
       title: "Total Revenue",
-      value: `Rs.${stats.totalRevenue.toLocaleString()}`,
-      icon: DollarSign,
+      value: `£${stats.totalRevenue.toLocaleString()}`,
+      icon: PoundSterling,
       color: "bg-green-500",
     },
     {
@@ -152,7 +152,7 @@ export default function AdminDashboard() {
                       <p className="text-xs text-gray-500 max-md:!text-[10px]">{format(new Date(order.created_at), "MMM d, h:mm a")}</p>
                     </div>
                     <div className="text-right max-md:!text-left max-md:!w-full max-md:!flex max-md:!justify-between max-md:!items-center">
-                      <p className="font-bold text-[#8B4513] max-md:!text-[12px] max-md:!font-semibold">Rs.{parseFloat(order.total_amount).toLocaleString()}</p>
+                      <p className="font-bold text-[#8B4513] max-md:!text-[12px] max-md:!font-semibold">£{parseFloat(order.total_amount).toLocaleString()}</p>
                       <span className={`text-xs px-2 py-1 rounded-full ${getStatusColor(order.status)} max-md:!text-[10px] max-md:!px-[8px] max-md:!py-[2px] max-md:!rounded-[20px]`}>{order.status}</span>
                     </div>
                   </div>

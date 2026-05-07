@@ -182,7 +182,7 @@ ${notification.email_body}`;
                 </div>
                 <div className="text-right text-sm text-gray-600 max-md:!text-left max-md:!w-full max-md:!bg-gray-50 max-md:!p-[10px] max-md:!rounded-[8px] max-md:!text-[11px]">
                   <p>Order: {selectedNotification.orders?.order_number}</p>
-                  <p>Amount: Rs.{parseFloat(selectedNotification.orders?.total_amount).toLocaleString()}</p>
+                  <p>Amount: £{parseFloat(selectedNotification.orders?.total_amount).toLocaleString()}</p>
                   <p>{format(new Date(selectedNotification.created_at), "MMM d, yyyy h:mm a")}</p>
                 </div>
               </div>

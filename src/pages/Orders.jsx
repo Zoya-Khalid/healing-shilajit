@@ -79,14 +79,14 @@ export default function Orders() {
                     <p className="font-semibold max-md:!text-[12px] max-md:!leading-tight">{item.product_name}</p>
                     <p className="text-sm text-gray-600 max-md:!text-[10px]">Qty: {item.quantity}</p>
                   </div>
-                  <p className="font-bold max-md:!text-[12px]">${(item.price * item.quantity).toFixed(2)}</p>
+                  <p className="font-bold max-md:!text-[12px]">£{(item.price * item.quantity).toFixed(2)}</p>
                 </div>
               ))}
             </div>
 
             <div className="border-t pt-4 flex justify-between items-center max-md:!pt-3 max-md:!mt-2 max-md:!text-[13px] max-md:!font-semibold">
               <span className="font-bold max-md:!font-semibold">Total:</span>
-              <span className="text-xl font-bold text-black max-md:!text-[13px] max-md:!font-bold">Rs.{order.total_amount}</span>
+              <span className="text-xl font-bold text-black max-md:!text-[13px] max-md:!font-bold">£{order.total_amount}</span>
             </div>
 
             {order.tracking_number && (
