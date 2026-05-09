@@ -88,7 +88,7 @@ export default function Home() {
   const featureDetails = {
     "Lab Tested": {
       title: "PCSIR Certified",
-      detail: "Our Shilajit is certified for purity and potency by PCSIR (Pakistan Council of Scientific and Industrial Research), one of Pakistan's top testing laboratories. Every batch is tested for heavy metals, microbial contamination, and active compound levels.",
+      detail: "Our Shilajit is certified for purity and potency by recognized laboratories. Every batch is tested for heavy metals, microbial contamination, and active compound levels to ensure it meets the highest standards.",
     },
     "100% Natural": {
       title: "Pure & Natural",
@@ -96,11 +96,11 @@ export default function Home() {
     },
     "Free Shipping": {
       title: "Free Express Shipping",
-      detail: "We offer complimentary express shipping on all orders across Pakistan. Orders are dispatched within 24 hours and delivered within 2-4 business days.",
+      detail: "We offer complimentary express shipping on all orders across the UK. Orders are dispatched within 24 hours and delivered within 2-4 business days.",
     },
     "Top Rated": {
       title: "Loved by Thousands",
-      detail: "Trusted by thousands of customers across Pakistan and worldwide. Our customers report increased energy, better focus, and improved stamina within weeks of consistent use.",
+      detail: "Trusted by thousands of customers across the UK and worldwide. Our customers report increased energy, better focus, and improved stamina within weeks of consistent use.",
     },
     "Trusted Products": {
       title: "Professionally Trusted",
@@ -141,7 +141,7 @@ export default function Home() {
     {
       id: "shilajit-resin-20g",
       name: "Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified",
-      price: 12500,
+      price: 21.99,
       image_url: "/images/products/shilajit-box-spoon.jpg",
       hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg",
       category: "Pure Resin",
@@ -153,7 +153,7 @@ export default function Home() {
     {
       id: "shilajit-resin-30g",
       name: "Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural",
-      price: 18500,
+      price: 29.99,
       image_url: "/images/products/shilajit-box-spoon.jpg",
       hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg",
       category: "Pure Resin",
@@ -165,7 +165,7 @@ export default function Home() {
     {
       id: "shilajit-resin-50g",
       name: "Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested",
-      price: 28500,
+      price: 42.99,
       image_url: "/images/products/shilajit-box-spoon.jpg",
       hover_image_url: "/images/products/shilajit-nutrition-infographic.jpg",
       category: "Pure Resin",
@@ -309,21 +309,21 @@ export default function Home() {
   const handleClaimBundle = () => {
     // Find the real 50g product from dynamicProducts
     const real50gProduct = dynamicProducts.find(
-      (p) => p.weight === "50g" || p.price === 16900 || p.name.includes("50g")
+      (p) => p.weight === "50g" || p.price === 42.99 || p.name.includes("50g")
     );
     
     if (real50gProduct) {
       const bundleItem = {
         ...real50gProduct,
         name: "Buy 2 Get 1 FREE - Premium Bundle",
-        price: 16900, // 16900 * 2 = 33800
+        price: 42.99, // 42.99 * 2 = 85.98
       };
       addItem(bundleItem, 2);
     } else {
       const bundleProduct = {
         id: "bundle-buy-2-get-1",
         name: "Buy 2 Get 1 FREE - Premium Bundle",
-        price: 33800,
+        price: 85.98,
         image_url: "/images/products/shilajit-display-jar.jpg",
         category: "Bundle Offer",
         weight: "2x50g + 1x30g FREE"
@@ -821,13 +821,13 @@ export default function Home() {
               {/* Pricing Section with Dividers */}
               <div className="w-full py-3 md:py-6 border-y border-[#D4AF37]/30 mb-4 md:mb-8">
                 <div className="text-gray-500 text-[13px] md:text-xl line-through decoration-gray-600 decoration-2 mb-1 md:mb-2">
-                  £45,000
+                  £115.97
                 </div>
                 <div className="text-[24px] md:text-6xl font-black text-white mb-2 md:mb-4 flex items-center justify-center gap-2">
-                  <span className="text-[#D4AF37] text-lg md:text-3xl font-serif">£</span>33,800
+                  <span className="text-[#D4AF37] text-lg md:text-3xl font-serif">£</span>85.98
                 </div>
                 <div className="inline-block bg-[#D4AF37] text-black font-black text-[11px] md:text-xs px-4 md:px-6 py-1 md:py-2 rounded-full uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-                  YOU SAVE £11,200!
+                  YOU SAVE £29.99!
                 </div>
               </div>
 

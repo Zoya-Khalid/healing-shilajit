@@ -45,7 +45,7 @@ export default function OrderConfirmation() {
             <strong>Order Number:</strong> {order.order_number}
           </p>
           <p>
-            <strong>Total:</strong> £{order.total_amount}
+            <strong>Total:</strong> £{Number(order.total_amount).toFixed(2)}
           </p>
           <p>
             <strong>Status:</strong> <span className="capitalize">{order.status}</span>

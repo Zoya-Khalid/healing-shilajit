@@ -86,7 +86,7 @@ export default function Orders() {
 
             <div className="border-t pt-4 flex justify-between items-center max-md:!pt-3 max-md:!mt-2 max-md:!text-[13px] max-md:!font-semibold">
               <span className="font-bold max-md:!font-semibold">Total:</span>
-              <span className="text-xl font-bold text-black max-md:!text-[13px] max-md:!font-bold">£{order.total_amount}</span>
+              <span className="text-xl font-bold text-black max-md:!text-[13px] max-md:!font-bold">£{Number(order.total_amount).toFixed(2)}</span>
             </div>
 
             {order.tracking_number && (

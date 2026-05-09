@@ -82,7 +82,7 @@ function CardPaymentForm({ formData, total, onSuccess, onError }) {
               city: formData.city,
               state: formData.state,
               postal_code: formData.postalCode,
-              country: "PK",
+              country: "GB",
             },
           },
         },
@@ -140,7 +140,7 @@ function CardPaymentForm({ formData, total, onSuccess, onError }) {
             Processing Payment...
           </>
         ) : (
-          <span>Pay £{total.toLocaleString()}</span>
+          <span>Pay £{total.toFixed(2)}</span>
         )}
       </button>
 
@@ -168,7 +168,7 @@ export default function Checkout() {
     addressLine2: "",
     city: "",
     state: "",
-    country: "Pakistan",
+    country: "United Kingdom",
     postalCode: "",
   });
 
@@ -195,7 +195,7 @@ export default function Checkout() {
           (item) => `
           <tr>
             <td style="padding: 10px; border-bottom: 1px solid #eee;">${item.quantity}x ${item.name}</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right;">£${(item.price * item.quantity).toLocaleString()}</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right;">£{(item.price * item.quantity).toFixed(2)}</td>
           </tr>
         `,
         )
@@ -239,7 +239,7 @@ export default function Checkout() {
               <table class="items-table">
                 ${itemsList}
                 <tr>
-                  <td colspan="2" class="total">Total: £${total.toLocaleString()}</td>
+                  <td colspan="2" class="total">Total: £{total.toFixed(2)}</td>
                 </tr>
               </table>
               
@@ -304,7 +304,7 @@ export default function Checkout() {
   // Fallback: Save notification for manual sending if automatic email fails
   const saveNotificationForManualSend = async (order, userEmail, userName, items, total, htmlBody = null) => {
     try {
-      const itemsList = items.map((item) => `${item.quantity}x ${item.name} - £${(item.price * item.quantity).toLocaleString()}`).join("\n");
+      const itemsList = items.map((item) => `${item.quantity}x ${item.name} - £${(item.price * item.quantity).toFixed(2)}`).join("\n");
 
       const textBody = `
 Dear ${userName},
@@ -315,7 +315,7 @@ ORDER DETAILS:
 --------------
 Order Number: ${order.order_number}
 Order Date: ${new Date().toLocaleDateString()}
-Total Amount: £${total.toLocaleString()}
+Total Amount: £${total.toFixed(2)}
 
 ITEMS ORDERED:
 ${itemsList}
@@ -528,7 +528,7 @@ Email: support@herbvedashilajit.com
                   <span className="max-w-[70%]">
                     {item.quantity}x {item.name}
                   </span>
-                  <span>£{(item.price * item.quantity).toLocaleString()}</span>
+                  <span>£{(item.price * item.quantity).toFixed(2)}</span>
                 </div>
               ))}
             </div>
@@ -536,7 +536,7 @@ Email: support@herbvedashilajit.com
             <div className="border-t pt-4 space-y-2 max-md:!pt-[10px] max-md:!border-t max-md:!border-t-[#e0e0e0] max-md:!mt-[10px]">
               <div className="flex justify-between max-md:!text-[13px]">
                 <span>Subtotal</span>
-                <span>£{total.toLocaleString()}</span>
+                <span>£{total.toFixed(2)}</span>
               </div>
               <div className="flex justify-between max-md:!text-[13px]">
                 <span>Shipping</span>
@@ -544,7 +544,7 @@ Email: support@herbvedashilajit.com
               </div>
               <div className="border-t pt-2 flex justify-between font-bold text-lg max-md:!text-[15px] max-md:!pt-[10px] max-md:!font-bold">
                 <span>Total</span>
-                <span className="text-black">£{total.toLocaleString()}</span>
+                <span className="text-black">£{total.toFixed(2)}</span>
               </div>
             </div>
           </div>

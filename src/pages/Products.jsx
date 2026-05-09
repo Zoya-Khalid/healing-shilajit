@@ -27,9 +27,9 @@ export default function Products() {
     
     // Fallback data if DB is empty or error
     const defaultProducts = [
-      { id: '1', name: 'Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified', price: 11200, category: 'Resin', weight: '20g' },
-      { id: '2', name: 'Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural', price: 16900, category: 'Resin', weight: '30g' },
-      { id: '3', name: 'Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested', price: 9500, category: 'Resin', weight: '50g' }
+      { id: '1', name: 'Pure Himalayan Shilajit Resin - 20g Gold Grade | PCSIR Certified', price: 21.99, category: 'Resin', weight: '20g' },
+      { id: '2', name: 'Herbveda Authentic Himalayan Shilajit - 30g Potent Extract | 100% Natural', price: 29.99, category: 'Resin', weight: '30g' },
+      { id: '3', name: 'Premium Sun-Dried Himalayan Shilajit Resin - 50g Mega Pack | Lab Tested', price: 42.99, category: 'Resin', weight: '50g' }
     ];
 
     const displayData = (data && data.length > 0) ? data : defaultProducts;
@@ -72,10 +72,10 @@ export default function Products() {
     // Price range filter
     if (priceRange !== "all") {
       filtered = filtered.filter((p) => {
-        if (priceRange === "under-15000") return p.price < 15000;
-        if (priceRange === "15000-50000") return p.price >= 15000 && p.price < 50000;
-        if (priceRange === "50000-100000") return p.price >= 50000 && p.price < 100000;
-        if (priceRange === "over-100000") return p.price >= 100000;
+        if (priceRange === "under-30") return p.price < 30;
+        if (priceRange === "30-50") return p.price >= 30 && p.price < 50;
+        if (priceRange === "50-100") return p.price >= 50 && p.price < 100;
+        if (priceRange === "over-100") return p.price >= 100;
         return true;
       });
     }
@@ -146,10 +146,10 @@ export default function Products() {
                   className="w-full bg-transparent border-none outline-none text-black appearance-none cursor-pointer text-sm font-medium max-md:!text-[13px]"
                 >
                   <option value="all">All Prices</option>
-                  <option value="under-15000">Under £15,000</option>
-                  <option value="15000-50000">£15,000 - £50,000</option>
-                  <option value="50000-100000">£50,000 - £100,000</option>
-                  <option value="over-100000">Over £100,000</option>
+                  <option value="under-30">Under £30</option>
+                  <option value="30-50">£30 - £50</option>
+                  <option value="50-100">£50 - £100</option>
+                  <option value="over-100">Over £100</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-gray-500 max-md:!px-[12px]">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>

@@ -15,7 +15,7 @@ export default function CartItem({ item }) {
       <div className="flex-grow min-w-0">
         <h3 className="font-semibold text-gray-900 line-clamp-2 max-md:!text-[13px] max-md:!font-medium max-md:!leading-[1.4]">{item.name}</h3>
         <p className="text-sm text-gray-500 mt-1 max-md:!text-[11px] max-md:!mt-[2px]">{item.weight || "Standard Pack"}</p>
-        <p className="text-black font-bold mt-1 max-md:!text-[13px] max-md:!font-bold max-md:!mt-[4px] max-md:!text-black">£{item.price.toLocaleString()}</p>
+        <p className="text-black font-bold mt-1 max-md:!text-[13px] max-md:!font-bold max-md:!mt-[4px] max-md:!text-black">£{item.price.toFixed(2)}</p>
       </div>
 
       <div className="flex items-center gap-2 ml-auto">
